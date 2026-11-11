@@ -1,0 +1,9 @@
+source_file,rows,columns,first_timestamp,last_timestamp_inclusive,expected_grid_rows,missing_grid_rows,unparseable_times,duplicate_timestamps,conflict_timestamps,off_grid_rows,sorted,timezone,frequency
+Cloakroom.csv,527041,5,2021-05-31 00:00:00+08:00,2022-06-01 00:00:00+08:00,527041,0,0,0,0,0,True,Asia/Shanghai,min
+Home_office.csv,527041,7,2021-05-31 00:00:00+08:00,2022-06-01 00:00:00+08:00,527041,0,0,0,0,0,True,Asia/Shanghai,min
+Kitchen.csv,527041,6,2021-05-31 00:00:00+08:00,2022-06-01 00:00:00+08:00,527041,0,0,0,0,0,True,Asia/Shanghai,min
+Living_room.csv,527041,7,2021-05-31 00:00:00+08:00,2022-06-01 00:00:00+08:00,527041,0,0,0,0,0,True,Asia/Shanghai,min
+Master_bedroom.csv,527041,6,2021-05-31 00:00:00+08:00,2022-06-01 00:00:00+08:00,527041,0,0,0,0,0,True,Asia/Shanghai,min
+Outdoor_weather.csv,8785,9,2021-05-31 00:00:00+08:00,2022-06-01 00:00:00+08:00,8785,0,0,0,0,0,True,Asia/Shanghai,h
+Power.csv,527041,15,2021-05-31 00:00:00+08:00,2022-06-01 00:00:00+08:00,527041,0,0,0,0,0,True,Asia/Shanghai,min
+Secondary_bedroom.csv,527041,6,2021-05-31 00:00:00+08:00,2022-06-01 00:00:00+08:00,527041,0,0,0,0,0,True,Asia/Shanghai,min

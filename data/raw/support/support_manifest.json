@@ -1,0 +1,16 @@
+{
+  "collection_url": "https://api.figshare.com/v2/collections/6742536/articles?page_size=100",
+  "files": [
+    {
+      "article_id": 24278092,
+      "version": 1,
+      "name": "Notebook.pdf",
+      "url": "https://ndownloader.figshare.com/files/42612655",
+      "size_bytes": 1897797,
+      "md5": "dbfd5e61be5b2713849abbb48f9648d9",
+      "sha256": "fbb774a6275d5967b68a83a0181fa90538bc5a8bb8cb2fc1dcb741162d8c6470",
+      "downloaded_at_utc": "2026-11-10T13:48:12.402119+00:00"
+    }
+  ],
+  "collection_note": "Article versions pinned to v1; collection listing retrieved at execution time."
+}

@@ -1,0 +1,20 @@
+{
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "panel_version": "v1.0.0",
+  "timezone": "Asia/Shanghai",
+  "new_imputation": false,
+  "coverage_admission": 0.95,
+  "short_gap_max_minutes": 2,
+  "constant_review_minutes": 1440,
+  "sensor_limits_w": {"other": 2500, "air_conditioner_and_water_heater": 4000},
+  "near_limit_review_fraction": 0.9,
+  "validation_days": 28,
+  "test_days": 56,
+  "history_days": 7,
+  "absolute_tolerance_kwh": 1e-8,
+  "relative_tolerance": 1e-10,
+  "minute_semantics": "publisher-minute averaged/reported-and-forward-held power; approximate left-labelled 60 s rectangles",
+  "last_singleton_policy": "preserve in standardized data, exclude from complete calendar periods",
+  "weather_interval_semantics": "hourly records; exact averaging interval unconfirmed; no upsampling or future-weather features",
+  "qc_bits": {"source_missing": 1, "grid_missing": 2, "numeric_invalid": 4, "physical_range_invalid": 8, "near_sensor_limit_review": 16, "long_constant_review": 32, "fractional_window_state_review": 64, "unresolved_category": 128}
+}

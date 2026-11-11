@@ -1,0 +1,2 @@
+source_file,source_column,token,count,action
+Outdoor_weather.csv,wind direction,PPC,1482,preserve raw; numeric direction unavailable; semantic unconfirmed

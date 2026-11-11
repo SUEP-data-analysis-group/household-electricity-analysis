@@ -1,0 +1,97 @@
+{
+  "dataset": "CN-OBEE",
+  "item_id": 23686476,
+  "version": 1,
+  "doi": "10.6084/m9.figshare.23686476.v1",
+  "collection_doi": "10.6084/m9.figshare.c.6742536.v1",
+  "landing_page": "https://springernature.figshare.com/articles/dataset/The_CN-OBEE_dataset_occupant_behavior_thermal_environment_and_appliance_electricity_use_of_a_single-family_apartment_in_China/23686476",
+  "download_url": "https://ndownloader.figshare.com/files/41566038",
+  "downloaded_at_utc": "2026-11-10T13:31:44.0288497+00:00",
+  "archive": {
+    "name": "The CN-OBEE dataset.zip",
+    "relative_path": "archives/The CN-OBEE dataset.zip",
+    "size_bytes": 10986996,
+    "publisher_size_bytes": 10986996,
+    "publisher_md5": "6ba07a621463cb13c5d0b28d8219b293",
+    "actual_md5": "6ba07a621463cb13c5d0b28d8219b293",
+    "sha256": "04df16a1ccb67714d0ad4b310188427509cd7aee8d30a348abccf86fbe5884b0",
+    "publisher_integrity_match": true
+  },
+  "csv_count": 8,
+  "content_modified": false,
+  "quality_audit_status": "not_yet_performed",
+  "files": [
+    {
+      "name": "Cloakroom.csv",
+      "relative_path": "extracted\\The CN-OBEE dataset\\Cloakroom.csv",
+      "size_bytes": 22664773,
+      "sha256": "22da7cf4361b1785a8b7ae17d9cc2b6673896353640f962c5d7ed9aced4ddba2",
+      "header": "time,dry-bulb temperature (°C),relative humidity (%),air pressure (Pa),occupancy presence (0/1)",
+      "first_record": "2021-05-31 00:00:00,25.58,41.02,99630.0,0",
+      "last_record": "2022-06-01 00:00:00,27.98,29.53,99268.0,0"
+    },
+    {
+      "name": "Home_office.csv",
+      "relative_path": "extracted\\The CN-OBEE dataset\\Home_office.csv",
+      "size_bytes": 24795348,
+      "sha256": "07082040fca7d7327a5585a5a2d20b08d29e7e64dbedb5b1559444c525b619f4",
+      "header": "time,dry-bulb temperature (°C),relative humidity (%),air pressure (Pa),window state (0/1),east window state (0/1),occupancy presence (0/1)",
+      "first_record": "2021-05-31 00:00:00,25.0,40.63,99930.0,0,0,0",
+      "last_record": "2022-06-01 00:00:00,27.57,30.68,99560.0,0,0,"
+    },
+    {
+      "name": "Kitchen.csv",
+      "relative_path": "extracted\\The CN-OBEE dataset\\Kitchen.csv",
+      "size_bytes": 23678299,
+      "sha256": "e25203d3a439217e08e02346994554659d8192b903847b2d5decda173872a2bc",
+      "header": "time,dry-bulb temperature (°C),relative humidity (%),air pressure (Pa),window state (0/1),occupancy presence (0/1)",
+      "first_record": "2021-05-31 00:00:00,24.48,44.47,99740.0,0,0",
+      "last_record": "2022-06-01 00:00:00,27.05,32.9,99235.0,1,0"
+    },
+    {
+      "name": "Living_room.csv",
+      "relative_path": "extracted\\The CN-OBEE dataset\\Living_room.csv",
+      "size_bytes": 24760496,
+      "sha256": "98d454c302a32172fb2ce0f5e0069833d74c5360585d912fa750adb2352510d4",
+      "header": "time,dry-bulb temperature (°C),relative humidity (%),air pressure (Pa),window state (0/1),east window state (0/1),occupancy presence (0/1)",
+      "first_record": "2021-05-31 00:00:00,24.18,45.37,99900.0,1,1,0",
+      "last_record": "2022-06-01 00:00:00,26.64,34.5,99408.0,1,0,0"
+    },
+    {
+      "name": "Master_bedroom.csv",
+      "relative_path": "extracted\\The CN-OBEE dataset\\Master_bedroom.csv",
+      "size_bytes": 20123826,
+      "sha256": "cac64a4e6c503c5126a0fa2723096d07c9c549d4e84fc2ff5c99edff769d3cb6",
+      "header": "time,dry-bulb temperature (°C),relative humidity (%),air pressure (Pa),window state (0/1),occupancy presence (0/1)",
+      "first_record": "2021-05-31 00:00:00,25.4,42.94,99771.0,0,0",
+      "last_record": "2022-06-01 00:00:00,,,,1,0"
+    },
+    {
+      "name": "Outdoor_weather.csv",
+      "relative_path": "extracted\\The CN-OBEE dataset\\Outdoor_weather.csv",
+      "size_bytes": 502364,
+      "sha256": "d85ceb751c231fdd7cfa6546177624e3ca7cae6d852ee80ac2ea19df82af628d",
+      "header": "time,dry-bulb temperature (°C),relative humidity (%),atmospheric pressure (hPa),wind speed (m/s),wind direction,ground temperature (°C),horizontal total solar radiation intensity (W/m2),horizontal diffuse solar radiation intensity (W/m2)",
+      "first_record": "2021-05-31 00:00:00,18.3,59,999.6,0.5,217,15.5,0.0,0.0",
+      "last_record": "2022-06-01 00:00:00,15.3,66,995.5,1.1,67,14.0,,"
+    },
+    {
+      "name": "Power.csv",
+      "relative_path": "extracted\\The CN-OBEE dataset\\Power.csv",
+      "size_bytes": 48647958,
+      "sha256": "6510e92dc225298c80496a6440a3e7fc9815f64e19662f4261316f8378e9d988",
+      "header": "time,electric kettle,fridge,rice cooker,computer,TV,upstairs water heater,downstairs water heater,washing machine,air conditioner#1,air conditioner#2,air conditioner#3,air conditioner#4,air conditioner#5,air conditioner#6",
+      "first_record": "2021-05-31 00:00:00,0.23,50.63,0.00,0.00,0.86,0.00,1.00,0.75,0.58,0.18,0.25,0.01,0.92,1.31",
+      "last_record": "2022-06-01 00:00:00,0.49,12.18,nan,0.00,0.30,0.00,1.00,0.75,0.00,1.11,0.05,1.17,0.00,2.04"
+    },
+    {
+      "name": "Secondary_bedroom.csv",
+      "relative_path": "extracted\\The CN-OBEE dataset\\Secondary_bedroom.csv",
+      "size_bytes": 23698485,
+      "sha256": "41d65938803627a92585c09494332c7a9e9e855420e7ad5f80ca4f3a6fd38438",
+      "header": "time,dry-bulb temperature (°C),relative humidity (%),air pressure (Pa),window state (0/1),occupancy presence (0/1)",
+      "first_record": "2021-05-31 00:00:00,24.81,40.35,99830.0,0,0",
+      "last_record": "2022-06-01 00:00:00,27.47,28.89,99444.0,0,"
+    }
+  ]
+}

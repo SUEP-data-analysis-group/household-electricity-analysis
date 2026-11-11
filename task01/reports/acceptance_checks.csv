@@ -1,0 +1,40 @@
+check,passed,detail
+archive_sha256,True,04df16a1ccb67714d0ad4b310188427509cd7aee8d30a348abccf86fbe5884b0
+archive_crc,True,Every archive entry CRC checked
+source_sha256:Cloakroom.csv,True,22da7cf4361b1785a8b7ae17d9cc2b6673896353640f962c5d7ed9aced4ddba2
+time_index:Cloakroom.csv,True,"Unique, parseable, sorted, aligned. Unexpected timestamp defects require explicit new rules."
+grid_completeness:Cloakroom.csv,True,0 missing source rows
+source_sha256:Home_office.csv,True,07082040fca7d7327a5585a5a2d20b08d29e7e64dbedb5b1559444c525b619f4
+time_index:Home_office.csv,True,"Unique, parseable, sorted, aligned. Unexpected timestamp defects require explicit new rules."
+grid_completeness:Home_office.csv,True,0 missing source rows
+source_sha256:Kitchen.csv,True,e25203d3a439217e08e02346994554659d8192b903847b2d5decda173872a2bc
+time_index:Kitchen.csv,True,"Unique, parseable, sorted, aligned. Unexpected timestamp defects require explicit new rules."
+grid_completeness:Kitchen.csv,True,0 missing source rows
+source_sha256:Living_room.csv,True,98d454c302a32172fb2ce0f5e0069833d74c5360585d912fa750adb2352510d4
+time_index:Living_room.csv,True,"Unique, parseable, sorted, aligned. Unexpected timestamp defects require explicit new rules."
+grid_completeness:Living_room.csv,True,0 missing source rows
+source_sha256:Master_bedroom.csv,True,cac64a4e6c503c5126a0fa2723096d07c9c549d4e84fc2ff5c99edff769d3cb6
+time_index:Master_bedroom.csv,True,"Unique, parseable, sorted, aligned. Unexpected timestamp defects require explicit new rules."
+grid_completeness:Master_bedroom.csv,True,0 missing source rows
+source_sha256:Outdoor_weather.csv,True,d85ceb751c231fdd7cfa6546177624e3ca7cae6d852ee80ac2ea19df82af628d
+time_index:Outdoor_weather.csv,True,"Unique, parseable, sorted, aligned. Unexpected timestamp defects require explicit new rules."
+grid_completeness:Outdoor_weather.csv,True,0 missing source rows
+source_sha256:Power.csv,True,6510e92dc225298c80496a6440a3e7fc9815f64e19662f4261316f8378e9d988
+time_index:Power.csv,True,"Unique, parseable, sorted, aligned. Unexpected timestamp defects require explicit new rules."
+grid_completeness:Power.csv,True,0 missing source rows
+source_sha256:Secondary_bedroom.csv,True,41d65938803627a92585c09494332c7a9e9e855420e7ad5f80ca4f3a6fd38438
+time_index:Secondary_bedroom.csv,True,"Unique, parseable, sorted, aligned. Unexpected timestamp defects require explicit new rules."
+grid_completeness:Secondary_bedroom.csv,True,0 missing source rows
+appliance_vs_panel_hourly:panel13,True,max absolute error 1.3322676295501878e-15 kWh
+minute_vs_hour_vs_day:panel13,True,max absolute error 3.552713678800501e-15 kWh
+panel_missing_rule:panel13,True,"Incomplete panel missing, all-missing diagnostic missing"
+appliance_vs_panel_hourly:panel14,True,max absolute error 8.881784197001252e-16 kWh
+minute_vs_hour_vs_day:panel14,True,max absolute error 3.552713678800501e-15 kWh
+panel_missing_rule:panel14,True,"Incomplete panel missing, all-missing diagnostic missing"
+main_panel_95pct_admission,True,0.9682073466909532
+test_8weeks_calendar,True,"['2022-04-06 00:00:00+08:00', '2022-06-01 00:00:00+08:00']"
+test_has_eligible_origins,True,See forecast_split_quality.csv
+zero_new_imputation,True,No new filled cells
+power_source_values_unchanged,True,0 power cells invalidated
+saved_power_numeric_roundtrip,True,"All 7,378,574 source power positions checked"
+saved_timezone_and_order,True,Every saved timestamp checked

@@ -1,0 +1,4 @@
+split,calendar_origins,history_complete_origins,full_target_origins,eligible_origins,eligible_target_hours,valid_target_hours,paired_baseline_valid_hours
+train,282,254,268,253,6072,6487,6173
+validation,28,28,28,28,672,672,672
+test,56,56,56,56,1344,1344,1344

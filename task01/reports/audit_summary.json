@@ -1,0 +1,94 @@
+{
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "timezone": "Asia/Shanghai",
+  "analysis_start": "2021-05-31 00:00:00+08:00",
+  "analysis_end_exclusive": "2022-06-01 00:00:00+08:00",
+  "source_start_inclusive": "2021-05-31 00:00:00+08:00",
+  "source_end_inclusive": "2022-06-01 00:00:00+08:00",
+  "minute_grid_rows": 527041,
+  "analysis_minutes": 527040,
+  "calendar_days": 366,
+  "complete_day_counts": {
+    "panel13": 352,
+    "panel14": 148
+  },
+  "complete_hour_counts": {
+    "panel13": 8503,
+    "panel14": 3625
+  },
+  "panel_coverage": {
+    "panel13": 0.9682073466909532,
+    "panel14": 0.4129534760170006
+  },
+  "gap_episode_count": 1073,
+  "anomaly_review_episodes": 67,
+  "modified_power_cells": 0,
+  "unresolved_category_records": [
+    {
+      "source_file": "Outdoor_weather.csv",
+      "source_column": "wind direction",
+      "token": "PPC",
+      "count": 1482,
+      "action": "preserve raw; numeric direction unavailable; semantic unconfirmed"
+    }
+  ],
+  "new_imputed_cells": 0,
+  "passed_checks": 39,
+  "split": {
+    "timezone": "Asia/Shanghai",
+    "data_version": "cn_obee_v1_noimpute_v1.0.0",
+    "panel_id": "panel13",
+    "panel_version": "v1.0.0",
+    "E": "2022-06-01 00:00:00+08:00",
+    "train": [
+      "2021-05-31 00:00:00+08:00",
+      "2022-03-09 00:00:00+08:00"
+    ],
+    "validation": [
+      "2022-03-09 00:00:00+08:00",
+      "2022-04-06 00:00:00+08:00"
+    ],
+    "test": [
+      "2022-04-06 00:00:00+08:00",
+      "2022-06-01 00:00:00+08:00"
+    ],
+    "intervals": "left-closed right-open; contiguous calendar days, no compression",
+    "release_time": "D 00:00 Asia/Shanghai",
+    "required_history_hours": 168,
+    "availability_assumption": "previous hour final by D 00:00; publication latency unavailable, must be stated in task06",
+    "conservative_mask": "previous 168 hourly targets and next 24 target hours all strict-valid; future feature selection not implemented",
+    "first_possible_origin": "2021-06-07 00:00:00+08:00"
+  },
+  "split_quality": [
+    {
+      "split": "train",
+      "calendar_origins": 282,
+      "history_complete_origins": 254,
+      "full_target_origins": 268,
+      "eligible_origins": 253,
+      "eligible_target_hours": 6072,
+      "valid_target_hours": 6487,
+      "paired_baseline_valid_hours": 6173
+    },
+    {
+      "split": "validation",
+      "calendar_origins": 28,
+      "history_complete_origins": 28,
+      "full_target_origins": 28,
+      "eligible_origins": 28,
+      "eligible_target_hours": 672,
+      "valid_target_hours": 672,
+      "paired_baseline_valid_hours": 672
+    },
+    {
+      "split": "test",
+      "calendar_origins": 56,
+      "history_complete_origins": 56,
+      "full_target_origins": 56,
+      "eligible_origins": 56,
+      "eligible_target_hours": 1344,
+      "valid_target_hours": 1344,
+      "paired_baseline_valid_hours": 1344
+    }
+  ]
+}

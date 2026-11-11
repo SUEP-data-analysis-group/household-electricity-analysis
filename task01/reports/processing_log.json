@@ -1,0 +1,29 @@
+{
+  "started_at_utc": "2026-11-10T14:33:29.540993+00:00",
+  "finished_at_utc": "2026-11-10T14:45:41.949596+00:00",
+  "pipeline_version": "1.0.0",
+  "pipeline_sha256": "135f571a342bc79cfd6591863ebc6f2848a007370d7aef78d9cb877b062ea138",
+  "config_sha256": "de59ac7d8851750a4fe1187f10101124073f7614a014790af2952ca351bcc2de",
+  "python": "3.12.14",
+  "pandas": "3.0.1",
+  "numpy": "2.3.5",
+  "source_root": "D:\\Desktop\\家庭用电分析方案\\data\\raw",
+  "output_root": "D:\\OneDrive\\文档\\ChatGPT\\数据分析\\家庭用电分析方案_交付",
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "actions": [
+    "sha256 and archive CRC verification",
+    "strict UTF-8 parsing",
+    "localize Asia/Shanghai",
+    "retain all source grid rows and every appliance",
+    "no interpolation/no scaling/no smoothing",
+    "physical-bound QC; constant/near-limit descriptive flags retained",
+    "independent auxiliary data; preserve PPC wind-direction token",
+    "fixed 13/14 panels",
+    "strict approximate energy audit only",
+    "fixed calendar forecast masks",
+    "full saved power numeric and timestamp round-trip check"
+  ],
+  "observed_time_defects": 0,
+  "new_imputed_cells": 0,
+  "source_unchanged": true
+}

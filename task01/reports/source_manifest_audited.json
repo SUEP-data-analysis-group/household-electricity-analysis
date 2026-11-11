@@ -1,0 +1,331 @@
+{
+  "original_manifest": "data/raw/source_manifest.json",
+  "version": 1,
+  "doi": "10.6084/m9.figshare.23686476.v1",
+  "download_time_utc": "2026-11-10T13:31:44.0288497+00:00",
+  "archive_sha256": "04df16a1ccb67714d0ad4b310188427509cd7aee8d30a348abccf86fbe5884b0",
+  "files": [
+    {
+      "source_file": "Cloakroom.csv",
+      "rows": 527041,
+      "columns": 5,
+      "first_timestamp": "2021-05-31 00:00:00+08:00",
+      "last_timestamp_inclusive": "2022-06-01 00:00:00+08:00",
+      "expected_grid_rows": 527041,
+      "missing_grid_rows": 0,
+      "unparseable_times": 0,
+      "duplicate_timestamps": 0,
+      "conflict_timestamps": 0,
+      "off_grid_rows": 0,
+      "sorted": true,
+      "timezone": "Asia/Shanghai",
+      "frequency": "min",
+      "encoding": "utf-8 (strict)",
+      "delimiter": ",",
+      "file_size_bytes": 22664773,
+      "sha256": "22da7cf4361b1785a8b7ae17d9cc2b6673896353640f962c5d7ed9aced4ddba2",
+      "missing_token_counts": {
+        "dry-bulb temperature (°C)": {
+          "": 12558
+        },
+        "relative humidity (%)": {
+          "": 12558
+        },
+        "air pressure (Pa)": {
+          "": 12558
+        },
+        "occupancy presence (0/1)": {
+          "": 118
+        }
+      }
+    },
+    {
+      "source_file": "Home_office.csv",
+      "rows": 527041,
+      "columns": 7,
+      "first_timestamp": "2021-05-31 00:00:00+08:00",
+      "last_timestamp_inclusive": "2022-06-01 00:00:00+08:00",
+      "expected_grid_rows": 527041,
+      "missing_grid_rows": 0,
+      "unparseable_times": 0,
+      "duplicate_timestamps": 0,
+      "conflict_timestamps": 0,
+      "off_grid_rows": 0,
+      "sorted": true,
+      "timezone": "Asia/Shanghai",
+      "frequency": "min",
+      "encoding": "utf-8 (strict)",
+      "delimiter": ",",
+      "file_size_bytes": 24795348,
+      "sha256": "07082040fca7d7327a5585a5a2d20b08d29e7e64dbedb5b1559444c525b619f4",
+      "missing_token_counts": {
+        "dry-bulb temperature (°C)": {
+          "": 11269
+        },
+        "relative humidity (%)": {
+          "": 11269
+        },
+        "air pressure (Pa)": {
+          "": 11269
+        },
+        "window state (0/1)": {
+          "": 1407
+        },
+        "east window state (0/1)": {
+          "": 9947
+        },
+        "occupancy presence (0/1)": {
+          "": 23858
+        }
+      }
+    },
+    {
+      "source_file": "Kitchen.csv",
+      "rows": 527041,
+      "columns": 6,
+      "first_timestamp": "2021-05-31 00:00:00+08:00",
+      "last_timestamp_inclusive": "2022-06-01 00:00:00+08:00",
+      "expected_grid_rows": 527041,
+      "missing_grid_rows": 0,
+      "unparseable_times": 0,
+      "duplicate_timestamps": 0,
+      "conflict_timestamps": 0,
+      "off_grid_rows": 0,
+      "sorted": true,
+      "timezone": "Asia/Shanghai",
+      "frequency": "min",
+      "encoding": "utf-8 (strict)",
+      "delimiter": ",",
+      "file_size_bytes": 23678299,
+      "sha256": "e25203d3a439217e08e02346994554659d8192b903847b2d5decda173872a2bc",
+      "missing_token_counts": {
+        "dry-bulb temperature (°C)": {
+          "": 13192
+        },
+        "relative humidity (%)": {
+          "": 13192
+        },
+        "air pressure (Pa)": {
+          "": 13192
+        },
+        "window state (0/1)": {
+          "": 131
+        },
+        "occupancy presence (0/1)": {
+          "": 256
+        }
+      }
+    },
+    {
+      "source_file": "Living_room.csv",
+      "rows": 527041,
+      "columns": 7,
+      "first_timestamp": "2021-05-31 00:00:00+08:00",
+      "last_timestamp_inclusive": "2022-06-01 00:00:00+08:00",
+      "expected_grid_rows": 527041,
+      "missing_grid_rows": 0,
+      "unparseable_times": 0,
+      "duplicate_timestamps": 0,
+      "conflict_timestamps": 0,
+      "off_grid_rows": 0,
+      "sorted": true,
+      "timezone": "Asia/Shanghai",
+      "frequency": "min",
+      "encoding": "utf-8 (strict)",
+      "delimiter": ",",
+      "file_size_bytes": 24760496,
+      "sha256": "98d454c302a32172fb2ce0f5e0069833d74c5360585d912fa750adb2352510d4",
+      "missing_token_counts": {
+        "dry-bulb temperature (°C)": {
+          "": 15292
+        },
+        "relative humidity (%)": {
+          "": 15292
+        },
+        "air pressure (Pa)": {
+          "": 15292
+        },
+        "window state (0/1)": {
+          "": 93
+        },
+        "east window state (0/1)": {
+          "": 245
+        },
+        "occupancy presence (0/1)": {}
+      }
+    },
+    {
+      "source_file": "Master_bedroom.csv",
+      "rows": 527041,
+      "columns": 6,
+      "first_timestamp": "2021-05-31 00:00:00+08:00",
+      "last_timestamp_inclusive": "2022-06-01 00:00:00+08:00",
+      "expected_grid_rows": 527041,
+      "missing_grid_rows": 0,
+      "unparseable_times": 0,
+      "duplicate_timestamps": 0,
+      "conflict_timestamps": 0,
+      "off_grid_rows": 0,
+      "sorted": true,
+      "timezone": "Asia/Shanghai",
+      "frequency": "min",
+      "encoding": "utf-8 (strict)",
+      "delimiter": ",",
+      "file_size_bytes": 20123826,
+      "sha256": "cac64a4e6c503c5126a0fa2723096d07c9c549d4e84fc2ff5c99edff769d3cb6",
+      "missing_token_counts": {
+        "dry-bulb temperature (°C)": {
+          "": 219152
+        },
+        "relative humidity (%)": {
+          "": 219510
+        },
+        "air pressure (Pa)": {
+          "": 219441
+        },
+        "window state (0/1)": {
+          "": 1464
+        },
+        "occupancy presence (0/1)": {
+          "": 90
+        }
+      }
+    },
+    {
+      "source_file": "Outdoor_weather.csv",
+      "rows": 8785,
+      "columns": 9,
+      "first_timestamp": "2021-05-31 00:00:00+08:00",
+      "last_timestamp_inclusive": "2022-06-01 00:00:00+08:00",
+      "expected_grid_rows": 8785,
+      "missing_grid_rows": 0,
+      "unparseable_times": 0,
+      "duplicate_timestamps": 0,
+      "conflict_timestamps": 0,
+      "off_grid_rows": 0,
+      "sorted": true,
+      "timezone": "Asia/Shanghai",
+      "frequency": "h",
+      "encoding": "utf-8 (strict)",
+      "delimiter": ",",
+      "file_size_bytes": 502364,
+      "sha256": "d85ceb751c231fdd7cfa6546177624e3ca7cae6d852ee80ac2ea19df82af628d",
+      "missing_token_counts": {
+        "dry-bulb temperature (°C)": {},
+        "relative humidity (%)": {},
+        "atmospheric pressure (hPa)": {},
+        "wind speed (m/s)": {},
+        "wind direction": {},
+        "ground temperature (°C)": {},
+        "horizontal total solar radiation intensity (W/m2)": {
+          "": 457
+        },
+        "horizontal diffuse solar radiation intensity (W/m2)": {
+          "": 457
+        }
+      }
+    },
+    {
+      "source_file": "Power.csv",
+      "rows": 527041,
+      "columns": 15,
+      "first_timestamp": "2021-05-31 00:00:00+08:00",
+      "last_timestamp_inclusive": "2022-06-01 00:00:00+08:00",
+      "expected_grid_rows": 527041,
+      "missing_grid_rows": 0,
+      "unparseable_times": 0,
+      "duplicate_timestamps": 0,
+      "conflict_timestamps": 0,
+      "off_grid_rows": 0,
+      "sorted": true,
+      "timezone": "Asia/Shanghai",
+      "frequency": "min",
+      "encoding": "utf-8 (strict)",
+      "delimiter": ",",
+      "file_size_bytes": 48647958,
+      "sha256": "6510e92dc225298c80496a6440a3e7fc9815f64e19662f4261316f8378e9d988",
+      "missing_token_counts": {
+        "electric kettle": {
+          "nan": 9017
+        },
+        "fridge": {
+          "nan": 9014
+        },
+        "rice cooker": {
+          "nan": 302397
+        },
+        "computer": {
+          "nan": 10273
+        },
+        "TV": {
+          "nan": 9022
+        },
+        "upstairs water heater": {
+          "nan": 9040
+        },
+        "downstairs water heater": {
+          "nan": 9793
+        },
+        "washing machine": {
+          "nan": 9039
+        },
+        "air conditioner#1": {
+          "nan": 9110
+        },
+        "air conditioner#2": {
+          "nan": 10423
+        },
+        "air conditioner#3": {
+          "nan": 9097
+        },
+        "air conditioner#4": {
+          "nan": 14162
+        },
+        "air conditioner#5": {
+          "nan": 9020
+        },
+        "air conditioner#6": {
+          "nan": 9054
+        }
+      }
+    },
+    {
+      "source_file": "Secondary_bedroom.csv",
+      "rows": 527041,
+      "columns": 6,
+      "first_timestamp": "2021-05-31 00:00:00+08:00",
+      "last_timestamp_inclusive": "2022-06-01 00:00:00+08:00",
+      "expected_grid_rows": 527041,
+      "missing_grid_rows": 0,
+      "unparseable_times": 0,
+      "duplicate_timestamps": 0,
+      "conflict_timestamps": 0,
+      "off_grid_rows": 0,
+      "sorted": true,
+      "timezone": "Asia/Shanghai",
+      "frequency": "min",
+      "encoding": "utf-8 (strict)",
+      "delimiter": ",",
+      "file_size_bytes": 23698485,
+      "sha256": "41d65938803627a92585c09494332c7a9e9e855420e7ad5f80ca4f3a6fd38438",
+      "missing_token_counts": {
+        "dry-bulb temperature (°C)": {
+          "": 12848
+        },
+        "relative humidity (%)": {
+          "": 12848
+        },
+        "air pressure (Pa)": {
+          "": 12848
+        },
+        "window state (0/1)": {},
+        "occupancy presence (0/1)": {
+          "": 34085
+        }
+      }
+    }
+  ],
+  "content_modified": false,
+  "support_manifest": "data/raw/support/support_manifest.json",
+  "audit_status": "completed"
+}

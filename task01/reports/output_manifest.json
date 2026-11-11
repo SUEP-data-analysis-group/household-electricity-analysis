@@ -1,0 +1,290 @@
+{
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "files": [
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_1_w.csv.gz",
+      "size_bytes": 5328552,
+      "sha256": "2599cd724c37aea0b35ca5219e2766d43284688786c4b7569210bbc4fbf431c7"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_2_w.csv.gz",
+      "size_bytes": 5803308,
+      "sha256": "3c07bdd6621a4e65c2ffc0de9362185ac5e4373c2c5fa0c3ea7c182c36e9a715"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_3_w.csv.gz",
+      "size_bytes": 5357100,
+      "sha256": "7339e62670d8d5b8bb4c8bfb13c10ca1b80931524fa6288ec9901fde2bc9e9ea"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_4_w.csv.gz",
+      "size_bytes": 5443125,
+      "sha256": "23a2ab2205243f3e44874ad273e6c1c135a77172b6b049b6e378c181f7a9eb64"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_5_w.csv.gz",
+      "size_bytes": 5588981,
+      "sha256": "29eb55e8ef55b9f4ca7469772c51911d79f256f29e903b1ec9928ccbfc1c916c"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_6_w.csv.gz",
+      "size_bytes": 5529264,
+      "sha256": "82e1f47e8d9208695242f2e743ccd5cd3a2c52e1b2268a9b431ca9556608f68e"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/computer_w.csv.gz",
+      "size_bytes": 5009965,
+      "sha256": "1491a2dd7e17b7961af8a0c1c2300c8e2cff7ef7706a7e5798d3bbc98178f3ee"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "size_bytes": 5106502,
+      "sha256": "77b03813c8a5979526912a7a2ce46284e62fe04d0b959464ae7dc176147386c3"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/electric_kettle_w.csv.gz",
+      "size_bytes": 5696802,
+      "sha256": "7916ca330bb7800aee58c661ff607ed72340f0e689b88f38208d6f42f1c2915c"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/fridge_w.csv.gz",
+      "size_bytes": 6773758,
+      "sha256": "4d39c9698c6d2725df40129fa28fb410c0de49a09115fc83df5cb8bdfca1628f"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/rice_cooker_w.csv.gz",
+      "size_bytes": 4975270,
+      "sha256": "d48bef089dc3ac9877ce4f156eb00f43eb0ccf2d7fc1148f0210b961429b8604"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/tv_w.csv.gz",
+      "size_bytes": 6001223,
+      "sha256": "430f1cde79ce15702ae3a633aec7232db75c851134d1909c8ea10450b769168c"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "size_bytes": 5468539,
+      "sha256": "fc285baee86ea8af96a129d579f4cfe9bcb0e61414bbd3b53301f2040aed25cd"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/washing_machine_w.csv.gz",
+      "size_bytes": 5415820,
+      "sha256": "341c22b19bcd2c7e668fe6ef5c781ed845b314c4b2d505077921582cf235386e"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/auxiliary_quality/cloakroom.csv.gz",
+      "size_bytes": 2826595,
+      "sha256": "1b5ecbe7d0746602ff428f227f2e3b14ba61d0c34715cd96c8edc74bb99edd0c"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/auxiliary_quality/home_office.csv.gz",
+      "size_bytes": 2834333,
+      "sha256": "4959cf63857e3de09956660a6a4eb90d3f94f4efda4ea18f3123be4a5d2cd592"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/auxiliary_quality/kitchen.csv.gz",
+      "size_bytes": 2819685,
+      "sha256": "6b0718b8d02f6ed1f1419a65dc95d115d239143bc62118b7b34966048df9527f"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/auxiliary_quality/living_room.csv.gz",
+      "size_bytes": 2833010,
+      "sha256": "eaab99b9b83a3377a591d13249e38913a7d49cccb2ea15d6511554d4e2117c94"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/auxiliary_quality/master_bedroom.csv.gz",
+      "size_bytes": 2821379,
+      "sha256": "ad5c044b41c0830ef00617c8183b50adf0919f3769f39d1cf18c2dc59f8a40e0"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/auxiliary_quality/outdoor_weather.csv.gz",
+      "size_bytes": 55167,
+      "sha256": "f6c1f78818de999b2420f435aca817cbfc7d507369ee71e37ac804da86ad9928"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/auxiliary_quality/secondary_bedroom.csv.gz",
+      "size_bytes": 2819318,
+      "sha256": "c78bb1217804cb5f06526e77cc3cf063f1af96d144088b33b7327a0fc71120d9"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/cloakroom.csv.gz",
+      "size_bytes": 5162161,
+      "sha256": "a0cfa76f4c7d77ff432ee547454970ea21c3edb5e5520776cdc42be7fa0e7026"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/home_office.csv.gz",
+      "size_bytes": 5274579,
+      "sha256": "0c9608373d405742a7c133487960a68ae3b87609f1b30184370ae2886e7942a4"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/kitchen.csv.gz",
+      "size_bytes": 5246889,
+      "sha256": "4b58b9e6fa994b9917776f90882b04dff5be3b7f1587cbe9fc1b47bdf73fdcd8"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/living_room.csv.gz",
+      "size_bytes": 5314384,
+      "sha256": "9be9bfc3db0e5625dc688a68916441bec9df7ebda1310c6b7c3f502d9146ddbe"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/master_bedroom.csv.gz",
+      "size_bytes": 5073628,
+      "sha256": "74be05bd9d58714573549d99914a5b727d2c2c41c84e8c1d28f8d26d4b9f6b8c"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/outdoor_weather.csv.gz",
+      "size_bytes": 232725,
+      "sha256": "8cd41d8fae85f925170db38147672d5e123ebdea21190e9b299c4596f177b035"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/panel_minute.csv.gz",
+      "size_bytes": 9616119,
+      "sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/power_minute.csv.gz",
+      "size_bytes": 9314304,
+      "sha256": "a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95"
+    },
+    {
+      "path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/secondary_bedroom.csv.gz",
+      "size_bytes": 5241241,
+      "sha256": "2ff2c7af37851849a2d40b3f8319b6f6a7c57df93c5079024b3d0479f1b33815"
+    },
+    {
+      "path": "task01/reports/acceptance_checks.csv",
+      "size_bytes": 3460,
+      "sha256": "3f34ecbaf3c3f831ad5d70acce8a6d34185374fb44f9e1eac09adcd6a5fbd68a"
+    },
+    {
+      "path": "task01/reports/anomaly_report.csv",
+      "size_bytes": 11098,
+      "sha256": "0d05e684473af82405018df334a5fb67096eeb1295679337916eac2254a63782"
+    },
+    {
+      "path": "task01/reports/audit_summary.json",
+      "size_bytes": 2954,
+      "sha256": "76653c7e1198b2bc8da4c0e3d0781072533d4facacb9538f21dabf0cb42ebe5f"
+    },
+    {
+      "path": "task01/reports/auxiliary_coverage_monthly.csv",
+      "size_bytes": 43996,
+      "sha256": "094dcc4e904312cd18a850188f3c6fa6675f4c924e1ca0fa6e016d2869b95aa6"
+    },
+    {
+      "path": "task01/reports/conflicts.csv",
+      "size_bytes": 69,
+      "sha256": "431d49648401491199fbd31b53958e0c9ab82121c5e4f7f909c8d513b65b7e2f"
+    },
+    {
+      "path": "task01/reports/coverage_daily.csv",
+      "size_bytes": 514060,
+      "sha256": "087804d1c56bc8ad415e0b0706814024165211cd9911153e5087715852b4ea1e"
+    },
+    {
+      "path": "task01/reports/coverage_hourly.csv.gz",
+      "size_bytes": 459062,
+      "sha256": "24e673319054c0c7063d4e0434f16e7530980baa7dff9ed6f8d9b9d860b25d2e"
+    },
+    {
+      "path": "task01/reports/coverage_monthly.csv",
+      "size_bytes": 20875,
+      "sha256": "831398e1e8dea34d370e447cf1caa6817994d7739b446e942e25520824414103"
+    },
+    {
+      "path": "task01/reports/coverage_overall.csv",
+      "size_bytes": 3498,
+      "sha256": "4dc86595f1b8dc02e329b24181a08a7856542c64fbebdc559378368018b3cf28"
+    },
+    {
+      "path": "task01/reports/coverage_yearly.csv",
+      "size_bytes": 4906,
+      "sha256": "413b8a49d8cfe6eb8cf957a9582af3f5eb2422ed854d3c5b87b5e9067490e6c0"
+    },
+    {
+      "path": "task01/reports/data_dictionary.csv",
+      "size_bytes": 23667,
+      "sha256": "8f94399747db85cf4945e99a7b147e46943de6454b479327116d081d2a842a32"
+    },
+    {
+      "path": "task01/reports/duplicates.csv",
+      "size_bytes": 44,
+      "sha256": "680186607dc8fe796c23115783c15ff2039bf6ee78d6e055bcc15d5691d55ec4"
+    },
+    {
+      "path": "task01/reports/forecast_origin_quality.csv",
+      "size_bytes": 23874,
+      "sha256": "fc271cb10b74227b1c4e58239b774ff30a62fcad106de3f00261fbdacd034f29"
+    },
+    {
+      "path": "task01/reports/forecast_split_quality.csv",
+      "size_bytes": 262,
+      "sha256": "6d05725254226f5314ac657e905feed497fcece45e2e86f3c3e18360ea18078b"
+    },
+    {
+      "path": "task01/reports/gap_report.csv",
+      "size_bytes": 169306,
+      "sha256": "41677212fb53f3481b7c2d64b0bb74dbfac2a970856ce99e8e8e7f3ed897f310"
+    },
+    {
+      "path": "task01/reports/panel_definition.json",
+      "size_bytes": 2454,
+      "sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb"
+    },
+    {
+      "path": "task01/reports/processing_log.json",
+      "size_bytes": 1247,
+      "sha256": "d45a0f1c083544021def4196db48f24d0f68591a5a84527f2420faa166ab1094"
+    },
+    {
+      "path": "task01/reports/qc_summary.csv",
+      "size_bytes": 5136,
+      "sha256": "e0a5ac2ab2b75de529d1d939b43382251e26804a280f04f6f9e560c4b6b4bbb5"
+    },
+    {
+      "path": "task01/reports/quality_report.md",
+      "size_bytes": 10026,
+      "sha256": "10dbca5dc7bf0d8a94b3b5ed61cb74909eab600777a83eb572afe85dbe69e00f"
+    },
+    {
+      "path": "task01/reports/quarantine.csv",
+      "size_bytes": 46,
+      "sha256": "8ebb875a3fd04c8d8f1052be411ded596b4c08b73b1915feb0ac211aea92ced6"
+    },
+    {
+      "path": "task01/reports/source_manifest_audited.json",
+      "size_bytes": 9593,
+      "sha256": "db2ca060fe07cddd0f80ae691580a4d08e50f8cabb5ac24800ffdd4e86df6a03"
+    },
+    {
+      "path": "task01/reports/split_manifest.json",
+      "size_bytes": 923,
+      "sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8"
+    },
+    {
+      "path": "task01/reports/strict_daily_check.csv",
+      "size_bytes": 66067,
+      "sha256": "8ce3f91036b5c1bbe384d88a9119a78d4def417079122fcb339e71536276d395"
+    },
+    {
+      "path": "task01/reports/strict_hourly_check.csv",
+      "size_bytes": 1529221,
+      "sha256": "563d43539aeefd3c09efdbde8ea691313f982115da26eb842f0603660a221b18"
+    },
+    {
+      "path": "task01/reports/time_index_audit.csv",
+      "size_bytes": 1143,
+      "sha256": "dac000c33d73bd9c3a6eac05320e774fdb6626b174e4a6f4f1962b1c9efab024"
+    },
+    {
+      "path": "task01/reports/unresolved_categories.csv",
+      "size_bytes": 157,
+      "sha256": "49585a93b3ca987bf813c66dd12447a242fcf1d801397702b6bbbf3f2098d0e3"
+    },
+    {
+      "path": "task01/reports/value_change_log.csv",
+      "size_bytes": 171787,
+      "sha256": "1bde9d1c6363e3eb749d5fe2386119e3415fcb6279518cb171b779c4b2b7485f"
+    }
+  ]
+}
