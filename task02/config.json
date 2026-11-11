@@ -1,0 +1,13 @@
+{
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "panel_version": "v1.0.0",
+  "panel_id": "panel13",
+  "timezone": "Asia/Shanghai",
+  "analysis_start": "2021-05-31 00:00:00+08:00",
+  "analysis_end_exclusive": "2022-06-01 00:00:00+08:00",
+  "minutes_per_hour": 60,
+  "hours_per_day": 24,
+  "w_per_minute_to_kwh_divisor": 60000,
+  "derive_dir": "data/derived/task02",
+  "short_gap_estimate_version": null
+}

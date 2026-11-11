@@ -1,0 +1,56 @@
+{
+  "task": "task02_hourly_daily_statistics",
+  "generated_rules": {
+    "panel_id": "panel13",
+    "panel_version": "v1.0.0",
+    "data_version": "cn_obee_v1_noimpute_v1.0.0",
+    "timezone": "Asia/Shanghai",
+    "analysis_start": "2021-05-31 00:00:00+08:00",
+    "analysis_end_exclusive": "2022-06-01 00:00:00+08:00",
+    "minute_energy_rule": "usable minute contributes panel_power_w/60000 kWh (left-labelled 60 s rectangle)",
+    "hour_rule": "hour_complete = 60/60 usable minutes",
+    "day_rule": "day_complete = 24/24 complete hours",
+    "no_imputation": true,
+    "no_gap_extension": true,
+    "no_coverage_scaling": true,
+    "excluded_terminal_row": "2022-06-01 00:00:00+08:00"
+  },
+  "inputs": [
+    {
+      "path": "data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\panel_minute.csv.gz",
+      "sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29",
+      "bytes": 9616119
+    }
+  ],
+  "counts": {
+    "minutes_in_window": 527040,
+    "usable_minutes": 510284,
+    "invalid_minutes": 16756,
+    "hours": 8784,
+    "hour_complete": 8503,
+    "days": 366,
+    "day_complete": 352,
+    "weeks": 53,
+    "week_complete": 48,
+    "appliance_rows": 114192
+  },
+  "verification": {
+    "hour_complete_mine": 8503,
+    "hour_complete_task01": 8503,
+    "usable_minutes_match": true,
+    "day_complete_mine": 352,
+    "day_complete_task01": 352,
+    "hour_energy_max_abs_diff": 6.661338147750939e-16,
+    "hour_energy_compared": 8503,
+    "all_pass": true
+  },
+  "outputs": [
+    "daily_panel13.csv",
+    "derivation_manifest.json",
+    "hourly_appliance.csv",
+    "hourly_panel13.csv",
+    "monthly_support.csv",
+    "typical_hourly_profile.csv",
+    "weekly_support.csv"
+  ]
+}
