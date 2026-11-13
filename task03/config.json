@@ -1,0 +1,17 @@
+{
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "panel_id": "panel13",
+  "panel_version": "v1.0.0",
+  "timezone": "Asia/Shanghai",
+  "analysis_start": "2021-05-31",
+  "analysis_end_exclusive": "2022-06-01",
+  "seed": 42,
+  "bootstrap_repetitions": 2000,
+  "primary_block_days": 7,
+  "sensitivity_block_days": [1, 3, 7, 14],
+  "minimum_valid_bootstrap_fraction": 0.95,
+  "relative_baseline_min_kwh": 0.000001,
+  "confidence_level": 0.95,
+  "calendar_rule_version": "cn_state_council_2021_2022_v1",
+  "derive_dir": "data/derived/task03"
+}

@@ -1,0 +1,36 @@
+PASS 366 unique contiguous local dates
+PASS 352 complete and 14 excluded days
+PASS excluded dates retain missing energy and reasons
+PASS no alteration of peer daily values or quality
+PASS input hourly grid and strict-hour support
+PASS curves use only 24 valid hours on each complete date
+PASS hourly integrals equal complete-day energy
+PASS calendar covers full 2021 and 2022 before slicing
+PASS natural weekday labels independently recomputed
+PASS every holiday and makeup label matches independent rule expansion
+PASS 31 holiday-break dates and 7 makeup dates in each full year
+PASS holiday/weekend overrides and year-boundary January cases
+PASS analysis date labels exactly inherited from full-year calendar
+PASS meteorological seasons preserve separate spring boundary periods
+PASS natural monthly support preserves denominators
+PASS natural group mean/median/day counts and month composition independently recomputed
+PASS natural 24 hours use identical date cohorts and correct means
+PASS natural monthly/seasonal/raw and matched-weight differences independently recomputed
+PASS natural matched hourly profiles integrate to standardized daily means/difference
+PASS actual monthly support preserves denominators
+PASS actual group mean/median/day counts and month composition independently recomputed
+PASS actual 24 hours use identical date cohorts and correct means
+PASS actual monthly/seasonal/raw and matched-weight differences independently recomputed
+PASS actual matched hourly profiles integrate to standardized daily means/difference
+PASS every within-month hourly mean independently recomputed
+PASS bootstrap settings frozen to 2000 repetitions and seed 42
+PASS intervals withheld if fewer than 95 percent of bootstrap draws support both groups
+PASS bootstrap settings frozen to 2000 repetitions and seed 42
+PASS intervals withheld if fewer than 95 percent of bootstrap draws support both groups
+PASS all four block-length sensitivities reported for both estimands and schemes
+PASS autocorrelations use actual calendar lags and preserve gaps
+PASS two official notice snapshots have source URLs, retrieval timestamps and matching hashes
+PASS all recorded input/source/code and output hashes match
+PASS six figures and both readable report formats delivered
+PASS single-file HTML embeds all figures and actual tables
+ALL PASS (35 checks)

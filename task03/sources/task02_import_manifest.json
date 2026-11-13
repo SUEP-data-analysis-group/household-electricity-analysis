@@ -1,0 +1,25 @@
+{
+  "imported_at": "2026-11-12T10:57:47.063432+08:00",
+  "original_package": "E:/task02",
+  "scope": "Only the three upstream files needed by task03; original task02 manifest preserved verbatim; other task02 products are in the peer package.",
+  "files": [
+    {
+      "source_path": "E:\\task02\\data\\derived\\task02\\daily_panel13.csv",
+      "local_path": "data\\derived\\task02\\daily_panel13.csv",
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65",
+      "identical_to_peer": true
+    },
+    {
+      "source_path": "E:\\task02\\data\\derived\\task02\\hourly_panel13.csv",
+      "local_path": "data\\derived\\task02\\hourly_panel13.csv",
+      "sha256": "2eca7322e043c5115a03b06dc180a4fd05da10c1db6273e56e3ed6c1325876d8",
+      "identical_to_peer": true
+    },
+    {
+      "source_path": "E:\\task02\\data\\derived\\task02\\derivation_manifest.json",
+      "local_path": "data\\derived\\task02\\derivation_manifest.json",
+      "sha256": "c8d7a185be07e56f94ba618c7d81188cd19e9643df200041c4f4891e471b2386",
+      "identical_to_peer": true
+    }
+  ]
+}
