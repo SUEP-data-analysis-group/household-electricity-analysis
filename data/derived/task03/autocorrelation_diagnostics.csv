@@ -1,0 +1,11 @@
+﻿series,lag_calendar_days,n_pairs,pearson_correlation
+raw,1,349,0.6349190397390712
+raw,2,347,0.6468766407489661
+raw,3,345,0.6370826778065274
+raw,7,339,0.577657303530286
+raw,14,333,0.4307535263268931
+within_year_month_demeaned,1,349,0.29517595359073423
+within_year_month_demeaned,2,347,0.26062331772198266
+within_year_month_demeaned,3,345,0.21789796725410923
+within_year_month_demeaned,7,339,0.08659884027542983
+within_year_month_demeaned,14,333,0.0017658570932259944

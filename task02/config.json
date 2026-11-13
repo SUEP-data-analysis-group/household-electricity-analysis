@@ -1,5 +1,6 @@
 {
   "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "derivation_version": "task02_v1.1.0_20261113",
   "panel_version": "v1.0.0",
   "panel_id": "panel13",
   "timezone": "Asia/Shanghai",

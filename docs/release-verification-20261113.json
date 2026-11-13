@@ -1,0 +1,92 @@
+{
+  "verified_at": "2026-11-13T18:42:28.585636+08:00",
+  "status": "pass",
+  "scope": "Publication portability, documented history, unchanged corrected data, and independent ZIP reproduction",
+  "task02_verifier_passes": 85,
+  "task03_verifier_passes": 36,
+  "original_task03_files": 23,
+  "unchanged_corrected_csvs": 18,
+  "zip": {
+    "path": "task03/deliverables/task03_工作日与休息日比较_完整成果包.zip",
+    "files": 38,
+    "sha256": "35dcbb0a8380eaf323f7b872aca27ba19f485deb444464102a6a157604d4af7f",
+    "crc": "pass",
+    "before_regeneration": "36 checks pass",
+    "after_reproduction": "36 checks pass",
+    "all_10_result_csv_hashes_identical": true
+  },
+  "formal_csvs": [
+    {
+      "path": "data/derived/task02/daily_panel13.csv",
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65"
+    },
+    {
+      "path": "data/derived/task02/hourly_appliance.csv",
+      "sha256": "6de532b6a96c841deac4b46741dea985713ea67cc48c6906d794dc3863006e09"
+    },
+    {
+      "path": "data/derived/task02/hourly_panel13.csv",
+      "sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee"
+    },
+    {
+      "path": "data/derived/task02/monthly_support.csv",
+      "sha256": "c513101570d2bd9ca3326906d8c65c385fe5225009f9ffef1ebbc17c880c9bc9"
+    },
+    {
+      "path": "data/derived/task02/monthly_typical_hourly_profile.csv",
+      "sha256": "d5efe2f5c84a67c5da15886c55e25724d447c80d5f08ef6edfcd2b608b7aee44"
+    },
+    {
+      "path": "data/derived/task02/seasonal_typical_hourly_profile.csv",
+      "sha256": "a3a65fe079f210cae25a2e08e2df9d2539f67c7df3ada60d5a813b999a1ee7ef"
+    },
+    {
+      "path": "data/derived/task02/typical_hourly_profile.csv",
+      "sha256": "23994c8434e9daa53214fae0923c0220114936610dd64761a07c2a5a0db0a1e9"
+    },
+    {
+      "path": "data/derived/task02/weekly_support.csv",
+      "sha256": "b82e9d67b10730ac83b67a4d010935bfe9f422e0d1c103a0d9b5ecb213f8bb8d"
+    },
+    {
+      "path": "data/derived/task03/autocorrelation_diagnostics.csv",
+      "sha256": "e2c32d3ef578be95a282910b67aa0174a40dffffb3e18e015ccac957c5a12b0d"
+    },
+    {
+      "path": "data/derived/task03/bootstrap_sensitivity.csv",
+      "sha256": "f3b900b7157a41ad20256e8509546ed3c9cfa6c0b3692deeecb9b3e41b55eb55"
+    },
+    {
+      "path": "data/derived/task03/date_dimension.csv",
+      "sha256": "ec95f8d24a7cac5da863846ee9c747defbb633a89707ee97b8ab59962472083e"
+    },
+    {
+      "path": "data/derived/task03/day_type_summary.csv",
+      "sha256": "d646dc4aafcceb9f82d9aef16db10e35a2316d5d683a75e423b790d5d4ac5940"
+    },
+    {
+      "path": "data/derived/task03/day_type_support.csv",
+      "sha256": "da6cd7d9dace9f9b6bb9843838eceab8167b46739e7c7abe00f3ab1148970e1b"
+    },
+    {
+      "path": "data/derived/task03/holiday_calendar_2021_2022.csv",
+      "sha256": "4ddf6a97133f94a4ad336b42b77b93782cc9ad64439b0704370e0c85b46de3c1"
+    },
+    {
+      "path": "data/derived/task03/hourly_day_type_profile.csv",
+      "sha256": "c2fa1d5981564b559b9bfb6961de3a6c0e4ac948075c9b37a3c1dd6c58c6b252"
+    },
+    {
+      "path": "data/derived/task03/monthly_hourly_day_type_profile.csv",
+      "sha256": "7bb4fc6ceaa081f6543a62a29f9f5d4daba6bb77fb55a0ca99880ae1cd4f5384"
+    },
+    {
+      "path": "data/derived/task03/standardized_hourly_day_type_profile.csv",
+      "sha256": "cf40e0a8d75035131c4b1aa74388f34bc40af54251c18a45cc032389fc599aa0"
+    },
+    {
+      "path": "data/derived/task03/stratified_comparison.csv",
+      "sha256": "da4ff905a75b0b9a1bf8a1ac1b774d576889499facfff43c8d2ccb05501875d9"
+    }
+  ]
+}

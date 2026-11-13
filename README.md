@@ -2,13 +2,41 @@
 
 本项目使用 **CN-OBEE v1**，研究北京一户家庭的监测电器用电规律、工作日与休息日差异、峰谷变化、电器贡献及日前负荷预测。
 
-**当前进度：task01 已完成；task02—task06 的数据入口和实施要求已写好，其正式统计分析、图表和模型仍待完成。** 仓库包含发布原件、标准分钟数据、质量标记和可复现程序。克隆后即可读取现成数据开展后续任务。
+**当前进度（2026-11-13）：task01—task03 已完成并经核验，task02/task03 修订成果已合入仓库；task04—task06 尚待执行。** 仓库包含发布原件、标准分钟数据、质量标记和可复现程序。克隆后即可读取现成数据开展后续任务。
+
+## 所有版本与当前推荐
+
+完整迭代、逐项改动、数值影响和历史归档见 **[CHANGELOG.md](CHANGELOG.md)**。标准数据版本与任务派生版本分别管理；后续任务使用默认 `main` 的当前成果。
+
+| 内容 | 当前推荐 / 历史状态 | 入口 |
+| --- | --- | --- |
+| task01 数据基础 | `cn_obee_v1_noimpute_v1.0.0`，仍在使用 | [任务说明](task01/README.md) |
+| task02 原始版，2026-11-11 | 历史，原版未单独编号 | [原始快照](https://github.com/SUEP-data-analysis-group/household-electricity-analysis/tree/task02-original-20261111) |
+| task03 原始版，2026-11-12 | 历史本地交付，缺正式数据；2026-11-13 才归档 | [原始快照](https://github.com/SUEP-data-analysis-group/household-electricity-analysis/tree/task03-original-20261112/task03) |
+| task02 当前严格修订版 | `task02_v1.1.0_20261113` | [README](task02/README.md)、[版本记录](task02/CHANGELOG.md)、[8 个正式 CSV 与清单](data/derived/task02/) |
+| task03 当前完整修订版 | `task03_v1.1.0_20261113` | [README](task03/README.md)、[版本记录](task03/CHANGELOG.md)、[10 个正式 CSV 与清单](data/derived/task03/) |
+
+旧版通过 Git 历史标签保留，主分支不重复摆放多套旧结果。各任务目录存程序/报告，正式数据集中在 `data/derived/`；task03 另附 [可独立复跑的完整 ZIP](task03/deliverables/task03_工作日与休息日比较_完整成果包.zip)。
+
+## 2026-11-13 修订与后续数据入口
+
+- task02 修订版 `task02_v1.1.0_20261113`：严格 mean_power_kw 在不完整小时为空；有效片段均值另列 observed_duration_mean_power_kw。补齐月度 312 行、季节时期 120 行典型曲线和两张图，并扩充输入/输出哈希与核验。
+- task03 修订版 `task03_v1.1.0_20261113`：已生成 10 个正式 CSV 和派生清单，刷新 task02 输入哈希；自然周末与实际休息日主差值仍为约 0.520/0.434 kWh，区间均覆盖 0。
+- 352 个完整日合计约 2739.60 kWh，不代表包含 14 个不完整日的完整区间总电量；标准分钟数据、面板和新增插补为 0 的规则保持一致。
+
+| 下一项任务 | 现在可读取的仓库文件 |
+| --- | --- |
+| task04 峰谷与案例 | [task02 严格小时表](data/derived/task02/hourly_panel13.csv)、[完整日表](data/derived/task02/daily_panel13.csv)和 [task03 日期标签](data/derived/task03/date_dimension.csv) |
+| task05 电器贡献 | [task02 设备小时表](data/derived/task02/hourly_appliance.csv)、task01 分钟明细与质量，并使用 task04 的同一案例区间 |
+| task06 日前预测 | [task02 连续小时表](data/derived/task02/hourly_panel13.csv)、[task03 全年日历](data/derived/task03/holiday_calendar_2021_2022.csv)和 [task01 固定切分](task01/reports/split_manifest.json) |
+
+当前数据字段、完整性要求、复现命令和交接规则分别见 [task02 README](task02/README.md)及 [task03 README](task03/README.md)。主目标继续使用严格负荷和 hour_complete，不以片段诊断均值补标签；预测只使用当时已公布的日历字段。
 
 ## 从这里开始
 
 1. 阅读 [task01 实际质量报告](task01/reports/quality_report.md)，了解数据范围、缺口与可用时段。
 2. 查阅 [数据字段与读取约定](task01/DATA_CONTRACT.md)，确认单位、时间、空值和面板字段。
-3. 按 [task02 操作说明](task02/README.md)生成正式小时表、日表和月度样本支持；再开展 task03—task06。
+3. 直接读取 [task02 正式数据](data/derived/task02/)和 [task03 正式数据](data/derived/task03/)，按 task04—task06 的 README 继续。
 
 ## task01 具体完成了什么
 
@@ -46,9 +74,9 @@ task01 建立六项任务共用的数据基础，回答“数据从哪里来、�
 
 ## task02—task06 如何利用 task01 继续
 
-后续新结果统一保存到 `data/derived/task02/` 至 `data/derived/task06/`。**这些派生目录和正式结果目前尚未生成。** 每项任务应记录所用标准版本、面板、时间范围、筛选规则及排除数量。
+后续新结果统一保存到 `data/derived/task02/` 至 `data/derived/task06/`。**task02 和 task03 的正式结果已交付到仓库；task04—task06 的派生结果仍待生成。** 每项任务应记录所用标准版本、面板、时间范围、筛选规则及排除数量。
 
-| 任务 | 读取哪些输入 | 接着完成什么 | 计划输出 |
+| 任务 | 读取哪些输入 | 接着完成什么 | 已生成 / 计划输出 |
 | --- | --- | --- | --- |
 | [task02 时间统计](task02/README.md) | task01 的 power_minute、panel_minute、面板定义和质量信息 | 固定 panel13，按分钟近似积分；发布严格小时/日统计、月度支持和典型曲线；与 task01 核验表对照 | hourly_panel13.csv、daily_panel13.csv、hourly_appliance.csv、monthly_support.csv、典型曲线与图表 |
 | [task03 工作日与休息日比较](task03/README.md) | task02 的日表、完整日小时曲线；task01 的质量与日期范围 | 建立 2021—2022 年自然星期与法定节假日/调休两套标签；在同月/季节内比较电量和曲线，报告日数与置信区间 | date_dimension.csv、节假日表、日类型统计、分层差异与样本支持 |
@@ -205,13 +233,13 @@ assert panel.index.is_unique
 
 默认主分析采用严格规则：小时面板联合覆盖为 100% 才给出完整小时电量；完整日期需要 24 个合格小时。其他时段原样保留并标记。95% 至不足 100% 的小时可保存“有效时段累计电量”，不能叫完整小时电量，也不能自动按比例放大。后续如放宽要求，另建敏感性版本并披露数量和影响。
 
-## 每项任务还需要什么预处理
+## 各任务的数据基础与状态
 
-| 任务 | 任务一保留的基础 | 该任务仍需完成 | 说明文件 |
+| 任务 | 任务一保留的基础 | 当前工作与状态 | 说明文件 |
 | --- | --- | --- | --- |
 | 一 数据可信度 | 发布原件、分钟数据、全部缺口、来源与质量 | 已完成审计、字典、面板、版本锁定和质量验收 | [任务一 README](task01/README.md) |
-| 二 时间统计 | 分钟功率与时间区间 | 按记录含义积分、严格小时与日聚合、记录完整性、月度样本支持 | [任务二 README](task02/README.md) |
-| 三 日类型比较 | 完整日及分钟基础 | 自然周末与实际休息日双口径、历史节假日和调休、季节分层及按日抽样 | [任务三 README](task03/README.md) |
+| 二 时间统计 | 分钟功率与时间区间 | 已完成严格小时/日/周/月统计、月度及季节典型曲线、样本支持与核验 | [任务二 README](task02/README.md) |
+| 三 日类型比较 | 完整日及分钟基础 | 已完成双口径日类型、历史日历、月份分层、日块抽样及正式交付 | [任务三 README](task03/README.md) |
 | 四 峰谷变化 | 原始分钟形态及严格小时表 | 完整日峰谷、负荷率、相邻小时变化、并列峰和案例规则 | [任务四 README](task04/README.md) |
 | 五 电器解释 | 全部电器列及逐设备质量 | 同时有效样本、固定分母、设备运行阈值、分钟级运行重叠 | [任务五 README](task05/README.md) |
 | 六 日前预测 | 连续时间轴、固定面板、缺测标记 | 固定时间切分、发布时间、可用历史窗口、训练期拟合处理、同集评估 | [任务六 README](task06/README.md) |
@@ -234,6 +262,6 @@ assert panel.index.is_unique
 
 先完成下载清单和字段核对，再做无插补标准化，生成逐设备与联合覆盖报告，比较 13 台候选面板与 14 台补充面板，最后锁定主范围和预测日历边界。随后才开始任务二至六。
 
-任务一已交付：`source_manifest`、`data_dictionary`、`panel_definition`、标准分钟数据及质量标记、`gap_report`、`anomaly_report`、`coverage_hourly`、`coverage_daily`、`quality_report`、`processing_log`、固定规则配置和版本说明。发布原件和原下载清单保留，官方补充 Notebook.pdf 已另存；标准分钟表、逐设备质量、字典、覆盖/缺口/异常报告、面板与切分、可复现程序均已生成。task02–06 已更新实际输入和具体实施步骤，其分析与建模尚未执行。
+任务一已交付：`source_manifest`、`data_dictionary`、`panel_definition`、标准分钟数据及质量标记、`gap_report`、`anomaly_report`、`coverage_hourly`、`coverage_daily`、`quality_report`、`processing_log`、固定规则配置和版本说明。发布原件和原下载清单保留，官方补充 Notebook.pdf 已另存；标准分钟表、逐设备质量、字典、覆盖/缺口/异常报告、面板与切分、可复现程序均已生成。task02、task03 已完成本地修订、正式数据生成与核验；task04—task06 的实施步骤已写明，分析与建模仍待执行。
 
 每个派生版本都应在相应 README 更新实际输入、面板、时间范围、完整性要求、缺口处理、异常处理、样本排除数及原因、参数来源、输出字段、已知限制和与标准版本的关系。不能只保留代码而不说明规则。

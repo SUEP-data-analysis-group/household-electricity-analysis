@@ -1,0 +1,20 @@
+[
+  {
+    "year": 2021,
+    "source_url": "https://app.www.gov.cn/govdata/gov/202011/26/465359/article.html",
+    "notice_date": "2020-11-25",
+    "retrieved_at": "2026-11-12T10:39:49.842517+08:00",
+    "local_file": "holiday_notice_2021.html",
+    "sha256": "a161e1729c1752ef0392b5fae3d047ea1fecfdc78b5744f71326caa48c0cafe3",
+    "verification": "Manually checked all 7 holiday intervals and 7 makeup workdays against archived official article"
+  },
+  {
+    "year": 2022,
+    "source_url": "https://app.www.gov.cn/govdata/gov/202110/25/477434/article.html",
+    "notice_date": "2021-10-25",
+    "retrieved_at": "2026-11-12T10:39:50.227966+08:00",
+    "local_file": "holiday_notice_2022.html",
+    "sha256": "c856f3008c881add4e7311e906fa1ebbf8e791f9922eb5aab2d7e7c66958cc57",
+    "verification": "Manually checked all 7 holiday intervals and 7 makeup workdays against archived official article"
+  }
+]

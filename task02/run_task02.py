@@ -15,6 +15,8 @@ Usage (from project root):
 import argparse
 import hashlib
 import json
+import platform
+from datetime import datetime, timezone
 from pathlib import Path
 
 import matplotlib
@@ -25,6 +27,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
+SOURCE_ROOT = ROOT
 CONFIG_PATH = Path(__file__).with_name("config.json")
 C = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
 
@@ -39,8 +42,8 @@ DIVISOR = C["w_per_minute_to_kwh_divisor"]
 MPH = C["minutes_per_hour"]
 HPD = C["hours_per_day"]
 
-START = pd.Timestamp(C["analysis_start"])
-END = pd.Timestamp(C["analysis_end_exclusive"])
+START = pd.Timestamp(C["analysis_start"]).tz_convert(TZ)
+END = pd.Timestamp(C["analysis_end_exclusive"]).tz_convert(TZ)
 
 plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "DejaVu Sans"]
 plt.rcParams["axes.unicode_minus"] = False
@@ -52,6 +55,13 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: f.read(1 << 20), b""):
             h.update(block)
     return h.hexdigest()
+
+
+def recorded_path(path):
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(path)
 
 
 def load_panel():
@@ -91,7 +101,9 @@ def build_hourly(df: pd.DataFrame, valid: pd.Series) -> pd.DataFrame:
 
     out["energy_kwh"] = out["valid_duration_energy_kwh"].where(out["hour_complete"])
     duration_h = out["usable_minutes"] / MPH
-    out["mean_power_kw"] = out["valid_duration_energy_kwh"] / duration_h.replace(0, np.nan)
+    out["observed_duration_mean_power_kw"] = out["valid_duration_energy_kwh"] / duration_h.replace(0, np.nan)
+    # The main hourly target is defined only for a complete one-hour interval.
+    out["mean_power_kw"] = out["energy_kwh"]
 
     out.index.name = "timestamp"
     return out
@@ -124,7 +136,7 @@ def build_daily(hourly: pd.DataFrame) -> pd.DataFrame:
 
 def build_monthly(daily: pd.DataFrame) -> pd.DataFrame:
     rows = []
-    for month, part in daily.groupby(daily.index.to_period("M")):
+    for month, part in daily.groupby(daily.index.tz_localize(None).to_period("M")):
         calendar_days = int(part.shape[0])
         # 文件边界是否覆盖整个自然月
         first, last = part.index.min(), part.index.max()
@@ -189,7 +201,7 @@ def build_typical(hourly: pd.DataFrame, daily: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_appliance_hourly():
-    panel_def = json.loads((ROOT / "task01/reports/panel_definition.json").read_text(encoding="utf-8"))
+    panel_def = json.loads((SOURCE_ROOT / "task01/reports/panel_definition.json").read_text(encoding="utf-8"))
     devices = next(p["devices"] for p in panel_def["panels"] if p["panel_id"] == PANEL_ID)
 
     frames = []
@@ -197,8 +209,7 @@ def build_appliance_hourly():
     for dev in devices:
         path = STD / "appliance_quality" / f"{dev}.csv.gz"
         if not path.is_file():
-            print(f"[warn] 缺少 {path.name}，跳过")
-            continue
+            raise FileNotFoundError(f"Missing required fixed-panel input: {path}")
         a = pd.read_csv(path, usecols=["timestamp", "is_usable", "usable_value"])
         a["timestamp"] = pd.to_datetime(a["timestamp"]).dt.tz_convert(TZ)
         a = a.set_index("timestamp").sort_index()
@@ -228,13 +239,70 @@ def build_appliance_hourly():
                 "valid_duration_energy_kwh", "energy_kwh"]]
 
 
-def make_figures(hourly, daily, prof, monthly):
+def season_labels(index):
+    names = {3: "spring", 4: "spring", 5: "spring", 6: "summer", 7: "summer", 8: "summer",
+             9: "autumn", 10: "autumn", 11: "autumn", 12: "winter", 1: "winter", 2: "winter"}
+    return [f"{t.year - int(t.month in (1, 2))}_{names[t.month]}" for t in index]
+
+
+def build_grouped_profiles(hourly, daily, grouping):
+    """Each period uses the same complete-date cohort at all 24 hours."""
+    good_days = daily.index[daily.day_complete]
+    part = hourly.loc[hourly.index.normalize().isin(good_days)].copy()
+    part["hour"] = part.index.hour
+    part[grouping] = part.index.strftime("%Y-%m") if grouping == "year_month" else season_labels(part.index)
+    day_labels = daily.index.strftime("%Y-%m") if grouping == "year_month" else season_labels(daily.index)
+    calendar_counts = pd.Series(day_labels).value_counts()
+    frames = []
+    for label, period in part.groupby(grouping, sort=False):
+        g = period.groupby("hour").energy_kwh
+        f = pd.DataFrame(dict(n_days=g.size(), mean_kwh=g.mean(), median_kwh=g.median(),
+            p25_kwh=g.quantile(.25), p75_kwh=g.quantile(.75), min_kwh=g.min(), max_kwh=g.max())).reindex(range(24))
+        f.index.name = "hour"
+        f = f.reset_index()
+        f.insert(0, grouping, label)
+        f["calendar_days_in_window"] = int(calendar_counts[label])
+        f["sample_scope"] = "strict_complete_days_only"
+        f["panel_id"] = PANEL_ID
+        f["panel_version"] = C["panel_version"]
+        f["data_version"] = VERSION
+        frames.append(f)
+    return pd.concat(frames, ignore_index=True)
+
+
+def make_grouped_figure(profile, grouping, filename, columns):
+    labels = profile[grouping].drop_duplicates().tolist()
+    rows = int(np.ceil(len(labels) / columns))
+    fig, axes = plt.subplots(rows, columns, figsize=(columns * 3.8, rows * 2.8), squeeze=False)
+    for ax, label in zip(axes.flat, labels):
+        f = profile.loc[profile[grouping].eq(label)]
+        ax.fill_between(f.hour, f.p25_kwh, f.p75_kwh, color="#4C72B0", alpha=.16)
+        ax.plot(f.hour, f.mean_kwh, color="#4C72B0", label="均值")
+        ax.plot(f.hour, f.median_kwh, color="#55A868", linestyle="--", label="中位数")
+        ax.set_title(f"{label}  n={int(f.n_days.iloc[0])} 天", fontsize=10)
+        ax.set_xticks([0, 6, 12, 18, 23])
+        ax.set_xlabel("小时")
+        ax.set_ylabel("小时电量 (kWh)")
+        ax.grid(alpha=.2)
+    for ax in list(axes.flat)[len(labels):]:
+        ax.set_visible(False)
+    handles, legends = axes.flat[0].get_legend_handles_labels()
+    fig.legend(handles, legends, loc="upper right", fontsize=9)
+    fig.suptitle("各期典型曲线：固定完整日集合；阴影为 25–75 分位范围", fontsize=12)
+    fig.tight_layout(rect=(0, 0, 1, .96))
+    path = FIGS / filename
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+    return path
+
+
+def make_figures(hourly, daily, prof, monthly, monthly_prof, seasonal_prof):
     FIGS.mkdir(parents=True, exist_ok=True)
     made = []
 
     fig, ax = plt.subplots(figsize=(13, 4.2))
     ok = daily["day_complete"]
-    ax.plot(daily.index[ok], daily.loc[ok, "energy_kwh"], lw=1.2, color="#4C72B0", label="完整日电量")
+    ax.plot(daily.index, daily["energy_kwh"], lw=1.2, color="#4C72B0", label="完整日电量（缺测断线）")
     bad = daily.index[~ok]
     ax.scatter(bad, np.full(len(bad), daily.loc[ok, "energy_kwh"].min() * 0.9),
                marker="|", s=60, color="#C44E52", label=f"不完整日（{len(bad)} 天，不参与电量统计）")
@@ -320,12 +388,14 @@ def make_figures(hourly, daily, prof, monthly):
     fig.savefig(p, dpi=150)
     plt.close(fig)
     made.append(p)
+    made.append(make_grouped_figure(monthly_prof, "year_month", "05_monthly_typical_profiles.png", 4))
+    made.append(make_grouped_figure(seasonal_prof, "season_period", "06_seasonal_typical_profiles.png", 3))
     return made
 
 
 def verify(hourly, daily):
     checks = {}
-    sh = pd.read_csv(ROOT / "task01/reports/strict_hourly_check.csv")
+    sh = pd.read_csv(SOURCE_ROOT / "task01/reports/strict_hourly_check.csv", float_precision="round_trip")
     sh = sh.loc[sh["panel_id"].eq(PANEL_ID)].copy()
     sh["timestamp"] = pd.to_datetime(sh["timestamp"]).dt.tz_convert(TZ)
     sh = sh.set_index("timestamp").sort_index()
@@ -337,7 +407,7 @@ def verify(hourly, daily):
             sh["usable_minutes"].astype("int64"))
     )
 
-    sd = pd.read_csv(ROOT / "task01/reports/strict_daily_check.csv")
+    sd = pd.read_csv(SOURCE_ROOT / "task01/reports/strict_daily_check.csv", float_precision="round_trip")
     sd = sd.loc[sd["panel_id"].eq(PANEL_ID)].copy()
     sd["date"] = pd.to_datetime(sd["date"]).dt.tz_convert(TZ)
     sd = sd.set_index("date").sort_index()
@@ -348,17 +418,27 @@ def verify(hourly, daily):
     diff = (j["energy_kwh"] - j["energy_kwh_t01"]).abs()
     checks["hour_energy_max_abs_diff"] = float(diff.max()) if len(diff) else None
     checks["hour_energy_compared"] = int(len(diff))
+    checks["hour_index_matches"] = hourly.index.equals(sh.index)
+    checks["day_index_matches"] = daily.index.equals(sd.index)
+    checks["strict_mean_missing_on_incomplete_hours"] = bool(hourly.loc[~hourly.hour_complete, "mean_power_kw"].isna().all())
+    checks["strict_mean_matches_task01"] = bool(np.allclose(hourly.mean_power_kw, sh.mean_power_kw,
+        atol=1e-10, rtol=1e-10, equal_nan=True))
+    checks["hour_energy_nan_mask_matches"] = bool(np.array_equal(hourly.energy_kwh.isna(), sh.energy_kwh.isna()))
+    checks["day_energy_nan_mask_matches"] = bool(np.array_equal(daily.energy_kwh.isna(), sd.energy_kwh.isna()))
 
     checks["all_pass"] = bool(
         checks["hour_complete_mine"] == checks["hour_complete_task01"]
         and checks["day_complete_mine"] == checks["day_complete_task01"]
         and checks["usable_minutes_match"]
         and (checks["hour_energy_max_abs_diff"] or 0) < 1e-9
+        and all(checks[k] for k in ["hour_index_matches", "day_index_matches",
+            "strict_mean_missing_on_incomplete_hours", "strict_mean_matches_task01",
+            "hour_energy_nan_mask_matches", "day_energy_nan_mask_matches"])
     )
     return checks
 
 
-def write_report(hourly, daily, monthly, weekly, prof, checks, figs, path):
+def write_report(hourly, daily, monthly, weekly, prof, checks, figs, path, monthly_prof, seasonal_prof):
     ok_h = int(hourly["hour_complete"].sum())
     ok_d = int(daily["day_complete"].sum())
     ok = daily["day_complete"]
@@ -396,12 +476,13 @@ def write_report(hourly, daily, monthly, weekly, prof, checks, figs, path):
         "",
         "## 口径",
         "",
-        "- 计量含义：`panel_power_w` 是面板总负荷的瞬时功率，单位 **W**，不是电量；"
-        "一分钟采样按 60 s 矩形近似积分，即该分钟电量 `= P_W / 60000` kWh（等价于「各分钟功率求和后除以 60000」）。",
+        "- 计量含义：`panel_power_w` 为已由作者规则化的发布分钟功率，单位 **W**；"
+        "采用左标签 60 s 矩形近似积分，该分钟电量 `= P_W / 60000` kWh。原发布序列含同分钟上报均值与作者前向保持，不等同于结算电表读数。",
         "- 有效分钟 = `panel_complete` 为真且 `panel_power_w` 非空；缺口不参与积分。",
         "- 小时完整 = 60/60 有效分钟；日完整 = 24/24 完整小时；周完整 = 7/7 完整日。缺口不积分、不延长、不按覆盖率放大。",
         "- `energy_kwh`（kWh）仅在完整时段给出；不完整时段只保留 `valid_duration_energy_kwh` 与覆盖度。",
-        "- `mean_power_kw`（kW）= 时段电量 / 有效时长（小时），即平均负荷；它与电量的单位、含义都不同，不可混用。",
+        "- `mean_power_kw`（kW）仅对完整小时给出，数值等于该完整一小时的 energy_kwh；不完整小时为空。",
+        "- `observed_duration_mean_power_kw` 仅表示有效分钟片段的均值，保留 4 个部分小时的诊断信息，不作为完整小时真实目标。日平均负荷为完整日电量 / 24h。",
         "",
         "## 结果",
         "",
@@ -416,7 +497,7 @@ def write_report(hourly, daily, monthly, weekly, prof, checks, figs, path):
         f"- 24 小时典型曲线：最高小时 **{int(peak['hour'])} 时**（均值 {peak['mean_kwh']:.3f} kWh），"
         f"最低小时 **{int(valley['hour'])} 时**（均值 {valley['mean_kwh']:.3f} kWh）",
         f"- 日均负荷（`mean_power_kw`）：完整日均值 **{load_mean:.4f} kW**，最大 **{load_max:.4f} kW**；"
-        f"整年电量合计 {total:.2f} kWh 与负荷是两种量，前者是能量、后者是功率",
+        f"{ok_d} 个完整日的电量合计为 {total:.2f} kWh；未包含 {len(daily) - ok_d} 个不完整日的完整电量，因此不报告全分析期间总电量。电量与负荷分别为能量和功率。",
         "",
         "## 各月样本支持",
         "",
@@ -462,12 +543,12 @@ def write_report(hourly, daily, monthly, weekly, prof, checks, figs, path):
         f"次峰在 **8 时**（{h8:.3f} kWh），白天 10–19 时基本平稳（{d1019.min():.2f}–{d1019.max():.2f} kWh），"
         f"谷值在 **{int(valley['hour'])} 时**（{valley['mean_kwh']:.3f} kWh）。"
         f"夜间 21–23 时明显抬升（{h21:.3f} / {peak['mean_kwh']:.3f} / {prof.loc[23, 'mean_kwh']:.3f} kWh），"
-        "说明大功率设备集中在晚间使用；早晨 7–8 时的上冲则是起床时段的短时集中用电。",
+        "这些是监测面板的时段形态；具体设备贡献和住户起床时间需另用分项或行为证据验证。",
         f"- **季节变化**：只比较 10 个完整月。最高 **{hi_m['year_month']}**（{hi_m['complete_day_mean_energy_kwh']:.2f} kWh/天），"
         f"最低 **{lo_m['year_month']}**（{lo_m['complete_day_mean_energy_kwh']:.2f} kWh/天）。"
         f"8 月（{mm['2021-08']:.2f}）与 12 月（{mm['2021-12']:.2f}）构成夏、冬两个高平台，"
         f"3–5 月（{mm['2022-03']:.2f} / {mm['2022-04']:.2f} / {mm['2022-05']:.2f}）处于中间水平，"
-        f"全年完整日均值 {mean_d:.2f} kWh/天；用电量主要受制冷/制热类负荷的季节驱动，而不是全年恒定。"
+        f"观测期完整日样本均值 {mean_d:.2f} kWh/天；各月负荷水平存在差异，具体设备和季节机制留待任务五分项验证。"
         + (f"（2021-07 只有 {int(part_jul['complete_days'].iloc[0])} 个完整日，"
            f"样本均值 {part_jul['complete_day_mean_energy_kwh'].iloc[0]:.2f} kWh/天，"
            "样本不足以代表整月，不与完整月并列比较。）" if len(part_jul) else ""),
@@ -476,8 +557,7 @@ def write_report(hourly, daily, monthly, weekly, prof, checks, figs, path):
         f"其中 {len(morning_m)} 个月（{'、'.join(str(int(m[5:])) for m in morning_m)} 月）最高点在早晨 8 时，"
         f"{len(evening_m)} 个月（{'、'.join(str(int(m[5:])) for m in evening_m)} 月）最高点在晚间 21–23 时，"
         f"耗电最低的 {lo_m['year_month'][:4]} 年 {int(lo_m['year_month'][5:])} 月曲线最平坦、最高点落在午后。"
-        "也就是说，作息没有整体位移，变化的是「早晨 8 时」与「晚间 21–23 时」两处负荷的相对高度——"
-        "典型曲线上的早晨次峰在部分月份确实反超了晚间主峰。",
+        "典型曲线上早晨与晚间负荷的相对高度随月份变化；仅凭面板曲线不能判断住户作息是否整体位移。",
         "- **从图里读出、需要进一步比较的变化**：",
         "  1. 日电量在同一季节内部仍有明显高低起伏（热力图与趋势图上多段连续深色带），"
         "工作日与周末是否构成两套不同的用电方式，留给任务三检验；",
@@ -487,6 +567,15 @@ def write_report(hourly, daily, monthly, weekly, prof, checks, figs, path):
         "可在峰谷分析时用分项表确认是空调还是热水器驱动；",
         "  4. 2022-02 的低谷是否与假期外出有关，仅凭功率数据无法判定，需要外部作息信息。",
     ]
+
+    lines += ["", "## 按月与季节的典型曲线", "",
+        f"- monthly_typical_hourly_profile.csv 共 {len(monthly_prof)} 行，13 个年月份各 24 小时。",
+        f"- seasonal_typical_hourly_profile.csv 共 {len(seasonal_prof)} 行，5 个季节时期各 24 小时。",
+        "- 每期均值、中位数、25/75 分位数、最小/最大值和 n_days 使用同一批完整日。",
+        "- 2021-05 只有 1 个完整日；2021 年夏季仅有 78 个完整日。两端春季分开；冬季以十二月所在年命名。分组曲线是样本描述，不补足缺测月份。", "",
+        "| 时期 | 完整日样本数 |", "| --- | --- |"]
+    for field, frame in [("year_month", monthly_prof), ("season_period", seasonal_prof)]:
+        lines += [f"| {r[field]} | {int(r['n_days'])} |" for _, r in frame.drop_duplicates(field).iterrows()]
 
     bad_days = daily.index[~daily["day_complete"]]
     lines += [
@@ -504,14 +593,19 @@ def write_report(hourly, daily, monthly, weekly, prof, checks, figs, path):
         "",
         "## 图",
         "",
-    ] + [f"- `{Path(p).name}`" for p in figs]
+    ] + [f"![{Path(p).stem}](figures/{Path(p).name})" for p in figs]
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main():
+    global SOURCE_ROOT, STD
     ap = argparse.ArgumentParser()
     ap.add_argument("--skip-appliance", action="store_true", help="跳过逐设备小时表")
+    ap.add_argument("--source-root", type=Path, default=ROOT,
+                    help="包含 data/standardized 与 task01/reports 的项目根目录；输出仍在本成果包")
     args = ap.parse_args()
+    SOURCE_ROOT = args.source_root.resolve()
+    STD = SOURCE_ROOT / "data/standardized" / VERSION
 
     DERIVE.mkdir(parents=True, exist_ok=True)
     REPORTS.mkdir(parents=True, exist_ok=True)
@@ -522,6 +616,8 @@ def main():
     monthly = build_monthly(daily)
     weekly = build_weekly(daily)
     prof = build_typical(hourly, daily)
+    monthly_prof = build_grouped_profiles(hourly, daily, "year_month")
+    seasonal_prof = build_grouped_profiles(hourly, daily, "season_period")
 
     h_out = pd.DataFrame({
         "timestamp": hourly.index.map(lambda t: t.isoformat()),
@@ -533,6 +629,7 @@ def main():
         "valid_duration_energy_kwh": hourly["valid_duration_energy_kwh"],
         "energy_kwh": hourly["energy_kwh"],
         "mean_power_kw": hourly["mean_power_kw"],
+        "observed_duration_mean_power_kw": hourly["observed_duration_mean_power_kw"],
     })
     h_out.to_csv(DERIVE / "hourly_panel13.csv", index=False, encoding="utf-8")
 
@@ -551,19 +648,34 @@ def main():
     monthly.to_csv(DERIVE / "monthly_support.csv", index=False, encoding="utf-8")
     weekly.to_csv(DERIVE / "weekly_support.csv", index=False, encoding="utf-8")
     prof.to_csv(DERIVE / "typical_hourly_profile.csv", index=False, encoding="utf-8")
+    monthly_prof.to_csv(DERIVE / "monthly_typical_hourly_profile.csv", index=False, encoding="utf-8")
+    seasonal_prof.to_csv(DERIVE / "seasonal_typical_hourly_profile.csv", index=False, encoding="utf-8")
 
     appliance = None if args.skip_appliance else build_appliance_hourly()
     if appliance is not None:
         appliance["timestamp"] = appliance["timestamp"].map(lambda t: t.isoformat())
         appliance.to_csv(DERIVE / "hourly_appliance.csv", index=False, encoding="utf-8")
 
-    figs = make_figures(hourly, daily, prof, monthly)
+    figs = make_figures(hourly, daily, prof, monthly, monthly_prof, seasonal_prof)
     checks = verify(hourly, daily)
-    write_report(hourly, daily, monthly, weekly, prof, checks, figs, REPORTS / "task02_report.md")
+    if not checks["all_pass"]:
+        raise AssertionError(f"Strict output checks failed: {checks}")
+    write_report(hourly, daily, monthly, weekly, prof, checks, figs, REPORTS / "task02_report.md", monthly_prof, seasonal_prof)
 
-    inputs = [STD / "panel_minute.csv.gz"]
+    panel_definition = SOURCE_ROOT / "task01/reports/panel_definition.json"
+    definitions = json.loads(panel_definition.read_text(encoding="utf-8"))
+    devices = next(p["devices"] for p in definitions["panels"] if p["panel_id"] == PANEL_ID)
+    inputs = [STD / "panel_minute.csv.gz", panel_definition,
+              SOURCE_ROOT / "task01/reports/strict_hourly_check.csv",
+              SOURCE_ROOT / "task01/reports/strict_daily_check.csv", CONFIG_PATH, Path(__file__)]
+    if not args.skip_appliance:
+        inputs += [STD / "appliance_quality" / f"{dev}.csv.gz" for dev in devices]
     manifest = {
         "task": "task02_hourly_daily_statistics",
+        "derivation_version": C["derivation_version"],
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "runtime": {"python": platform.python_version(), "pandas": pd.__version__,
+                    "numpy": np.__version__, "matplotlib": matplotlib.__version__},
         "generated_rules": {
             "panel_id": PANEL_ID,
             "panel_version": C["panel_version"],
@@ -574,12 +686,16 @@ def main():
             "minute_energy_rule": "usable minute contributes panel_power_w/60000 kWh (left-labelled 60 s rectangle)",
             "hour_rule": "hour_complete = 60/60 usable minutes",
             "day_rule": "day_complete = 24/24 complete hours",
+            "mean_power_rule": "mean_power_kw is strict full-hour average; incomplete hours remain missing",
+            "observed_duration_mean_rule": "diagnostic mean over usable minutes only; never a complete-hour target",
+            "grouped_profile_rule": "same strict complete-date cohort at all 24 hours within each year_month/season_period",
+            "season_rule": "Mar-May spring; Jun-Aug summer; Sep-Nov autumn; Dec-Feb winter named by December year; spring boundaries kept separate",
             "no_imputation": True,
             "no_gap_extension": True,
             "no_coverage_scaling": True,
             "excluded_terminal_row": "2022-06-01 00:00:00+08:00",
         },
-        "inputs": [{"path": str(p.relative_to(ROOT)), "sha256": sha256(p), "bytes": p.stat().st_size}
+        "inputs": [{"path": recorded_path(p), "sha256": sha256(p), "bytes": p.stat().st_size}
                    for p in inputs],
         "counts": {
             "minutes_in_window": int(len(df)),
@@ -592,9 +708,14 @@ def main():
             "weeks": int(len(weekly)),
             "week_complete": int(weekly["week_complete"].sum()),
             "appliance_rows": int(0 if appliance is None else len(appliance)),
+            "monthly_profile_rows": len(monthly_prof),
+            "seasonal_profile_rows": len(seasonal_prof),
+            "partial_hours_retained_as_diagnostic": int(((hourly.usable_minutes > 0) & ~hourly.hour_complete).sum()),
         },
         "verification": checks,
         "outputs": sorted(p.name for p in DERIVE.glob("*")),
+        "output_files": [{"path": recorded_path(p), "sha256": sha256(p), "bytes": p.stat().st_size}
+                         for p in sorted(list(DERIVE.glob("*.csv")) + [REPORTS / "task02_report.md"] + figs)],
     }
     (DERIVE / "derivation_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")

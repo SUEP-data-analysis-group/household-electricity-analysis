@@ -12,6 +12,8 @@
 from __future__ import annotations
 
 import gzip
+import argparse
+import hashlib
 import json
 import sys
 from datetime import datetime
@@ -23,10 +25,15 @@ import pandas as pd
 TASK_DIR = Path(__file__).resolve().parent
 REPO = TASK_DIR.parent
 CFG = json.loads((TASK_DIR / "config.json").read_text(encoding="utf-8"))
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--source-root", type=Path, default=REPO,
+                    help="包含标准分钟表和 task01 核验表的项目根目录")
+ARGS = parser.parse_args()
+SOURCE_ROOT = ARGS.source_root.resolve()
 
-DATA = REPO / "data" / "standardized" / CFG["data_version"]
+DATA = SOURCE_ROOT / "data" / "standardized" / CFG["data_version"]
 DERIVED = REPO / CFG["derive_dir"]
-T01 = REPO / "task01" / "reports"
+T01 = SOURCE_ROOT / "task01" / "reports"
 OUT = TASK_DIR / "reports" / "verify_task02.txt"
 
 PANEL = CFG["panel_id"]
@@ -57,6 +64,11 @@ def check(name: str, ok: bool, detail: str) -> None:
         fails.append(name)
 
 
+def close(a, b):
+    return np.allclose(np.asarray(a, dtype=float), np.asarray(b, dtype=float),
+                       atol=1e-9, rtol=1e-10, equal_nan=True)
+
+
 say("=" * 78)
 say(f"任务二独立核验  {datetime.now():%Y-%m-%d %H:%M:%S}")
 say(f"数据版本 {CFG['data_version']}  面板 {PANEL}/{CFG['panel_version']}")
@@ -85,7 +97,7 @@ say(f"  有效分钟 {int(valid.sum())}，不可用 {int((~valid).sum())} "
 
 # ------------------------------------------------- 2. resample 重算（与主程序不同路径）
 say("\n[2] 用 resample 重算小时（主程序用的是 floor + groupby，两者独立）")
-hour_energy = pm["kwh"].resample(f"{MPH}min", label="left", closed="left").sum(min_count=0)
+hour_energy = pm["kwh"].resample(f"{MPH}min", label="left", closed="left").sum(min_count=1)
 hour_valid = pm["kwh"].notna().resample(f"{MPH}min", label="left", closed="left").sum()
 hour_complete = hour_valid == MPH
 say(f"  重算小时槽 {len(hour_energy)}，完整小时 {int(hour_complete.sum())}")
@@ -107,6 +119,15 @@ d_energy = (hour_energy.reindex(h.index) - h["valid_duration_energy_kwh"]).abs()
 check("逐小时有效时长电量差", float(d_energy) < 1e-9, f"最大绝对差 {float(d_energy):.3e} kWh")
 d_umin = (hour_valid.reindex(h.index) - h["usable_minutes"]).abs().max()
 check("逐小时有效分钟数", float(d_umin) == 0, f"最大差 {float(d_umin):.0f} 分钟")
+check("完整小时目标与空值位置", close(h.energy_kwh, hour_energy.where(hour_complete)), "不完整小时严格电量为空")
+check("严格小时平均负荷", close(h.mean_power_kw, hour_energy.where(hour_complete)), "完整小时 kW 与 1h 电量数值相等；其余为空")
+check("不完整小时平均负荷掩码", h.loc[~h.hour_complete, "mean_power_kw"].isna().all(),
+      f"{int((~h.hour_complete).sum())} 个不完整小时均为空")
+observed = hour_energy / (hour_valid / MPH).replace(0, np.nan)
+check("有效片段诊断均值", close(h.observed_duration_mean_power_kw, observed),
+      "部分小时均值只保存在 observed_duration_mean_power_kw")
+check("全缺失小时不写零", h.loc[h.usable_minutes.eq(0), "valid_duration_energy_kwh"].isna().all(),
+      "NaN 位置单独核验")
 
 # -------------------------------------------------------- 4. 对照任务一核验表
 say("\n[4] 与 task01/reports 的独立核验表对照")
@@ -118,9 +139,10 @@ check("完整小时数 vs task01", int(t1h["hour_complete"].sum()) == int(hour_c
       f"task01 {int(t1h['hour_complete'].sum())} / 重算 {int(hour_complete.sum())}")
 check("完整标记逐行 vs task01",
       bool((t1h["hour_complete"].reindex(h.index).values == h["hour_complete"].values).all()),
-      "8503 个 True + 1281 个 False 逐行一致")
+      f"{int(h.hour_complete.sum())} 个 True + {int((~h.hour_complete).sum())} 个 False 逐行一致")
 cmp = (t1h["valid_duration_energy_kwh"].reindex(h.index) - h["valid_duration_energy_kwh"]).abs()
 check("逐小时电量 vs task01", float(cmp.max()) < 1e-12, f"最大绝对差 {float(cmp.max()):.3e} kWh")
+check("严格负荷及空值 vs task01", close(h.mean_power_kw, t1h.mean_power_kw.reindex(h.index)), "逐行核验含 NaN")
 
 t1d = pd.read_csv(T01 / "strict_daily_check.csv")
 t1d["date"] = pd.to_datetime(t1d["date"], utc=True).dt.tz_convert(TZ)
@@ -128,7 +150,7 @@ t1d = t1d[t1d["panel_id"] == PANEL].set_index("date").sort_index()
 
 # ------------------------------------------------------------- 5. 重算自然日
 say("\n[5] 用小时结果重算自然日（24/24 严格判完整）")
-day_energy = hour_energy.resample("1D", label="left", closed="left").sum(min_count=0)
+day_energy = hour_energy.resample("1D", label="left", closed="left").sum(min_count=1)
 day_complete_hours = hour_complete.resample("1D", label="left", closed="left").sum()
 day_complete = day_complete_hours == HPD
 say(f"  自然日 {len(day_energy)}，完整日 {int(day_complete.sum())}")
@@ -149,6 +171,8 @@ check("逐日电量", float(d_energy_day) < 1e-9, f"最大绝对差 {float(d_ene
 check("逐日电量 vs task01",
       float((t1d["valid_duration_energy_kwh"].reindex(d.index) - d["valid_duration_energy_kwh"]).abs().max()) < 1e-9,
       "与 task01 日表逐日一致")
+check("严格日电量空值及负荷", close(d.energy_kwh, day_energy.where(day_complete))
+      and close(d.mean_power_kw, day_energy.where(day_complete) / HPD), "完整日/不完整日全部位置")
 
 total = float(d.loc[d["day_complete"], "energy_kwh"].sum())
 mean = float(d.loc[d["day_complete"], "energy_kwh"].mean())
@@ -233,6 +257,70 @@ wk_e = float(np.nanmax(np.abs(calc["e"].where(calc["ok"]).to_numpy()
 check("各完整周电量", wk_e < 1e-9, f"最大绝对差 {wk_e:.3e} kWh")
 say(f"  完整周合计 {float(wks['week_energy_kwh'].sum()):.1f} kWh，"
     f"周均 {float(wks['week_energy_kwh'].mean()):.1f} kWh")
+
+# ------------------------------------------------- 补充：月/季节曲线、全量分项与版本清单
+say("\n[补充] 分组曲线与全量分项核验")
+complete_samples = hour_energy.loc[keep_hour].to_frame("energy_kwh")
+complete_samples["hour"] = complete_samples.index.hour
+season_map = {m: name for name, months in {"spring": [3, 4, 5], "summer": [6, 7, 8],
+              "autumn": [9, 10, 11], "winter": [12, 1, 2]}.items() for m in months}
+complete_samples["year_month"] = complete_samples.index.strftime("%Y-%m")
+complete_samples["season_period"] = [f"{t.year - (t.month <= 2)}_{season_map[t.month]}" for t in complete_samples.index]
+for field, filename, expected_rows in [("year_month", "monthly_typical_hourly_profile.csv", 312),
+                                       ("season_period", "seasonal_typical_hourly_profile.csv", 120)]:
+    delivered = pd.read_csv(DERIVED / filename, float_precision="round_trip")
+    expected = complete_samples.groupby([field, "hour"]).energy_kwh.agg(
+        n_days="size", mean_kwh="mean", median_kwh="median", min_kwh="min", max_kwh="max")
+    expected["p25_kwh"] = complete_samples.groupby([field, "hour"]).energy_kwh.quantile(.25)
+    expected["p75_kwh"] = complete_samples.groupby([field, "hour"]).energy_kwh.quantile(.75)
+    actual = delivered.set_index([field, "hour"]).sort_index()
+    check(filename + " 完整网格", len(actual) == expected_rows and actual.index.equals(expected.index),
+          f"{expected_rows} 行；年月份/季节时期不合并边界")
+    check(filename + " 数值与分位数", all(close(actual[c], expected[c]) for c in expected.columns),
+          "均值、中位数、分位数、极值和样本数逐行一致")
+    check(filename + " 固定日期集合", delivered.groupby(field).n_days.nunique().eq(1).all()
+          and delivered.drop_duplicates(field).n_days.sum() == len(ok_days), "每期 24 小时使用同一组完整日")
+
+devices = [c for c in pw.columns if c.endswith("_w") and c != "rice_cooker_w"]
+app = pd.read_csv(DERIVED / "hourly_appliance.csv", float_precision="round_trip")
+app["timestamp"] = pd.to_datetime(app.timestamp, utc=True).dt.tz_convert(TZ)
+check("全部分项记录完整", len(app) == len(h)*13 and set(app.appliance_id) == set(devices),
+      f"{len(app)} 条，13 台设备")
+for device in devices:
+    expected_count = pw[device].resample("h").count()
+    expected_value = (pw[device] / DIV).resample("h").sum(min_count=1)
+    actual = app.loc[app.appliance_id.eq(device)].set_index("timestamp").sort_index()
+    check("分项全量 " + device, actual.index.equals(h.index)
+          and close(actual.usable_minutes, expected_count)
+          and close(actual.valid_duration_energy_kwh, expected_value)
+          and close(actual.energy_kwh, expected_value.where(expected_count.eq(MPH))),
+          "8784 小时，含空值位置")
+
+manifest = json.loads((DERIVED / "derivation_manifest.json").read_text(encoding="utf-8"))
+
+
+def manifest_path(raw: str) -> Path:
+    """Resolve archived source locations against the current task01 checkout."""
+    normalized = raw.replace("\\", "/")
+    # Keep original absolute paths in the provenance record, but use the selected
+    # source root for verification after a clone or move to another computer.
+    for prefix in ("data/standardized/", "task01/reports/"):
+        start = normalized.find(prefix)
+        if start >= 0 and (start == 0 or normalized[start - 1] == "/"):
+            return SOURCE_ROOT / normalized[start:]
+    path = Path(raw)
+    return path if path.is_absolute() else REPO / path
+
+
+for record in manifest["inputs"] + manifest["output_files"]:
+    path = manifest_path(record["path"])
+    with path.open("rb") as stream:
+        hasher = hashlib.sha256()
+        for block in iter(lambda: stream.read(1 << 20), b""):
+            hasher.update(block)
+        actual_hash = hasher.hexdigest()
+    check("清单校验 " + path.name, actual_hash == record["sha256"], "SHA-256 一致")
+check("六张图均存在", len(list((TASK_DIR / "reports/figures").glob("*.png"))) == 6, "总体、月度及季节曲线均已生成")
 
 # ------------------------------------------------- 10. 完整性小结
 say("\n[10] 结论")

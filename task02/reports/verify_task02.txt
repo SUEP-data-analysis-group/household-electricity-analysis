@@ -1,5 +1,5 @@
 ==============================================================================
-任务二独立核验  2026-11-11 12:13:22
+任务二独立核验  2026-11-13 18:38:36
 数据版本 cn_obee_v1_noimpute_v1.0.0  面板 panel13/v1.0.0
 区间 [2021-05-31 00:00:00+08:00, 2022-06-01 00:00:00+08:00)
 ==============================================================================
@@ -18,11 +18,17 @@
 [PASS] 逐小时完整标记一致: 逐行比对 8784 个槽
 [PASS] 逐小时有效时长电量差: 最大绝对差 4.441e-16 kWh
 [PASS] 逐小时有效分钟数: 最大差 0 分钟
+[PASS] 完整小时目标与空值位置: 不完整小时严格电量为空
+[PASS] 严格小时平均负荷: 完整小时 kW 与 1h 电量数值相等；其余为空
+[PASS] 不完整小时平均负荷掩码: 281 个不完整小时均为空
+[PASS] 有效片段诊断均值: 部分小时均值只保存在 observed_duration_mean_power_kw
+[PASS] 全缺失小时不写零: NaN 位置单独核验
 
 [4] 与 task01/reports 的独立核验表对照
 [PASS] 完整小时数 vs task01: task01 8503 / 重算 8503
-[PASS] 完整标记逐行 vs task01: 8503 个 True + 1281 个 False 逐行一致
+[PASS] 完整标记逐行 vs task01: 8503 个 True + 281 个 False 逐行一致
 [PASS] 逐小时电量 vs task01: 最大绝对差 4.441e-16 kWh
+[PASS] 严格负荷及空值 vs task01: 逐行核验含 NaN
 
 [5] 用小时结果重算自然日（24/24 严格判完整）
   自然日 366，完整日 352
@@ -32,6 +38,7 @@
 [PASS] 逐日完整标记一致: 366 天逐行比对
 [PASS] 逐日电量: 最大绝对差 3.553e-15 kWh
 [PASS] 逐日电量 vs task01: 与 task01 日表逐日一致
+[PASS] 严格日电量空值及负荷: 完整日/不完整日全部位置
   完整日合计 2739.60 kWh，日均 7.7829，中位 6.7699
   最高 2021-07-15 47.7756 kWh；最低 2022-01-28 1.8357 kWh
 
@@ -59,6 +66,63 @@
 [PASS] 完整周数: 派生 48 / 重算 48
 [PASS] 各完整周电量: 最大绝对差 2.842e-14 kWh
   完整周合计 2624.3 kWh，周均 54.7 kWh
+
+[补充] 分组曲线与全量分项核验
+[PASS] monthly_typical_hourly_profile.csv 完整网格: 312 行；年月份/季节时期不合并边界
+[PASS] monthly_typical_hourly_profile.csv 数值与分位数: 均值、中位数、分位数、极值和样本数逐行一致
+[PASS] monthly_typical_hourly_profile.csv 固定日期集合: 每期 24 小时使用同一组完整日
+[PASS] seasonal_typical_hourly_profile.csv 完整网格: 120 行；年月份/季节时期不合并边界
+[PASS] seasonal_typical_hourly_profile.csv 数值与分位数: 均值、中位数、分位数、极值和样本数逐行一致
+[PASS] seasonal_typical_hourly_profile.csv 固定日期集合: 每期 24 小时使用同一组完整日
+[PASS] 全部分项记录完整: 114192 条，13 台设备
+[PASS] 分项全量 electric_kettle_w: 8784 小时，含空值位置
+[PASS] 分项全量 fridge_w: 8784 小时，含空值位置
+[PASS] 分项全量 computer_w: 8784 小时，含空值位置
+[PASS] 分项全量 tv_w: 8784 小时，含空值位置
+[PASS] 分项全量 upstairs_water_heater_w: 8784 小时，含空值位置
+[PASS] 分项全量 downstairs_water_heater_w: 8784 小时，含空值位置
+[PASS] 分项全量 washing_machine_w: 8784 小时，含空值位置
+[PASS] 分项全量 air_conditioner_1_w: 8784 小时，含空值位置
+[PASS] 分项全量 air_conditioner_2_w: 8784 小时，含空值位置
+[PASS] 分项全量 air_conditioner_3_w: 8784 小时，含空值位置
+[PASS] 分项全量 air_conditioner_4_w: 8784 小时，含空值位置
+[PASS] 分项全量 air_conditioner_5_w: 8784 小时，含空值位置
+[PASS] 分项全量 air_conditioner_6_w: 8784 小时，含空值位置
+[PASS] 清单校验 panel_minute.csv.gz: SHA-256 一致
+[PASS] 清单校验 panel_definition.json: SHA-256 一致
+[PASS] 清单校验 strict_hourly_check.csv: SHA-256 一致
+[PASS] 清单校验 strict_daily_check.csv: SHA-256 一致
+[PASS] 清单校验 config.json: SHA-256 一致
+[PASS] 清单校验 run_task02.py: SHA-256 一致
+[PASS] 清单校验 electric_kettle_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 fridge_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 computer_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 tv_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 upstairs_water_heater_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 downstairs_water_heater_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 washing_machine_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 air_conditioner_1_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 air_conditioner_2_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 air_conditioner_3_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 air_conditioner_4_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 air_conditioner_5_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 air_conditioner_6_w.csv.gz: SHA-256 一致
+[PASS] 清单校验 daily_panel13.csv: SHA-256 一致
+[PASS] 清单校验 hourly_appliance.csv: SHA-256 一致
+[PASS] 清单校验 hourly_panel13.csv: SHA-256 一致
+[PASS] 清单校验 monthly_support.csv: SHA-256 一致
+[PASS] 清单校验 monthly_typical_hourly_profile.csv: SHA-256 一致
+[PASS] 清单校验 seasonal_typical_hourly_profile.csv: SHA-256 一致
+[PASS] 清单校验 typical_hourly_profile.csv: SHA-256 一致
+[PASS] 清单校验 weekly_support.csv: SHA-256 一致
+[PASS] 清单校验 01_daily_energy_trend.png: SHA-256 一致
+[PASS] 清单校验 02_date_hour_heatmap.png: SHA-256 一致
+[PASS] 清单校验 03_typical_24h_curve.png: SHA-256 一致
+[PASS] 清单校验 04_monthly_support.png: SHA-256 一致
+[PASS] 清单校验 05_monthly_typical_profiles.png: SHA-256 一致
+[PASS] 清单校验 06_seasonal_typical_profiles.png: SHA-256 一致
+[PASS] 清单校验 task02_report.md: SHA-256 一致
+[PASS] 六张图均存在: 总体、月度及季节曲线均已生成
 
 [10] 结论
   完整小时 8503；完整日 352；完整日合计 2739.60 kWh

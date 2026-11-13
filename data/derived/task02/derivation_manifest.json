@@ -1,5 +1,13 @@
 {
   "task": "task02_hourly_daily_statistics",
+  "derivation_version": "task02_v1.1.0_20261113",
+  "generated_at_utc": "2026-11-13T09:58:56.198852+00:00",
+  "runtime": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "numpy": "2.3.4",
+    "matplotlib": "3.10.0"
+  },
   "generated_rules": {
     "panel_id": "panel13",
     "panel_version": "v1.0.0",
@@ -10,6 +18,10 @@
     "minute_energy_rule": "usable minute contributes panel_power_w/60000 kWh (left-labelled 60 s rectangle)",
     "hour_rule": "hour_complete = 60/60 usable minutes",
     "day_rule": "day_complete = 24/24 complete hours",
+    "mean_power_rule": "mean_power_kw is strict full-hour average; incomplete hours remain missing",
+    "observed_duration_mean_rule": "diagnostic mean over usable minutes only; never a complete-hour target",
+    "grouped_profile_rule": "same strict complete-date cohort at all 24 hours within each year_month/season_period",
+    "season_rule": "Mar-May spring; Jun-Aug summer; Sep-Nov autumn; Dec-Feb winter named by December year; spring boundaries kept separate",
     "no_imputation": true,
     "no_gap_extension": true,
     "no_coverage_scaling": true,
@@ -17,9 +29,99 @@
   },
   "inputs": [
     {
-      "path": "data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\panel_minute.csv.gz",
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\panel_minute.csv.gz",
       "sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29",
       "bytes": 9616119
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\task01\\reports\\panel_definition.json",
+      "sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb",
+      "bytes": 2454
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\task01\\reports\\strict_hourly_check.csv",
+      "sha256": "563d43539aeefd3c09efdbde8ea691313f982115da26eb842f0603660a221b18",
+      "bytes": 1529221
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\task01\\reports\\strict_daily_check.csv",
+      "sha256": "8ce3f91036b5c1bbe384d88a9119a78d4def417079122fcb339e71536276d395",
+      "bytes": 66067
+    },
+    {
+      "path": "task02/config.json",
+      "sha256": "38173f22144558bf7d3e4c8243e24ca044ad7e0c9e87da9d0c4a7a02d775bd83",
+      "bytes": 458
+    },
+    {
+      "path": "task02/run_task02.py",
+      "sha256": "152e69eaddcfee18d9f228f9f171787b0e3a1310df343b1ce03374f0455340e6",
+      "bytes": 38665
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\electric_kettle_w.csv.gz",
+      "sha256": "7916ca330bb7800aee58c661ff607ed72340f0e689b88f38208d6f42f1c2915c",
+      "bytes": 5696802
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\fridge_w.csv.gz",
+      "sha256": "4d39c9698c6d2725df40129fa28fb410c0de49a09115fc83df5cb8bdfca1628f",
+      "bytes": 6773758
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\computer_w.csv.gz",
+      "sha256": "1491a2dd7e17b7961af8a0c1c2300c8e2cff7ef7706a7e5798d3bbc98178f3ee",
+      "bytes": 5009965
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\tv_w.csv.gz",
+      "sha256": "430f1cde79ce15702ae3a633aec7232db75c851134d1909c8ea10450b769168c",
+      "bytes": 6001223
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\upstairs_water_heater_w.csv.gz",
+      "sha256": "fc285baee86ea8af96a129d579f4cfe9bcb0e61414bbd3b53301f2040aed25cd",
+      "bytes": 5468539
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\downstairs_water_heater_w.csv.gz",
+      "sha256": "77b03813c8a5979526912a7a2ce46284e62fe04d0b959464ae7dc176147386c3",
+      "bytes": 5106502
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\washing_machine_w.csv.gz",
+      "sha256": "341c22b19bcd2c7e668fe6ef5c781ed845b314c4b2d505077921582cf235386e",
+      "bytes": 5415820
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_1_w.csv.gz",
+      "sha256": "2599cd724c37aea0b35ca5219e2766d43284688786c4b7569210bbc4fbf431c7",
+      "bytes": 5328552
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_2_w.csv.gz",
+      "sha256": "3c07bdd6621a4e65c2ffc0de9362185ac5e4373c2c5fa0c3ea7c182c36e9a715",
+      "bytes": 5803308
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_3_w.csv.gz",
+      "sha256": "7339e62670d8d5b8bb4c8bfb13c10ca1b80931524fa6288ec9901fde2bc9e9ea",
+      "bytes": 5357100
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_4_w.csv.gz",
+      "sha256": "23a2ab2205243f3e44874ad273e6c1c135a77172b6b049b6e378c181f7a9eb64",
+      "bytes": 5443125
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_5_w.csv.gz",
+      "sha256": "29eb55e8ef55b9f4ca7469772c51911d79f256f29e903b1ec9928ccbfc1c916c",
+      "bytes": 5588981
+    },
+    {
+      "path": "D:\\Desktop\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_6_w.csv.gz",
+      "sha256": "82e1f47e8d9208695242f2e743ccd5cd3a2c52e1b2268a9b431ca9556608f68e",
+      "bytes": 5529264
     }
   ],
   "counts": {
@@ -32,7 +134,10 @@
     "day_complete": 352,
     "weeks": 53,
     "week_complete": 48,
-    "appliance_rows": 114192
+    "appliance_rows": 114192,
+    "monthly_profile_rows": 312,
+    "seasonal_profile_rows": 120,
+    "partial_hours_retained_as_diagnostic": 4
   },
   "verification": {
     "hour_complete_mine": 8503,
@@ -40,8 +145,14 @@
     "usable_minutes_match": true,
     "day_complete_mine": 352,
     "day_complete_task01": 352,
-    "hour_energy_max_abs_diff": 6.661338147750939e-16,
+    "hour_energy_max_abs_diff": 4.440892098500626e-16,
     "hour_energy_compared": 8503,
+    "hour_index_matches": true,
+    "day_index_matches": true,
+    "strict_mean_missing_on_incomplete_hours": true,
+    "strict_mean_matches_task01": true,
+    "hour_energy_nan_mask_matches": true,
+    "day_energy_nan_mask_matches": true,
     "all_pass": true
   },
   "outputs": [
@@ -50,7 +161,86 @@
     "hourly_appliance.csv",
     "hourly_panel13.csv",
     "monthly_support.csv",
+    "monthly_typical_hourly_profile.csv",
+    "seasonal_typical_hourly_profile.csv",
     "typical_hourly_profile.csv",
     "weekly_support.csv"
+  ],
+  "output_files": [
+    {
+      "path": "data/derived/task02/daily_panel13.csv",
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65",
+      "bytes": 34926
+    },
+    {
+      "path": "data/derived/task02/hourly_appliance.csv",
+      "sha256": "6de532b6a96c841deac4b46741dea985713ea67cc48c6906d794dc3863006e09",
+      "bytes": 10170016
+    },
+    {
+      "path": "data/derived/task02/hourly_panel13.csv",
+      "sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee",
+      "bytes": 1234311
+    },
+    {
+      "path": "data/derived/task02/monthly_support.csv",
+      "sha256": "c513101570d2bd9ca3326906d8c65c385fe5225009f9ffef1ebbc17c880c9bc9",
+      "bytes": 956
+    },
+    {
+      "path": "data/derived/task02/monthly_typical_hourly_profile.csv",
+      "sha256": "d5efe2f5c84a67c5da15886c55e25724d447c80d5f08ef6edfcd2b608b7aee44",
+      "bytes": 59573
+    },
+    {
+      "path": "data/derived/task02/seasonal_typical_hourly_profile.csv",
+      "sha256": "a3a65fe079f210cae25a2e08e2df9d2539f67c7df3ada60d5a813b999a1ee7ef",
+      "bytes": 23034
+    },
+    {
+      "path": "data/derived/task02/typical_hourly_profile.csv",
+      "sha256": "23994c8434e9daa53214fae0923c0220114936610dd64761a07c2a5a0db0a1e9",
+      "bytes": 2825
+    },
+    {
+      "path": "data/derived/task02/weekly_support.csv",
+      "sha256": "b82e9d67b10730ac83b67a4d010935bfe9f422e0d1c103a0d9b5ecb213f8bb8d",
+      "bytes": 4648
+    },
+    {
+      "path": "task02/reports/figures/01_daily_energy_trend.png",
+      "sha256": "1712bd4c671d5e61822d36bf6c8829c60c66af091d79389c6adfdddb6c0fefa3",
+      "bytes": 113160
+    },
+    {
+      "path": "task02/reports/figures/02_date_hour_heatmap.png",
+      "sha256": "ef3564fa2bb6b05e3a019b3a7d97951ea9ee587888ec48a22e64010c3ff26db1",
+      "bytes": 79963
+    },
+    {
+      "path": "task02/reports/figures/03_typical_24h_curve.png",
+      "sha256": "02042b3d2cd36d583eb3419f743637e8b73008e8bc06cd9ad31625e7bb859657",
+      "bytes": 102926
+    },
+    {
+      "path": "task02/reports/figures/04_monthly_support.png",
+      "sha256": "2a399a19b6dc52e4c7220d2e62c1c5bfe24c920e0628b37c697c27fb9590ad74",
+      "bytes": 55534
+    },
+    {
+      "path": "task02/reports/figures/05_monthly_typical_profiles.png",
+      "sha256": "03df80fc8fff1ec4ef6904b59f687d5f5892315bf250dda9d479b621c2e26507",
+      "bytes": 564837
+    },
+    {
+      "path": "task02/reports/figures/06_seasonal_typical_profiles.png",
+      "sha256": "3aa73ef132430eaea8f8600b0767b47896d38caff4e74098b8d60dbb46c6a844",
+      "bytes": 210315
+    },
+    {
+      "path": "task02/reports/task02_report.md",
+      "sha256": "9b2750fece20407577869687ca6e67f799b8515f5890466ed425845dcfc3945b",
+      "bytes": 11295
+    }
   ]
 }
