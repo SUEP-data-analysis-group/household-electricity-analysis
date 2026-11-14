@@ -1,0 +1,320 @@
+{
+  "version": "task04_v1.0.0_20261114",
+  "files": [
+    {
+      "path": "config.json",
+      "sha256": "51b59d6fdd6b7d0bee1aa2deaeb497f511f5f3486e1715e6f6d3e09ba598bdb4",
+      "bytes": 1820
+    },
+    {
+      "path": "data/derived/task04/case_hourly_curves.csv",
+      "sha256": "1de1392943bf83b9997cb5509eb4c572d26aef0ed35646bedb9d2391a596f6f9",
+      "bytes": 14044
+    },
+    {
+      "path": "data/derived/task04/case_manifest.csv",
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30",
+      "bytes": 3780
+    },
+    {
+      "path": "data/derived/task04/case_minute_curves.csv.gz",
+      "sha256": "fa04f83aace62209d35d91c90b21b1e169211ece228deae08a3f29265542e0d0",
+      "bytes": 89175
+    },
+    {
+      "path": "data/derived/task04/case_quality_summary.csv",
+      "sha256": "6d7d58ec301b4617140a2250471232adcd334ded0b80f2a80bd90136f2f80850",
+      "bytes": 3978
+    },
+    {
+      "path": "data/derived/task04/daily_extrema_times.csv",
+      "sha256": "e9e699ee8afc08ee0c17dcab8ab628c1cac87584b19cf2fb1add4ff82e04f0d7",
+      "bytes": 60127
+    },
+    {
+      "path": "data/derived/task04/daily_minute_hourly_comparison.csv",
+      "sha256": "2f7f0336a2eb2930f88215984d1992edf85e26767379fbfcbf26aa872562740f",
+      "bytes": 46847
+    },
+    {
+      "path": "data/derived/task04/daily_peak_valley.csv",
+      "sha256": "2bed412c140d424d7fa363d7beb3cf9f0a0ecd2a0acddb23f50b094c7621a515",
+      "bytes": 76255
+    },
+    {
+      "path": "data/derived/task04/derivation_manifest.json",
+      "sha256": "6db8dc1faed172b57c964fb4fa456dab1aec55e62d29136694a6c18ba4aee166",
+      "bytes": 27020
+    },
+    {
+      "path": "data/derived/task04/excluded_days.csv",
+      "sha256": "f9c8b1142e309f31aa82c09412cc171fd204902d684b43d82158547d3c29461a",
+      "bytes": 1419
+    },
+    {
+      "path": "data/derived/task04/hourly_change_summary.csv",
+      "sha256": "ba83e84cb897576a3217d8e95cf3d352de795875eeb3ed695c492d54802f5e6b",
+      "bytes": 541
+    },
+    {
+      "path": "data/derived/task04/hourly_changes.csv",
+      "sha256": "2f8d259c5f466a76550c778774b6cd318db699aff05985cd93d6ee94e1d8b49d",
+      "bytes": 1409783
+    },
+    {
+      "path": "data/derived/task04/peak_hour_frequency.csv",
+      "sha256": "08ee56360723cb45ced8a0ececb65e73782afe445638714e287b386240dd755f",
+      "bytes": 3502
+    },
+    {
+      "path": "data/derived/task04/thresholds.json",
+      "sha256": "2b570312dd0de69c2ce7c3e12d998ab7628a66d4953edb4668960a5c9e496166",
+      "bytes": 787
+    },
+    {
+      "path": "DATA_DICTIONARY.md",
+      "sha256": "5bc3c3f595954233c4073bfac941fb925ae1db4a4a01ea2b3f80c30d2e4f0938",
+      "bytes": 4465
+    },
+    {
+      "path": "inputs/data/derived/task02/daily_panel13.csv",
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65",
+      "bytes": 34926
+    },
+    {
+      "path": "inputs/data/derived/task02/derivation_manifest.json",
+      "sha256": "18e097e2ba76df978739a0eee0ffd15019b2f61f0d48ab26e2a8f63453b63d1e",
+      "bytes": 10291
+    },
+    {
+      "path": "inputs/data/derived/task02/hourly_panel13.csv",
+      "sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee",
+      "bytes": 1234311
+    },
+    {
+      "path": "inputs/data/derived/task03/date_dimension.csv",
+      "sha256": "ec95f8d24a7cac5da863846ee9c747defbb633a89707ee97b8ab59962472083e",
+      "bytes": 111582
+    },
+    {
+      "path": "inputs/data/derived/task03/derivation_manifest.json",
+      "sha256": "6e8aac50d549cec4b25020c2932fc62e891ac182edf84a5615b8fa83682f7c13",
+      "bytes": 5151
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_1_w.csv.gz",
+      "sha256": "2599cd724c37aea0b35ca5219e2766d43284688786c4b7569210bbc4fbf431c7",
+      "bytes": 5328552
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_2_w.csv.gz",
+      "sha256": "3c07bdd6621a4e65c2ffc0de9362185ac5e4373c2c5fa0c3ea7c182c36e9a715",
+      "bytes": 5803308
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_3_w.csv.gz",
+      "sha256": "7339e62670d8d5b8bb4c8bfb13c10ca1b80931524fa6288ec9901fde2bc9e9ea",
+      "bytes": 5357100
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_4_w.csv.gz",
+      "sha256": "23a2ab2205243f3e44874ad273e6c1c135a77172b6b049b6e378c181f7a9eb64",
+      "bytes": 5443125
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_5_w.csv.gz",
+      "sha256": "29eb55e8ef55b9f4ca7469772c51911d79f256f29e903b1ec9928ccbfc1c916c",
+      "bytes": 5588981
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_6_w.csv.gz",
+      "sha256": "82e1f47e8d9208695242f2e743ccd5cd3a2c52e1b2268a9b431ca9556608f68e",
+      "bytes": 5529264
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/computer_w.csv.gz",
+      "sha256": "1491a2dd7e17b7961af8a0c1c2300c8e2cff7ef7706a7e5798d3bbc98178f3ee",
+      "bytes": 5009965
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "sha256": "77b03813c8a5979526912a7a2ce46284e62fe04d0b959464ae7dc176147386c3",
+      "bytes": 5106502
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/electric_kettle_w.csv.gz",
+      "sha256": "7916ca330bb7800aee58c661ff607ed72340f0e689b88f38208d6f42f1c2915c",
+      "bytes": 5696802
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/fridge_w.csv.gz",
+      "sha256": "4d39c9698c6d2725df40129fa28fb410c0de49a09115fc83df5cb8bdfca1628f",
+      "bytes": 6773758
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/tv_w.csv.gz",
+      "sha256": "430f1cde79ce15702ae3a633aec7232db75c851134d1909c8ea10450b769168c",
+      "bytes": 6001223
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "sha256": "fc285baee86ea8af96a129d579f4cfe9bcb0e61414bbd3b53301f2040aed25cd",
+      "bytes": 5468539
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/washing_machine_w.csv.gz",
+      "sha256": "341c22b19bcd2c7e668fe6ef5c781ed845b314c4b2d505077921582cf235386e",
+      "bytes": 5415820
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/panel_minute.csv.gz",
+      "sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29",
+      "bytes": 9616119
+    },
+    {
+      "path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/power_minute.csv.gz",
+      "sha256": "a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95",
+      "bytes": 9314304
+    },
+    {
+      "path": "inputs/task01/reports/panel_definition.json",
+      "sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb",
+      "bytes": 2454
+    },
+    {
+      "path": "inputs/task01/reports/split_manifest.json",
+      "sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8",
+      "bytes": 923
+    },
+    {
+      "path": "inputs/task01/reports/strict_daily_check.csv",
+      "sha256": "8ce3f91036b5c1bbe384d88a9119a78d4def417079122fcb339e71536276d395",
+      "bytes": 66067
+    },
+    {
+      "path": "inputs/task01/reports/strict_hourly_check.csv",
+      "sha256": "563d43539aeefd3c09efdbde8ea691313f982115da26eb842f0603660a221b18",
+      "bytes": 1529221
+    },
+    {
+      "path": "README.md",
+      "sha256": "fbd79faf7d34cda34b8ddbe6066d36d580e901bf89d0cec7a22a844ddf296706",
+      "bytes": 8669
+    },
+    {
+      "path": "report_task04.py",
+      "sha256": "3afdcb1d5bfd749aa87f9fb1b38b7cd6421ab46fcbd663237d3283abab7ce21c",
+      "bytes": 32649
+    },
+    {
+      "path": "reports/figures/01_daily_peak_valley.png",
+      "sha256": "a2e61d75488bb9cee3906161aefef203cf9b6981bce109b3922005f57b8d3129",
+      "bytes": 365747
+    },
+    {
+      "path": "reports/figures/02_extrema_hour_frequency.png",
+      "sha256": "e44e9eeafae2828272f981bc56a12b341a50e2b0bb79ec5763ac5660ad45e8ea",
+      "bytes": 78014
+    },
+    {
+      "path": "reports/figures/03_hourly_changes.png",
+      "sha256": "01b1be17e6c6e788a176608fd66000728969b7b167160c93bca41b56f26cff7e",
+      "bytes": 116322
+    },
+    {
+      "path": "reports/figures/04_minute_hour_peak_comparison.png",
+      "sha256": "749432229d8d7f96de76c34260de92aa7377a9f037008346451024120dbe08a7",
+      "bytes": 138406
+    },
+    {
+      "path": "reports/figures/05_C01_minute_case.png",
+      "sha256": "74d65b85ca9d900d05c6d2dd8665fb3c3d3b910d300ebaadb690745a8d55a0b5",
+      "bytes": 248189
+    },
+    {
+      "path": "reports/figures/05_C02_minute_case.png",
+      "sha256": "10279875792563009bb3ae8a283525687560f9ecda043d18a450c20182dfa023",
+      "bytes": 219120
+    },
+    {
+      "path": "reports/figures/05_C03_minute_case.png",
+      "sha256": "b5b7535a259fd0cc18521482313174604edeb4a35a4068253b29e52d5ab1c1d9",
+      "bytes": 253990
+    },
+    {
+      "path": "reports/figures/05_C04_minute_case.png",
+      "sha256": "8c8e63b718fcfbefd172a0c65f8384b918e9e4a74f66256ad61f0617fa7b0af2",
+      "bytes": 230424
+    },
+    {
+      "path": "reports/task04_report.html",
+      "sha256": "006560dd13d4b81272e221432750b7ae81ec018a341a61b4402a28a91a550663",
+      "bytes": 2214025
+    },
+    {
+      "path": "reports/task04_report.md",
+      "sha256": "dfb29566053caaeee9df0b8da684ed56aee3eda12b80187bd304d9354eb93ca1",
+      "bytes": 9036
+    },
+    {
+      "path": "reports/test_rules.txt",
+      "sha256": "826e54fe7c504cf3ef80cee097859d7b4d22db998ce3ac96bafccdc96f6ccef1",
+      "bytes": 1182
+    },
+    {
+      "path": "reports/verification.json",
+      "sha256": "54b961fba233b70e8645d571990622a1e13c45915f4e8fb43d1e56b6c29c5af9",
+      "bytes": 8797
+    },
+    {
+      "path": "reports/verify_task04.txt",
+      "sha256": "5f5c3e2a01f381b84f0b7d0962d7928bdd53f40d4190d55ddba6d56059e2da55",
+      "bytes": 7959
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "ec63c14e397820f80c23fe1b4dd76d8c1e2149f9e0f963cbac3917c40fcb0364",
+      "bytes": 46
+    },
+    {
+      "path": "run_task04.py",
+      "sha256": "1de861718ce27a3d3049e438706d248b1d1cdd2e9aa735bcb6f09ca3f8cb2eb9",
+      "bytes": 19789
+    },
+    {
+      "path": "sources/input_manifest.json",
+      "sha256": "e52fd54c27ceebd54ec80a1e61d1f64804f3c40870cf5580b23c9b08809742bc",
+      "bytes": 16694
+    },
+    {
+      "path": "sources/requirements/DATA_CONTRACT.md",
+      "sha256": "d2c2e67b7328c53879210ddb532a9528160fad07bf9f194a93a7f0f88c308dca",
+      "bytes": 6335
+    },
+    {
+      "path": "sources/requirements/project_README.md",
+      "sha256": "b317560d8a6b44cae3b4dd8c0ffd1561e8b74ef9e0bec41ca86ca1a2281ee6ca",
+      "bytes": 26959
+    },
+    {
+      "path": "sources/requirements/task01_quality_report.md",
+      "sha256": "10dbca5dc7bf0d8a94b3b5ed61cb74909eab600777a83eb572afe85dbe69e00f",
+      "bytes": 10026
+    },
+    {
+      "path": "sources/requirements/task04_REQUIREMENTS.md",
+      "sha256": "ba4d0cdf7959565ddb545eef05466e18ba37ae4d93710763d8c259d68b165483",
+      "bytes": 4834
+    },
+    {
+      "path": "tests/test_rules.py",
+      "sha256": "791bee95fc4c3f166ba85fc8212db072844c849a60da001a414a862b04fc4bf0",
+      "bytes": 4974
+    },
+    {
+      "path": "verify_task04.py",
+      "sha256": "7cea26cdaac21bfe1d6ecb011f9cde46de393456201ad580b6585bae42ae7947",
+      "bytes": 17538
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "unit": "kW",
+  "training_interval": [
+    "2021-05-31T00:00:00+08:00",
+    "2022-03-09T00:00:00+08:00"
+  ],
+  "quantile_method": "linear",
+  "train_abs_hour_change_q95_kw": 0.6444772416666662,
+  "train_change_pairs": 6484,
+  "train_hourly_load_q90_kw": 0.7326097666666669,
+  "train_strict_hours": 6487,
+  "large_change_rule": "abs_delta_kw > train_abs_hour_change_q95_kw",
+  "changes_fit_rule": "Both endpoints inside frozen training interval and strict-valid, exactly 1h apart",
+  "exploratory_full_period_abs_change_q95_kw": 0.5830923999999994,
+  "exploratory_threshold_usage": "Descriptive only; not fitted parameters for task06",
+  "task06_usage": "Candidate evaluation thresholds only. Daily/case/QC outcomes are retrospective, never future-known features."
+}

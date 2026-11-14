@@ -1,0 +1,28 @@
+{
+  "derivation_version": "task04_v1.0.0_20261114",
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "panel_id": "panel13",
+  "panel_version": "v1.0.0",
+  "timezone": "Asia/Shanghai",
+  "analysis_start": "2021-05-31T00:00:00+08:00",
+  "analysis_end_exclusive": "2022-06-01T00:00:00+08:00",
+  "ties": "Exact equality of float64 round-trip values; no rounding; every tied hour has weight 1/tied_count",
+  "daily_scope": "Only days marked day_complete with 24 strict hours",
+  "changes_scope": "Continuous hourly grid, including valid hours on incomplete days; both endpoints strict-valid and exactly one hour apart; cross-midnight retained and labelled",
+  "large_change_quantile": 0.95,
+  "task06_high_load_quantile": 0.90,
+  "quantile_method": "linear",
+  "large_change_comparison": "abs_delta_kw > training_q95",
+  "threshold_fit": "Frozen task01 training interval only; both change endpoints inside training",
+  "case_selection": {
+    "comparison_month": "Earliest full calendar month with every day complete, at least 5 natural weekdays and 4 natural weekend days",
+    "typical_weekday": "Complete natural weekday in comparison month closest to its group's daily-energy median; exact distance ties choose earliest date",
+    "typical_weekend": "Complete natural weekend in the same month closest to its group's daily-energy median; exact distance ties choose earliest date",
+    "high_load": "In the same month, smallest daily energy at or above the month's q95 (linear); energy ties choose earliest date",
+    "global_peak": "Across all strict complete days, largest hourly peak; exact ties choose earliest date",
+    "high_load_quantile": 0.95,
+    "purpose": "Retrospective descriptive case selection only, never a task06 fitted threshold or feature"
+  },
+  "new_imputation": false,
+  "smooth_or_clip": false
+}

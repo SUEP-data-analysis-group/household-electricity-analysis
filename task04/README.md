@@ -1,41 +1,105 @@
-# 任务四 分析峰值低谷及日内变化
+# 任务四：峰值、低谷与日内变化
 
-状态：后续预处理要求，尚未生成峰谷指标。输入为固定面板的严格小时平均负荷与标准分钟曲线。
+**已完成，2026-11-14。** 当前派生版 `task04_v1.0.0_20261114`。本目录是独立本地交付，含所需输入、程序、正式数据、8 张图和可离线阅读的报告。
+
+先打开 **[完整 HTML 报告](reports/task04_report.html)**；也可看 [Markdown 报告](reports/task04_report.md)、[核验日志](reports/verify_task04.txt)和 [字段说明](DATA_DICTIONARY.md)。
+
+## 完成了什么
+
+- 352 个完整日的日峰、谷、峰谷差、均值和负荷率；14 个不完整日只保留质量清单，不冒充已知全日极值。
+- 全部并列小时保留，按 `1/tied_count` 分配权重；峰/谷各自的日期权重总和为 352。
+- 连续保留 8784 小时、8503 个严格有效小时；有效相邻变化 8500 对，其中同日内 8147 对、跨午夜 353 对。缺口两侧不相减。
+- 每个完整日另算分钟记录峰，与小时均值峰分开；全期最大小时峰 3.438890 kW，最大分钟记录峰 6130.41 W。
+- 按预先写入配置的规则固定 4 个案例；每例附 13 台设备的全部 1440 分钟及 QC，不平滑、不削峰、不新增插补。
 
 ## 任务一完成后的实际承接
 
-标准版本 `cn_obee_v1_noimpute_v1.0.0`；主面板 `panel13/v1.0.0`；时区 `Asia/Shanghai`；功率 W。分析区间为 `[2021-05-31 00:00, 2022-06-01 00:00)`，共 366 个自然日。13 台联合有效率 96.8207%，严格完整小时 8,503 个、完整日 352 天。本次新增插补 0。
+依据 [仓库](https://github.com/SUEP-data-analysis-group/household-electricity-analysis)提交 `3e0ffa3da8fbacf714bacff1d84094ed08a31f73` 的项目说明和任务四要求。28 份输入/要求原件已与 GitHub blob ID 核对，并记录 SHA-256，见 [输入清单](sources/input_manifest.json)。
 
-统一入口：标准表位于 `../data/standardized/cn_obee_v1_noimpute_v1.0.0/`；[面板定义](../task01/reports/panel_definition.json)、[数据字典](../task01/reports/data_dictionary.csv)、[字段和读取约定](../task01/DATA_CONTRACT.md)、[实际质量报告](../task01/reports/quality_report.md)。原件无需再次清洗。14 个不完整自然日仍保留在时间轴上，全部缺测不能写成 0。
+- task01：`cn_obee_v1_noimpute_v1.0.0`、固定 `panel13/v1.0.0`、标准分钟功率和面板、13 台设备 QC、冻结切分及严格聚合核验表。
+- task02：`task02_v1.1.0_20261113` 的严格小时/日表及派生清单；主字段 `mean_power_kw`，不完整小时为空。
+- task03：`task03_v1.1.0_20261113` 的日期标签及派生清单。案例普通工作日/周末按自然星期选，实际法定日类型同时附带。
 
-### 按此顺序继续
+原任务说明留在 [sources/requirements/](sources/requirements/)；其中“尚未生成”是收到的历史任务要求，当前完成状态以本 README 和实际数据为准。原件和上游清单没有被改写。上游清单提到的其他结果不属于本任务必需输入，未重复打包。
 
-1. 接任务二的 `hourly_panel13.csv` 和 `daily_panel13.csv`，用 day_complete 明确选择 352 个完整日；保留其余 14 日的质量清单。输入目标为 mean_power_kw。
-2. 每日计算 peak_kw、valley_kw、peak_valley_kw、mean_kw、load_factor。负荷率分母为日峰值，分母为 0 时为空。分钟峰值另从标准分钟面板生成 minute_record_peak_w，不与小时均值峰混合。
-3. 以同一 float64 读数相等判断并列，不先把小时负荷四舍五入再取峰。另输出长表 `daily_extrema_times.csv`：date, kind, hour_start, tied_count, weight=1/tied_count。峰谷统计保留全部并列时刻。
-4. 连续小时索引上用 shift(1) 计算变化，并同时检查时间差等于 1h 且两个 hour_complete 均为 True。缺口两侧不相减。可单列跨午夜变化，不把它误称同日内变化。
-5. 若描述“大变化”，先声明阈值。例如全期描述可报告分位数，但作为任务六特征或高峰阈值的参数只能在训练区间 [2021-05-31,2022-03-09) 拟合，写清单位与用途。
-6. 案例规则先落盘：在同一年月份的严格自然工作日/周末中选接近各组日电量中位数的日期；高负荷案例按预先声明分位数选择。使用实际休息日标签时接任务三，若标签尚未完成可先用自然星期并注明。并列候选用最早日期作为可复现选择。
-7. 为选中日期从标准分钟表抽取完整设备曲线，记录 panel13、峰小时及峰分钟。与任务五共用 `case_manifest.csv`，保留异常标记，不进行平滑或削峰。
+## 目录为什么有这些文件
+
+```text
+README.md、DATA_DICTIONARY.md、config.json、requirements.txt
+run_task04.py / report_task04.py / verify_task04.py  生成、报告、独立核验
+inputs/                  从仓库逐字节复制的 24 个必需数据/规则文件
+sources/                 原要求、数据约定与来源哈希
+data/derived/task04/      当前正式结果，后续任务从这里读取
+reports/                 报告、8 张图、实际核验记录
+tests/                   并列、零峰、缺口及训练阈值的边界检查
+```
+
+输入约 90 MB，主要是全年标准分钟数据与 13 台 QC；保留它们是为了本目录能独立复跑。没有另放一套旧版结果或额外重复 ZIP。
+
+## 复现与核验
+
+推荐使用本次实际环境：Python 3.13.5，依赖版本见 requirements.txt。在本目录运行：
+
+```powershell
+cd 'D:\Desktop\task04'
+python -m pip install -r requirements.txt
+python run_task04.py
+python verify_task04.py
+python -m unittest discover -s tests -v
+```
+
+本机已有相同依赖的 Python 为 `D:\anaconda\python.exe`，可将上述 `python` 换为 `& 'D:\anaconda\python.exe'`。生成程序只写本目录结果/报告，不联网，也不修改 inputs。核验程序只写核验日志。
+
+若并入仓库，代码/配置/说明/报告放入 `task04/`，正式结果放入根目录 `data/derived/task04/`，然后在仓库根目录运行：
+
+```powershell
+python task04/run_task04.py --source-root . --output-root .
+python task04/verify_task04.py --source-root . --output-root .
+```
+
+同时保留本任务 `sources/` 中的原要求和哈希。`--source-root` 指向同字节的标准输入，`--output-root` 控制正式数据位置；报告仍在脚本旁 reports/。清单使用相对路径，移动文件夹无需恢复某个旧盘符。
+
+## 正式数据入口
 
 ### 本任务应交付
 
-保存至 `data/derived/task04/`：`daily_peak_valley.csv`、`daily_extrema_times.csv`、`peak_hour_frequency.csv`、`hourly_changes.csv`、`case_manifest.csv` 和 `derivation_manifest.json`；另附案例图及分钟峰/小时峰对照。
+| 文件 | 行数 | 内容 |
+| --- | --- | --- |
+| [daily_peak_valley.csv](data/derived/task04/daily_peak_valley.csv) | 352 | 完整日日峰、谷、差、均值、负荷率及并列数量 |
+| [daily_extrema_times.csv](data/derived/task04/daily_extrema_times.csv) | 715 | 全部并列峰谷小时及等权重 |
+| [peak_hour_frequency.csv](data/derived/task04/peak_hour_frequency.csv) | 48 | 24 小时 × 峰/谷；按完整日归一的加权频率 |
+| [hourly_changes.csv](data/derived/task04/hourly_changes.csv) | 8784 | 连续小时网格，含无效行原因、同日/跨午夜、严格相邻变化 |
+| [case_manifest.csv](data/derived/task04/case_manifest.csv) | 4 | 任务五共用的四个案例、设备范围、全部峰时、选择依据及质量 |
+| [excluded_days.csv](data/derived/task04/excluded_days.csv) | 14 | 14 个不完整日及无法确定全日峰谷的原因 |
+| [daily_minute_hourly_comparison.csv](data/derived/task04/daily_minute_hourly_comparison.csv) | 352 | 完整日分钟记录峰与小时均值峰对照，保留全部分钟并列峰 |
+| [hourly_change_summary.csv](data/derived/task04/hourly_change_summary.csv) | 3 | 全体/同日内/跨午夜的相邻变化支持与描述统计 |
+| [case_hourly_curves.csv](data/derived/task04/case_hourly_curves.csv) | 96 | 案例的全部严格小时输入 |
+| [case_minute_curves.csv.gz](data/derived/task04/case_minute_curves.csv.gz) | 5760 | 每例 1440 分钟的 13 台设备、面板值、源行号及逐设备 QC 位 |
+| [case_quality_summary.csv](data/derived/task04/case_quality_summary.csv) | 52 | 每例每台设备的有效/复核/插补数量 |
 
-验收：主日指标恰有 352 个完整日；每个日期每种并列极值的 weight 之和为 1；hourly_changes 的有效行均确实相隔 1h；案例设备范围和任务五一致；负荷率在非零峰值时满足 0–1。
+另附 [thresholds.json](data/derived/task04/thresholds.json) 和 [derivation_manifest.json](data/derived/task04/derivation_manifest.json)，记录版本、规则、输入/输出哈希、环境、实际数量和阈值。
 
-## 仍需完成的预处理
+## 口径、阈值和案例规则
 
-1. 日峰谷主分析只使用有 24 个合格小时的日期。不能把缺测小时忽略后，声称已找到当天最大值或最小值。另行保留不完整日并注明无法确定全日峰谷。
-2. 主要指标基于小时平均负荷 kW，分钟级最大值另命名为“分钟记录峰值”。不混用两个时间尺度。
-3. 计算日最大、最小、峰谷差及负荷率 `日平均负荷 / 日最大负荷`。日最大负荷为 0 时负荷率记为不可定义，不自动写 0。
-4. 若多个小时并列最大或最小，保留全部时刻，并声明用于频率图或比较的规则，例如每个并列时刻分配等权。不得默默取第一项造成时刻偏差。
-5. 相邻小时变化只在两个时间点确实相隔 1 小时、且二者均有效时计算。不能先删除缺测，再把不相邻小时相减。需要“快速变化”阈值时，区分探索性全期描述与预测用途；预测用途的阈值只从训练期确定。
-6. 普通工作日、周末、高负荷日案例的选择规则先写明，如同季节中接近日电量中位数的完整日，以及按预定分位数选出的高负荷日。案例分钟数据还须检查峰时段的设备联合完整性。
-7. 峰时案例若含尚未解决的仪表异常，应展示并标注；不能通过平滑或缩尾让其变成普通曲线。统计上的大值本身不构成删除依据。
+时间为 Asia/Shanghai，分析 `[2021-05-31 00:00,2022-06-01 00:00)`，小时标签为左闭右开区间起点。功率 W/kW 分列，电量 kWh；float64 round-trip 读取，不先舍入再取极值。
 
-## 输出与记录
+负荷率是 `mean_kw/peak_kw`，零峰时为空；并列峰谷每小时分配 `1/tied_count`。分钟峰是上游规则化数据的“分钟记录峰值”，不声称真实瞬时峰值。14 个缺测日不在日极值主表中。
 
-输出每日峰谷表、峰时频率、相邻小时变化表和案例清单。与任务五共享案例日期、面板范围和小时区间。
+“大变化”用训练期有效相邻对 |变化| 的 q95：**0.644477241667 kW**，条件为严格大于；训练区间 `[2021-05-31,2022-03-09)`，两端都在训练段。另存训练期严格小时 q90 **0.732609766667 kW** 供任务六评估参考。全期分位数另标探索描述，不能拿来替换训练拟合参数。
 
-README 运行后填写：有效日期、峰谷粒度、并列处理、变化阈值来源、案例选择规则、排除原因、分钟峰与小时峰的差别。
+案例规则先写在 config.json：最早完整自然月内，普通工作日/周末各取接近组内日电量中位数的日期；高电量日取同月达到 q95 的最小电量日期；另保留全期最大小时峰日期。所有并列候选取最早日期。案例选择是回顾性描述，不作为预测参数。
+
+## 任务五、六如何接着做
+
+| 下游 | 读取 | 接着做 |
+| --- | --- | --- |
+| task05 | case_manifest.csv、case_minute_curves.csv.gz、case_hourly_curves.csv、case_quality_summary.csv | 原样共用案例、13 台设备、完整时间窗和全部峰时；在同一小时/同一分钟计算贡献，继续制定逐设备运行阈值和重叠统计 |
+| task06 | thresholds.json；task02 连续严格小时表及 task01 冻结切分 | 训练阈值可作为预先声明的评估规则；仍需特征可获知性检查、训练/验证/测试及共同掩码，不能使用当日峰谷、事后 QC 或案例选择作为已知未来特征 |
+
+task05 不要相加各设备各自最大值；如有并列小时峰，保留所有区间或事先声明等权汇总。电饭煲/14 台补充须使用独立共同有效样本，不能塞进此 13 台主表。任务六还没有由本任务完成预测或得到成绩。
+
+## 版本与限制
+
+仓库原 task04 仅有任务要求，本版是 2026-11-14 首次实现，不沿用 task02/03 的旧版本号。源数据、上游派生版本与本任务派生版本分别记录。
+
+本任务只描述这一户固定监测设备的观测结果，不等于独立整户总表；缺测集中在 2021-06/07，不能解释为已补齐全年。长常值和近量程 QC 只复核、不删值；空调3的小量级记录不能直接证明故障或未使用。曲线与电量关联不能单独支持设备或住户行为的因果判断。

@@ -1,0 +1,156 @@
+{
+  "task": "task03_day_type_comparison",
+  "derivation_version": "task03_v1.1.0_20261113",
+  "generated_at": "2026-11-13T18:02:14.934578+08:00",
+  "rules": {
+    "data_version": "cn_obee_v1_noimpute_v1.0.0",
+    "derivation_version": "task03_v1.1.0_20261113",
+    "panel_id": "panel13",
+    "panel_version": "v1.0.0",
+    "timezone": "Asia/Shanghai",
+    "analysis_start": "2021-05-31",
+    "analysis_end_exclusive": "2022-06-01",
+    "seed": 42,
+    "bootstrap_repetitions": 2000,
+    "primary_block_days": 7,
+    "sensitivity_block_days": [
+      1,
+      3,
+      7,
+      14
+    ],
+    "minimum_valid_bootstrap_fraction": 0.95,
+    "relative_baseline_min_kwh": 1e-06,
+    "confidence_level": 0.95,
+    "calendar_rule_version": "cn_state_council_2021_2022_v1",
+    "derive_dir": "data/derived/task03"
+  },
+  "runtime": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "numpy": "2.3.4",
+    "matplotlib": "3.10.0"
+  },
+  "counts": {
+    "calendar_days": 366,
+    "complete_days": 352,
+    "excluded_days": 14,
+    "holiday_calendar_days": 730
+  },
+  "task01_daily_and_hourly_reference_check": "pass",
+  "bootstrap": {
+    "unit": "calendar_day",
+    "method": "noncircular_moving_calendar_blocks_within_year_month",
+    "missing": "retained_in_calendar_not_used_in_means",
+    "interval": "pointwise_percentile",
+    "primary_block_days": 7,
+    "repetitions": 2000,
+    "seed": 42
+  },
+  "comparison_direction": "rest_minus_work",
+  "no_imputation": true,
+  "inputs": [
+    {
+      "path": "data/derived/task02/daily_panel13.csv",
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65",
+      "bytes": 34926
+    },
+    {
+      "path": "data/derived/task02/hourly_panel13.csv",
+      "sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee",
+      "bytes": 1234311
+    },
+    {
+      "path": "data/derived/task02/derivation_manifest.json",
+      "sha256": "18e097e2ba76df978739a0eee0ffd15019b2f61f0d48ab26e2a8f63453b63d1e",
+      "bytes": 10291
+    },
+    {
+      "path": "task03/sources/holiday_notice_2021.html",
+      "sha256": "a161e1729c1752ef0392b5fae3d047ea1fecfdc78b5744f71326caa48c0cafe3",
+      "bytes": 11347
+    },
+    {
+      "path": "task03/sources/holiday_notice_2022.html",
+      "sha256": "c856f3008c881add4e7311e906fa1ebbf8e791f9922eb5aab2d7e7c66958cc57",
+      "bytes": 11169
+    },
+    {
+      "path": "task03/sources/holiday_rules.json",
+      "sha256": "7ee7ea9566761ff56402577d41c50d5908128049b24eda538304d1d086e0e480",
+      "bytes": 1471
+    },
+    {
+      "path": "task03/sources/source_manifest.json",
+      "sha256": "311fdd43ec5ce06b4ae2c61020ef6df47978f797999dbc8981df9413c9355fca",
+      "bytes": 919
+    },
+    {
+      "path": "task03/sources/task02_import_manifest.json",
+      "sha256": "99f298507803e9d6a51bb78b9c4c6a91f2bd2e03ef149e4103d81ceb20d4edb2",
+      "bytes": 2854
+    },
+    {
+      "path": "task03/config.json",
+      "sha256": "b46305faa948c8d53b4599e59fa7212af85914593ee800c1d8fcfad76514d8e0",
+      "bytes": 591
+    },
+    {
+      "path": "task03/run_task03.py",
+      "sha256": "4adb221ae171545d1b4c05ac6ba262926824e413bb05bdeef7116a6f454be426",
+      "bytes": 38460
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/derived/task03/holiday_calendar_2021_2022.csv",
+      "rows": 730,
+      "sha256": "4ddf6a97133f94a4ad336b42b77b93782cc9ad64439b0704370e0c85b46de3c1"
+    },
+    {
+      "path": "data/derived/task03/date_dimension.csv",
+      "rows": 366,
+      "sha256": "ec95f8d24a7cac5da863846ee9c747defbb633a89707ee97b8ab59962472083e"
+    },
+    {
+      "path": "data/derived/task03/day_type_support.csv",
+      "rows": 52,
+      "sha256": "da6cd7d9dace9f9b6bb9843838eceab8167b46739e7c7abe00f3ab1148970e1b"
+    },
+    {
+      "path": "data/derived/task03/day_type_summary.csv",
+      "rows": 4,
+      "sha256": "d646dc4aafcceb9f82d9aef16db10e35a2316d5d683a75e423b790d5d4ac5940"
+    },
+    {
+      "path": "data/derived/task03/hourly_day_type_profile.csv",
+      "rows": 96,
+      "sha256": "c2fa1d5981564b559b9bfb6961de3a6c0e4ac948075c9b37a3c1dd6c58c6b252"
+    },
+    {
+      "path": "data/derived/task03/stratified_comparison.csv",
+      "rows": 40,
+      "sha256": "da4ff905a75b0b9a1bf8a1ac1b774d576889499facfff43c8d2ccb05501875d9"
+    },
+    {
+      "path": "data/derived/task03/monthly_hourly_day_type_profile.csv",
+      "rows": 1200,
+      "sha256": "7bb4fc6ceaa081f6543a62a29f9f5d4daba6bb77fb55a0ca99880ae1cd4f5384"
+    },
+    {
+      "path": "data/derived/task03/standardized_hourly_day_type_profile.csv",
+      "rows": 48,
+      "sha256": "cf40e0a8d75035131c4b1aa74388f34bc40af54251c18a45cc032389fc599aa0"
+    },
+    {
+      "path": "data/derived/task03/bootstrap_sensitivity.csv",
+      "rows": 16,
+      "sha256": "f3b900b7157a41ad20256e8509546ed3c9cfa6c0b3692deeecb9b3e41b55eb55"
+    },
+    {
+      "path": "data/derived/task03/autocorrelation_diagnostics.csv",
+      "rows": 10,
+      "sha256": "e2c32d3ef578be95a282910b67aa0174a40dffffb3e18e015ccac957c5a12b0d"
+    }
+  ]
+}
