@@ -1,0 +1,14 @@
+test_case_selection_ties_choose_earliest_date (test_rules.RuleTests.test_case_selection_ties_choose_earliest_date) ... ok
+test_close_values_are_not_rounded_into_ties (test_rules.RuleTests.test_close_values_are_not_rounded_into_ties) ... ok
+test_exact_ties_keep_all_and_share_weight (test_rules.RuleTests.test_exact_ties_keep_all_and_share_weight) ... ok
+test_incomplete_day_does_not_become_a_daily_extreme (test_rules.RuleTests.test_incomplete_day_does_not_become_a_daily_extreme) ... ok
+test_invalid_hours_break_both_edges (test_rules.RuleTests.test_invalid_hours_break_both_edges) ... ok
+test_midnight_is_valid_but_not_intra_day (test_rules.RuleTests.test_midnight_is_valid_but_not_intra_day) ... ok
+test_non_adjacent_timestamps_never_subtract (test_rules.RuleTests.test_non_adjacent_timestamps_never_subtract) ... ok
+test_threshold_excludes_both_out_of_training_endpoints (test_rules.RuleTests.test_threshold_excludes_both_out_of_training_endpoints) ... ok
+test_zero_peak_is_undefined_load_factor (test_rules.RuleTests.test_zero_peak_is_undefined_load_factor) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.780s
+
+OK

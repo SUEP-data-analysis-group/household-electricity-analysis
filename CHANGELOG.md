@@ -1,6 +1,6 @@
 # 版本迭代记录
 
-本页记录截至 2026-11-13 的全部已知交付、验收修订和仓库发布。日期采用北京时间。原交付没有显式版本号时，沿用日期称呼，不倒填 `v1.0.0`。下列历史标签是在本次归档时补建的检索入口，不表示标签当日已经发布。
+本页记录截至 2026-11-14 的全部已知交付、验收修订和仓库发布。日期采用北京时间。原交付没有显式版本号时，沿用日期称呼，不倒填 `v1.0.0`。下列历史标签是在归档时补建的检索入口，不表示标签当日已经发布。
 
 ## 版本总览：现在应该用哪个
 
@@ -12,8 +12,10 @@
 | task02 验收修订 | 2026-11-13 | `task02_v1.1.0_20261113`；当前推荐 | [当前 README](task02/README.md)、[本次版本标签](https://github.com/SUEP-data-analysis-group/household-electricity-analysis/tree/task02_v1.1.0_20261113) |
 | task03 验收修订 | 2026-11-13 | `task03_v1.1.0_20261113`；当前推荐 | [当前 README](task03/README.md)、[本次版本标签](https://github.com/SUEP-data-analysis-group/household-electricity-analysis/tree/task03_v1.1.0_20261113) |
 | task02/task03 正式合入主分支 | 2026-11-13 | 发布上述两个修订版，补充历史说明、路径兼容和新版 ZIP；未另改派生版本号 | 本仓库 `main`；两个修订版标签指向同一个集成提交 |
+| task04 本地审核版 | 2026-11-14 | `task04_v1.0.0_20261114`；完整独立包原字节归档 | [审核版标签](https://github.com/SUEP-data-analysis-group/household-electricity-analysis/tree/task04_v1.0.0_20261114/task04) |
+| task04 仓库发布版 | 2026-11-14 | `task04_v1.0.1_20261114`；当前推荐，路径适配，11 CSV 与审核版一致 | [README](task04/README.md)、[版本记录](task04/CHANGELOG.md)、[正式数据](data/derived/task04/) |
 
-`task01-data-v1.0.0` 是 task01 发布提交的归档别名；`v1.0.0` 标准数据和 `v1.1.0` 派生任务属于不同版本对象，不是互相冲突的版本号。task04—task06 仍为待执行任务。
+`task01-data-v1.0.0` 是 task01 发布提交的归档别名；标准数据、任务派生和各任务独立版本分别管理。当前 task01—task04 已完成，task05、task06 仍为待执行任务。
 
 ## 1. task01：建立不新增插补的数据基础
 
@@ -95,3 +97,14 @@ task02 独立验收核查了小时/日能量、严格掩码、分期曲线、全
 | task06 | task02 连续小时表；task03 全年日历；task01 固定切分和起点质量 | 以严格负荷作目标，按已公开日历构造特征，完成日前预测和共同样本评估 |
 
 不得从旧版小时表或 `observed_duration_mean_power_kw` 获取当前预测真实目标，也不得将缺口填 0 或混用不同面板。具体执行约定继续参考各任务 README。
+
+
+## 7. 2026-11-14：task04 审核版与仓库发布版
+
+- 本地首次完成并经用户审核：`task04_v1.0.0_20261114`，63 个文件，114 项独立核验、9 个边界测试。完整原字节保存在 [审核版标签](https://github.com/SUEP-data-analysis-group/household-electricity-analysis/tree/task04_v1.0.0_20261114/task04)；原要求中的“尚未生成”作为历史来源保留。
+- 当前推荐：`task04_v1.0.1_20261114`，修正自动根目录识别、仓库数据路径、README 链接及版本标记；正式数据放在 `data/derived/task04/`，不在 main 再复制已有 inputs。
+- 两版 11 份 CSV（含 gzip）逐字节一致；样本、并列权重、8,500 个有效变化对、4 个案例、阈值、13 台范围与统计结论保持一致。当前代码已在仓库布局下重新生成并核验。
+- 新增 [task04 README](task04/README.md)、[版本记录](task04/CHANGELOG.md)、[报告](task04/reports/task04_report.html)及数据；更新首页和 task05/task06 的真实承接入口。
+- 两个版本标签均于本次公开上传时创建。审核版标签使用完整独立包布局；当前版标签使用仓库布局。原 task01—task03 数据及既有 Git 历史不改写。
+
+详细变更与原件核对记录见 [task04 版本记录](task04/CHANGELOG.md)。task05、task06 尚未执行，本次未生成贡献、运行状态或预测成绩。

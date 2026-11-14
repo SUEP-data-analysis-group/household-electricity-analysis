@@ -1,0 +1,56 @@
+{
+  "task04_approved_version": "task04_v1.0.0_20261114",
+  "published_version": "task04_v1.0.1_20261114",
+  "original_files": 63,
+  "same_numerical_csvs": 11,
+  "same_thresholds": true,
+  "canonical_verifier_checks": 114,
+  "edge_tests": 9,
+  "default_repository_commands_passed": true,
+  "numerical_files": [
+    {
+      "path": "data/derived/task04/case_hourly_curves.csv",
+      "sha256": "1de1392943bf83b9997cb5509eb4c572d26aef0ed35646bedb9d2391a596f6f9"
+    },
+    {
+      "path": "data/derived/task04/case_manifest.csv",
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30"
+    },
+    {
+      "path": "data/derived/task04/case_minute_curves.csv.gz",
+      "sha256": "fa04f83aace62209d35d91c90b21b1e169211ece228deae08a3f29265542e0d0"
+    },
+    {
+      "path": "data/derived/task04/case_quality_summary.csv",
+      "sha256": "6d7d58ec301b4617140a2250471232adcd334ded0b80f2a80bd90136f2f80850"
+    },
+    {
+      "path": "data/derived/task04/daily_extrema_times.csv",
+      "sha256": "e9e699ee8afc08ee0c17dcab8ab628c1cac87584b19cf2fb1add4ff82e04f0d7"
+    },
+    {
+      "path": "data/derived/task04/daily_minute_hourly_comparison.csv",
+      "sha256": "2f7f0336a2eb2930f88215984d1992edf85e26767379fbfcbf26aa872562740f"
+    },
+    {
+      "path": "data/derived/task04/daily_peak_valley.csv",
+      "sha256": "2bed412c140d424d7fa363d7beb3cf9f0a0ecd2a0acddb23f50b094c7621a515"
+    },
+    {
+      "path": "data/derived/task04/excluded_days.csv",
+      "sha256": "f9c8b1142e309f31aa82c09412cc171fd204902d684b43d82158547d3c29461a"
+    },
+    {
+      "path": "data/derived/task04/hourly_change_summary.csv",
+      "sha256": "ba83e84cb897576a3217d8e95cf3d352de795875eeb3ed695c492d54802f5e6b"
+    },
+    {
+      "path": "data/derived/task04/hourly_changes.csv",
+      "sha256": "2f8d259c5f466a76550c778774b6cd318db699aff05985cd93d6ee94e1d8b49d"
+    },
+    {
+      "path": "data/derived/task04/peak_hour_frequency.csv",
+      "sha256": "08ee56360723cb45ced8a0ececb65e73782afe445638714e287b386240dd755f"
+    }
+  ]
+}

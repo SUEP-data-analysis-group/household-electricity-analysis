@@ -1,0 +1,234 @@
+{
+  "repository": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis",
+  "repository_commit": "3e0ffa3da8fbacf714bacff1d84094ed08a31f73",
+  "checked_at": "2026-11-14T11:25:28.101517+08:00",
+  "mode": "byte-identical local copies verified against current GitHub blob IDs",
+  "inputs": [
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/panel_minute.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/panel_minute.csv.gz",
+      "bytes": 9616119,
+      "sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29",
+      "git_blob_sha1": "b13da750a3a1b958037c574cd7aa2edf31e44eeb",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/panel_minute.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/power_minute.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/power_minute.csv.gz",
+      "bytes": 9314304,
+      "sha256": "a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95",
+      "git_blob_sha1": "e68f262e5029d6a6eb9d73ba6b746b2dd5fb6d63",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/power_minute.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/electric_kettle_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/electric_kettle_w.csv.gz",
+      "bytes": 5696802,
+      "sha256": "7916ca330bb7800aee58c661ff607ed72340f0e689b88f38208d6f42f1c2915c",
+      "git_blob_sha1": "2789a5b000eec7bd98c6a4140ad3d5edc6ee3639",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/electric_kettle_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/fridge_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/fridge_w.csv.gz",
+      "bytes": 6773758,
+      "sha256": "4d39c9698c6d2725df40129fa28fb410c0de49a09115fc83df5cb8bdfca1628f",
+      "git_blob_sha1": "fff4991e895c93a7327898278fa4ccfa2c4fd1ee",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/fridge_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/computer_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/computer_w.csv.gz",
+      "bytes": 5009965,
+      "sha256": "1491a2dd7e17b7961af8a0c1c2300c8e2cff7ef7706a7e5798d3bbc98178f3ee",
+      "git_blob_sha1": "98f3f304c0f960752961434133cff361d903afdc",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/computer_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/tv_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/tv_w.csv.gz",
+      "bytes": 6001223,
+      "sha256": "430f1cde79ce15702ae3a633aec7232db75c851134d1909c8ea10450b769168c",
+      "git_blob_sha1": "5b03bb2083aaedcfec7b47be96484ef1a8fd5f97",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/tv_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "bytes": 5468539,
+      "sha256": "fc285baee86ea8af96a129d579f4cfe9bcb0e61414bbd3b53301f2040aed25cd",
+      "git_blob_sha1": "4958dafc094e7732afc6a176e1cc61fe4172015a",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/upstairs_water_heater_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "bytes": 5106502,
+      "sha256": "77b03813c8a5979526912a7a2ce46284e62fe04d0b959464ae7dc176147386c3",
+      "git_blob_sha1": "aa374c392b66449827ae32b22233a7f1af368f8a",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/downstairs_water_heater_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/washing_machine_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/washing_machine_w.csv.gz",
+      "bytes": 5415820,
+      "sha256": "341c22b19bcd2c7e668fe6ef5c781ed845b314c4b2d505077921582cf235386e",
+      "git_blob_sha1": "d66f0228c2f37370627555b05e4d6a09d2520101",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/washing_machine_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_1_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_1_w.csv.gz",
+      "bytes": 5328552,
+      "sha256": "2599cd724c37aea0b35ca5219e2766d43284688786c4b7569210bbc4fbf431c7",
+      "git_blob_sha1": "650ed3446d168e034b9bd32530ccb8b0229c4855",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_1_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_2_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_2_w.csv.gz",
+      "bytes": 5803308,
+      "sha256": "3c07bdd6621a4e65c2ffc0de9362185ac5e4373c2c5fa0c3ea7c182c36e9a715",
+      "git_blob_sha1": "64eed60278782237eaee747864a7655646ac6bcb",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_2_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_3_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_3_w.csv.gz",
+      "bytes": 5357100,
+      "sha256": "7339e62670d8d5b8bb4c8bfb13c10ca1b80931524fa6288ec9901fde2bc9e9ea",
+      "git_blob_sha1": "50aae19f07d0b37deda2235acb71403483e3c1ab",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_3_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_4_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_4_w.csv.gz",
+      "bytes": 5443125,
+      "sha256": "23a2ab2205243f3e44874ad273e6c1c135a77172b6b049b6e378c181f7a9eb64",
+      "git_blob_sha1": "02387d2f3f72540522cee768e2c190b3d6edc0bf",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_4_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_5_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_5_w.csv.gz",
+      "bytes": 5588981,
+      "sha256": "29eb55e8ef55b9f4ca7469772c51911d79f256f29e903b1ec9928ccbfc1c916c",
+      "git_blob_sha1": "7811f5a362b2193a3c3d80ec6058d7829b377aab",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_5_w.csv.gz"
+    },
+    {
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_6_w.csv.gz",
+      "local_path": "inputs/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_6_w.csv.gz",
+      "bytes": 5529264,
+      "sha256": "82e1f47e8d9208695242f2e743ccd5cd3a2c52e1b2268a9b431ca9556608f68e",
+      "git_blob_sha1": "21a64fcb3dad276c45844dba2b36d210822c5c20",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_6_w.csv.gz"
+    },
+    {
+      "repository_path": "task01/reports/panel_definition.json",
+      "local_path": "inputs/task01/reports/panel_definition.json",
+      "bytes": 2454,
+      "sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb",
+      "git_blob_sha1": "ca456d1837cd1312905fadd387b27a0f1e2abbe7",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/task01/reports/panel_definition.json"
+    },
+    {
+      "repository_path": "task01/reports/split_manifest.json",
+      "local_path": "inputs/task01/reports/split_manifest.json",
+      "bytes": 923,
+      "sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8",
+      "git_blob_sha1": "f7ee569742e069b51b4eb5849a641ab0960d3b77",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/task01/reports/split_manifest.json"
+    },
+    {
+      "repository_path": "task01/reports/strict_hourly_check.csv",
+      "local_path": "inputs/task01/reports/strict_hourly_check.csv",
+      "bytes": 1529221,
+      "sha256": "563d43539aeefd3c09efdbde8ea691313f982115da26eb842f0603660a221b18",
+      "git_blob_sha1": "66e288294cd3b288528eee580c25223658550e2c",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/task01/reports/strict_hourly_check.csv"
+    },
+    {
+      "repository_path": "task01/reports/strict_daily_check.csv",
+      "local_path": "inputs/task01/reports/strict_daily_check.csv",
+      "bytes": 66067,
+      "sha256": "8ce3f91036b5c1bbe384d88a9119a78d4def417079122fcb339e71536276d395",
+      "git_blob_sha1": "e9bccbc7ceb681913d897c8b765d0ad81ee7f249",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/task01/reports/strict_daily_check.csv"
+    },
+    {
+      "repository_path": "data/derived/task02/hourly_panel13.csv",
+      "local_path": "inputs/data/derived/task02/hourly_panel13.csv",
+      "bytes": 1234311,
+      "sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee",
+      "git_blob_sha1": "87ba70f82744aed4e088e074f95cc28209ee0a87",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/derived/task02/hourly_panel13.csv"
+    },
+    {
+      "repository_path": "data/derived/task02/daily_panel13.csv",
+      "local_path": "inputs/data/derived/task02/daily_panel13.csv",
+      "bytes": 34926,
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65",
+      "git_blob_sha1": "657ce0eee9a7f7f6cac7887274e8465df00ce0c4",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/derived/task02/daily_panel13.csv"
+    },
+    {
+      "repository_path": "data/derived/task02/derivation_manifest.json",
+      "local_path": "inputs/data/derived/task02/derivation_manifest.json",
+      "bytes": 10291,
+      "sha256": "18e097e2ba76df978739a0eee0ffd15019b2f61f0d48ab26e2a8f63453b63d1e",
+      "git_blob_sha1": "dfc37d804e8f7e64df63e9b0b24daaaec491240c",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/derived/task02/derivation_manifest.json"
+    },
+    {
+      "repository_path": "data/derived/task03/date_dimension.csv",
+      "local_path": "inputs/data/derived/task03/date_dimension.csv",
+      "bytes": 111582,
+      "sha256": "ec95f8d24a7cac5da863846ee9c747defbb633a89707ee97b8ab59962472083e",
+      "git_blob_sha1": "6d13bb27f4e23bab51cb42e59b0a4c32d88741e6",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/derived/task03/date_dimension.csv"
+    },
+    {
+      "repository_path": "data/derived/task03/derivation_manifest.json",
+      "local_path": "inputs/data/derived/task03/derivation_manifest.json",
+      "bytes": 5151,
+      "sha256": "6e8aac50d549cec4b25020c2932fc62e891ac182edf84a5615b8fa83682f7c13",
+      "git_blob_sha1": "9a80580c1b1bd72b8df99c8aa2442575258a0357",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/data/derived/task03/derivation_manifest.json"
+    },
+    {
+      "repository_path": "README.md",
+      "local_path": "sources/requirements/project_README.md",
+      "bytes": 26959,
+      "sha256": "b317560d8a6b44cae3b4dd8c0ffd1561e8b74ef9e0bec41ca86ca1a2281ee6ca",
+      "git_blob_sha1": "204cd6c72330ee353f803824b50ba1612352967e",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/README.md"
+    },
+    {
+      "repository_path": "task04/README.md",
+      "local_path": "sources/requirements/task04_REQUIREMENTS.md",
+      "bytes": 4834,
+      "sha256": "ba4d0cdf7959565ddb545eef05466e18ba37ae4d93710763d8c259d68b165483",
+      "git_blob_sha1": "6650585dd90f97812779c100a35d8bc844b08100",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/task04/README.md"
+    },
+    {
+      "repository_path": "task01/DATA_CONTRACT.md",
+      "local_path": "sources/requirements/DATA_CONTRACT.md",
+      "bytes": 6335,
+      "sha256": "d2c2e67b7328c53879210ddb532a9528160fad07bf9f194a93a7f0f88c308dca",
+      "git_blob_sha1": "fc6b931c02c680d4d69a9b9d4cad5ad75d4ebc47",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/task01/DATA_CONTRACT.md"
+    },
+    {
+      "repository_path": "task01/reports/quality_report.md",
+      "local_path": "sources/requirements/task01_quality_report.md",
+      "bytes": 10026,
+      "sha256": "10dbca5dc7bf0d8a94b3b5ed61cb74909eab600777a83eb572afe85dbe69e00f",
+      "git_blob_sha1": "a151dfe7af0eaf5423751752114d9803e918d353",
+      "source_url": "https://github.com/SUEP-data-analysis-group/household-electricity-analysis/blob/3e0ffa3da8fbacf714bacff1d84094ed08a31f73/task01/reports/quality_report.md"
+    }
+  ],
+  "upstream_task02": "task02_v1.1.0_20261113",
+  "upstream_task03": "task03_v1.1.0_20261113"
+}
