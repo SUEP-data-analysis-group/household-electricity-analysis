@@ -1,0 +1,27 @@
+{
+  "node": "C_state_rule_review_before_full_generation",
+  "generated_at": "2026-11-17T20:09:58.573268+08:00",
+  "review_kind": "automated implementation self-check; not external human approval",
+  "all_pass": true,
+  "checks": {
+    "device_list_exact": true,
+    "ac3_unidentifiable": true,
+    "thresholds_different_by_device": true,
+    "fit_period_training_only": true,
+    "no_future_confirmation": true,
+    "S12_fixed": true,
+    "heating_one_minute_preserved": true,
+    "boundary_unit_tests_13": true
+  },
+  "frozen_files": [
+    {
+      "path": "task05/config.json",
+      "sha256": "6593cb400534ffb3b1b9002cd10f4942f4f844972f8e3db34816710bf44e510a"
+    },
+    {
+      "path": "data/derived/task05/operation_thresholds.csv",
+      "sha256": "183b62186bb0c137c79be47d933cbd09c1123d93eedb3b3a619bc0d17c44315e"
+    }
+  ],
+  "evidence_sha256": "ec70a7205fe56517f3011deec2579fb3a6a6a1b435affda0152fc6d6d2d65607"
+}

@@ -1,0 +1,65 @@
+{
+  "node": "B",
+  "generated_by": "run_B_contribution.py",
+  "tolerances": {
+    "abs_kwh": 1e-06,
+    "share_sum": 1e-09
+  },
+  "main_scope": {
+    "sample_scope": "panel13_complete_352d",
+    "minutes": 506880,
+    "days": 352,
+    "panel_energy_kwh": 2739.5971373333323,
+    "sum_device_energy_kwh": 2739.597137333333,
+    "diff_kwh": 9.094947017729282e-13,
+    "task02_complete_day_total_kwh": 2739.597137333333,
+    "share_sum": 1.0
+  },
+  "supplement_scope": {
+    "sample_scope": "panel13_all_common_valid",
+    "minutes": 510284,
+    "panel_energy_kwh": 2758.8816481666668,
+    "sum_device_energy_kwh": 2758.8816481666668,
+    "diff_kwh": 0.0,
+    "share_sum": 0.9999999999999998
+  },
+  "panel14": {
+    "all_common_valid": {
+      "minutes": 217643,
+      "panel_energy_kwh": 1471.4150801666665,
+      "sum_device_kwh": 1471.4150801666663,
+      "last_common_valid": "2021-11-09 18:38"
+    },
+    "complete_148d": {
+      "minutes": 213120,
+      "days": 148,
+      "panel_energy_kwh": 1444.1057531666663,
+      "sum_device_kwh": 1444.105753166667
+    }
+  },
+  "hourly_reconcile": {
+    "hour_keys": 8448,
+    "rows": 109824,
+    "max_abs_diff_kwh": 4.547473508864641e-13,
+    "worst_appliance": "upstairs_water_heater_w"
+  },
+  "checks": {
+    "main_minutes_506880": true,
+    "main_device_null_values": true,
+    "main_sum_devices_eq_panel_abs_le_1e-6": true,
+    "main_share_sum_eq_1_le_1e-9": true,
+    "main_panel_matches_task02_day_total_le_1e-6": true,
+    "supp_minutes_510284": true,
+    "supp_sum_devices_eq_panel_abs_le_1e-6": true,
+    "supp_share_sum_eq_1_le_1e-9": true,
+    "panel14_minutes_217643": true,
+    "panel14_sum_devices_eq_panel_le_1e-6": true,
+    "panel14_148d_minutes_213120": true,
+    "panel14_148d_sum_le_1e-6": true,
+    "hour_keys_8448": true,
+    "hour_reconcile_rows_109824": true,
+    "hour_vs_minute_max_abs_diff_le_1e-6": true,
+    "separate_denominators": true
+  },
+  "all_pass": true
+}

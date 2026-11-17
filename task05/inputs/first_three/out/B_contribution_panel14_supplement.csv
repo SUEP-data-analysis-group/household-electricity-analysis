@@ -1,0 +1,59 @@
+﻿sample_scope,panel_id,panel_version,appliance_id,energy_kwh,denominator_kwh,share,minutes,n_days,data_version,role,denominator_note
+panel14_all_common_valid,panel14,v1.0.0,electric_kettle_w,43.925849833,1471.415080167,0.029852793,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,electric_kettle_w,43.925849833,1459.1217755,0.030104307,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,fridge_w,265.412274167,1471.415080167,0.180378928,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,fridge_w,265.412274167,1459.1217755,0.181898645,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,rice_cooker_w,12.293304667,1471.415080167,0.00835475,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,rice_cooker_w,,,,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,computer_w,2.107798833,1471.415080167,0.001432498,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,computer_w,2.107798833,1459.1217755,0.001444567,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,tv_w,104.2981395,1471.415080167,0.070882881,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,tv_w,104.2981395,1459.1217755,0.071480079,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,upstairs_water_heater_w,652.963114667,1471.415080167,0.443765409,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,upstairs_water_heater_w,652.963114667,1459.1217755,0.447504194,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,downstairs_water_heater_w,217.924912833,1471.415080167,0.148105668,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,downstairs_water_heater_w,217.924912833,1459.1217755,0.149353479,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,washing_machine_w,6.180352333,1471.415080167,0.004200278,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,washing_machine_w,6.180352333,1459.1217755,0.004235666,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,air_conditioner_1_w,24.586612333,1471.415080167,0.016709501,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,air_conditioner_1_w,24.586612333,1459.1217755,0.016850281,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,air_conditioner_2_w,23.7387925,1471.415080167,0.016133308,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,air_conditioner_2_w,23.7387925,1459.1217755,0.016269233,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,air_conditioner_3_w,0.490316667,1471.415080167,0.000333228,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,air_conditioner_3_w,0.490316667,1459.1217755,0.000336035,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,air_conditioner_4_w,42.122522,1471.415080167,0.028627219,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,air_conditioner_4_w,42.122522,1459.1217755,0.028868407,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,air_conditioner_5_w,52.298246833,1471.415080167,0.035542824,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,air_conditioner_5_w,52.298246833,1459.1217755,0.035842277,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,air_conditioner_6_w,23.072843,1471.415080167,0.015680717,217643,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14_same_set_ref13,v1.0.0,air_conditioner_6_w,23.072843,1459.1217755,0.015812829,217643,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_all_common_valid,panel14,v1.0.0,__panel14__,1471.415080167,1471.415080167,1.0,217643,148,cn_obee_v1_noimpute_v1.0.0,面板合计,217643个共同有效分钟，止于2021-11-09 18:38
+panel14_complete_148d,panel14,v1.0.0,electric_kettle_w,42.977102,1444.105753167,0.029760356,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,electric_kettle_w,42.977102,1432.0757345,0.030010356,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,fridge_w,258.766426167,1444.105753167,0.179188003,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,fridge_w,258.766426167,1432.0757345,0.180693255,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,rice_cooker_w,12.030018667,1444.105753167,0.008330428,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充,148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,rice_cooker_w,,,,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,computer_w,2.055700333,1444.105753167,0.001423511,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,computer_w,2.055700333,1432.0757345,0.001435469,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,tv_w,101.860762667,1444.105753167,0.070535529,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,tv_w,101.860762667,1432.0757345,0.071128056,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,upstairs_water_heater_w,642.1888145,1444.105753167,0.444696528,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,upstairs_water_heater_w,642.1888145,1432.0757345,0.44843216,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,downstairs_water_heater_w,216.9111295,1444.105753167,0.150204463,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,downstairs_water_heater_w,216.9111295,1432.0757345,0.151466242,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,washing_machine_w,6.027937,1444.105753167,0.004174166,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,washing_machine_w,6.027937,1432.0757345,0.004209231,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,air_conditioner_1_w,24.582085,1444.105753167,0.017022358,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,air_conditioner_1_w,24.582085,1432.0757345,0.017165353,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,air_conditioner_2_w,22.846291,1444.105753167,0.015820373,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,air_conditioner_2_w,22.846291,1432.0757345,0.01595327,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,air_conditioner_3_w,0.4813595,1444.105753167,0.000333327,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,air_conditioner_3_w,0.4813595,1432.0757345,0.000336127,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,air_conditioner_4_w,40.3189385,1444.105753167,0.027919658,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,air_conditioner_4_w,40.3189385,1432.0757345,0.028154194,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,air_conditioner_5_w,52.231822667,1444.105753167,0.036168973,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,air_conditioner_5_w,52.231822667,1432.0757345,0.036472808,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,air_conditioner_6_w,20.827365667,1444.105753167,0.014422327,213120,148,cn_obee_v1_noimpute_v1.0.0,14台补充(13台成员),148个严格完整日×1440
+panel14_complete_148d,panel14_same_set_ref13,v1.0.0,air_conditioner_6_w,20.827365667,1432.0757345,0.014543481,213120,148,cn_obee_v1_noimpute_v1.0.0,同集合13台参考（不可与352日主排名直接比较比例变化）,148个严格完整日×1440
+panel14_complete_148d,panel14,v1.0.0,__panel14__,1444.105753167,1444.105753167,1.0,213120,148,cn_obee_v1_noimpute_v1.0.0,面板合计,148个严格完整日×1440

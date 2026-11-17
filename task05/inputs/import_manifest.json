@@ -1,0 +1,470 @@
+{
+  "imported_at": "2026-11-15T16:48:02.818667+08:00",
+  "files": [
+    {
+      "source": "E:\\task05_前三步\\inputs\\standardized\\panel_minute.csv.gz",
+      "local_path": "task05/inputs/standardized/panel_minute.csv.gz",
+      "bytes": 9616119,
+      "sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\standardized\\power_minute.csv.gz",
+      "local_path": "task05/inputs/standardized/power_minute.csv.gz",
+      "bytes": 9314304,
+      "sha256": "a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task01\\panel_definition.json",
+      "local_path": "task05/inputs/task01/panel_definition.json",
+      "bytes": 2454,
+      "sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task02\\daily_panel13.csv",
+      "local_path": "task05/inputs/task02/daily_panel13.csv",
+      "bytes": 34926,
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task02\\hourly_appliance.csv",
+      "local_path": "task05/inputs/task02/hourly_appliance.csv",
+      "bytes": 10170016,
+      "sha256": "6de532b6a96c841deac4b46741dea985713ea67cc48c6906d794dc3863006e09"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task02\\hourly_panel13.csv",
+      "local_path": "task05/inputs/task02/hourly_panel13.csv",
+      "bytes": 1088287,
+      "sha256": "2eca7322e043c5115a03b06dc180a4fd05da10c1db6273e56e3ed6c1325876d8"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\case_hourly_curves.csv",
+      "local_path": "task05/inputs/task04/case_hourly_curves.csv",
+      "bytes": 14044,
+      "sha256": "1de1392943bf83b9997cb5509eb4c572d26aef0ed35646bedb9d2391a596f6f9"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\case_manifest.csv",
+      "local_path": "task05/inputs/task04/case_manifest.csv",
+      "bytes": 3780,
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\case_minute_curves.csv.gz",
+      "local_path": "task05/inputs/task04/case_minute_curves.csv.gz",
+      "bytes": 89175,
+      "sha256": "fa04f83aace62209d35d91c90b21b1e169211ece228deae08a3f29265542e0d0"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\case_quality_summary.csv",
+      "local_path": "task05/inputs/task04/case_quality_summary.csv",
+      "bytes": 3978,
+      "sha256": "6d7d58ec301b4617140a2250471232adcd334ded0b80f2a80bd90136f2f80850"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\config.json",
+      "local_path": "task05/inputs/task04/config.json",
+      "bytes": 1820,
+      "sha256": "51b59d6fdd6b7d0bee1aa2deaeb497f511f5f3486e1715e6f6d3e09ba598bdb4"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\daily_extrema_times.csv",
+      "local_path": "task05/inputs/task04/daily_extrema_times.csv",
+      "bytes": 60127,
+      "sha256": "e9e699ee8afc08ee0c17dcab8ab628c1cac87584b19cf2fb1add4ff82e04f0d7"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\daily_minute_hourly_comparison.csv",
+      "local_path": "task05/inputs/task04/daily_minute_hourly_comparison.csv",
+      "bytes": 46847,
+      "sha256": "2f7f0336a2eb2930f88215984d1992edf85e26767379fbfcbf26aa872562740f"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\daily_peak_valley.csv",
+      "local_path": "task05/inputs/task04/daily_peak_valley.csv",
+      "bytes": 76255,
+      "sha256": "2bed412c140d424d7fa363d7beb3cf9f0a0ecd2a0acddb23f50b094c7621a515"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\DATA_DICTIONARY.md",
+      "local_path": "task05/inputs/task04/DATA_DICTIONARY.md",
+      "bytes": 4465,
+      "sha256": "5bc3c3f595954233c4073bfac941fb925ae1db4a4a01ea2b3f80c30d2e4f0938"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\derivation_manifest.json",
+      "local_path": "task05/inputs/task04/derivation_manifest.json",
+      "bytes": 27020,
+      "sha256": "6db8dc1faed172b57c964fb4fa456dab1aec55e62d29136694a6c18ba4aee166"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\excluded_days.csv",
+      "local_path": "task05/inputs/task04/excluded_days.csv",
+      "bytes": 1419,
+      "sha256": "f9c8b1142e309f31aa82c09412cc171fd204902d684b43d82158547d3c29461a"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\hourly_changes.csv",
+      "local_path": "task05/inputs/task04/hourly_changes.csv",
+      "bytes": 1409783,
+      "sha256": "2f8d259c5f466a76550c778774b6cd318db699aff05985cd93d6ee94e1d8b49d"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\hourly_change_summary.csv",
+      "local_path": "task05/inputs/task04/hourly_change_summary.csv",
+      "bytes": 541,
+      "sha256": "ba83e84cb897576a3217d8e95cf3d352de795875eeb3ed695c492d54802f5e6b"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\peak_hour_frequency.csv",
+      "local_path": "task05/inputs/task04/peak_hour_frequency.csv",
+      "bytes": 3502,
+      "sha256": "08ee56360723cb45ced8a0ececb65e73782afe445638714e287b386240dd755f"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\README.md",
+      "local_path": "task05/inputs/task04/README.md",
+      "bytes": 8669,
+      "sha256": "fbd79faf7d34cda34b8ddbe6066d36d580e901bf89d0cec7a22a844ddf296706"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\thresholds.json",
+      "local_path": "task05/inputs/task04/thresholds.json",
+      "bytes": 787,
+      "sha256": "2b570312dd0de69c2ce7c3e12d998ab7628a66d4953edb4668960a5c9e496166"
+    },
+    {
+      "source": "E:\\task05_前三步\\inputs\\task04\\verification_task04.json",
+      "local_path": "task05/inputs/task04/verification_task04.json",
+      "bytes": 8797,
+      "sha256": "54b961fba233b70e8645d571990622a1e13c45915f4e8fb43d1e56b6c29c5af9"
+    },
+    {
+      "source": "E:\\task05_前三步\\code\\make_delivery_tables.py",
+      "local_path": "task05/inputs/first_three/code/make_delivery_tables.py",
+      "bytes": 4522,
+      "sha256": "3d92ed3918a8cf0c4cda700229a8870a553a724f0262fd02234d4a32d57a58af"
+    },
+    {
+      "source": "E:\\task05_前三步\\code\\make_manifest.py",
+      "local_path": "task05/inputs/first_three/code/make_manifest.py",
+      "bytes": 6633,
+      "sha256": "5b486bbd7e4f999432709b2fa77de4f10dfe0332a369cf5a1a49fe6716c06ea3"
+    },
+    {
+      "source": "E:\\task05_前三步\\code\\run_A_input_audit.py",
+      "local_path": "task05/inputs/first_three/code/run_A_input_audit.py",
+      "bytes": 12460,
+      "sha256": "dc2e4e5c16b8023d0ed41429dcfe7d2c0d95e0458e3167e67744a6d2b02a9b89"
+    },
+    {
+      "source": "E:\\task05_前三步\\code\\run_B_contribution.py",
+      "local_path": "task05/inputs/first_three/code/run_B_contribution.py",
+      "bytes": 12981,
+      "sha256": "87e8781082829780f485c0dcea76e49442656fd85fb11760779efe0e0e2239f0"
+    },
+    {
+      "source": "E:\\task05_前三步\\code\\run_C_peak_contribution.py",
+      "local_path": "task05/inputs/first_three/code/run_C_peak_contribution.py",
+      "bytes": 9481,
+      "sha256": "942de3cf350ab9190c230154d8d5bb8796af1270f53899de12c6bd896ffd664c"
+    },
+    {
+      "source": "E:\\task05_前三步\\code\\verify_package.py",
+      "local_path": "task05/inputs/first_three/code/verify_package.py",
+      "bytes": 1088,
+      "sha256": "42291ab8c76d1cd9ed1b8c1623c0c6ce8d8000f6ab2bf13ce9b301a364cf8139"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\A_audit.json",
+      "local_path": "task05/inputs/first_three/out/A_audit.json",
+      "bytes": 1145,
+      "sha256": "19247150532a65ed9d89d44306a54c0ca879000f97d2f095cad7d30e04b1d97b"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\A_input_inventory.csv",
+      "local_path": "task05/inputs/first_three/out/A_input_inventory.csv",
+      "bytes": 1923,
+      "sha256": "1f6084fe6df64cfa0d59179a1b810e54777723512ff219166c56e5c382fb9be9"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\A_sample_day_list_panel13.csv",
+      "local_path": "task05/inputs/first_three/out/A_sample_day_list_panel13.csv",
+      "bytes": 11337,
+      "sha256": "4920368e18ba1d7ff7fc5e59b139329949a4215dadfd7fbad185fd7f9282c812"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\A_sample_day_list_panel14.csv",
+      "local_path": "task05/inputs/first_three/out/A_sample_day_list_panel14.csv",
+      "bytes": 4485,
+      "sha256": "e34d0ddf5d379822406a1fa9c36775bb787dd60917ade0b006e9a47528004f35"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\A_sample_support.csv",
+      "local_path": "task05/inputs/first_three/out/A_sample_support.csv",
+      "bytes": 1189,
+      "sha256": "dfa4a0d7895891b0e1864de577c9a12b23972635610775d14410b722157cf15f"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\A_time_axis_check.csv",
+      "local_path": "task05/inputs/first_three/out/A_time_axis_check.csv",
+      "bytes": 749,
+      "sha256": "5742cbdf9e7dd1b244361872b8211e691591dc25b09badbebd81e8afcdeaeef0"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\B_contribution_panel13.csv",
+      "local_path": "task05/inputs/first_three/out/B_contribution_panel13.csv",
+      "bytes": 5318,
+      "sha256": "186f4cce1c486e25a22ca18ffa66188e1397894de9b082108eba660da18dad93"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\B_contribution_panel14_supplement.csv",
+      "local_path": "task05/inputs/first_three/out/B_contribution_panel14_supplement.csv",
+      "bytes": 13327,
+      "sha256": "2bdc94b541f2c5f1b83ec2eeef0457e45550bdc1ef908a8b67dc3d4121706796"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\B_hour_reconcile.csv",
+      "local_path": "task05/inputs/first_three/out/B_hour_reconcile.csv",
+      "bytes": 1380,
+      "sha256": "7bc4ffe153333cfc24cd153cd38128f7745097eb041bb0cb7eea834478ed3d38"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\B_reconcile.json",
+      "local_path": "task05/inputs/first_three/out/B_reconcile.json",
+      "bytes": 2000,
+      "sha256": "093a039a2467bb3c9c50f29edbdc9d002a48c9625bb08c7c4b1db25f94a1fa51"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\C_case_peak.csv",
+      "local_path": "task05/inputs/first_three/out/C_case_peak.csv",
+      "bytes": 13603,
+      "sha256": "b045fa70ec87b0d7c2c0168b6bf62df347c44e6bfa903db5dc37e268ba260acd"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\C_peak_contribution.csv",
+      "local_path": "task05/inputs/first_three/out/C_peak_contribution.csv",
+      "bytes": 556080,
+      "sha256": "9f5ce353388ade2f0b291172b49b918adc1f05446cb9d37e34bcd0c19a59e15f"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\C_peak_summary.csv",
+      "local_path": "task05/inputs/first_three/out/C_peak_summary.csv",
+      "bytes": 1245,
+      "sha256": "c2bdd4739cad084139c56e5c6d5da09980b51a27985791180b43369a521f1a28"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\C_reconcile.json",
+      "local_path": "task05/inputs/first_three/out/C_reconcile.json",
+      "bytes": 890,
+      "sha256": "a53c3b8bfabfb9b4359b3d3e319779c1c828622a73f2b70476b6d34c1a288617"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\derivation_manifest.json",
+      "local_path": "task05/inputs/first_three/out/derivation_manifest.json",
+      "bytes": 11514,
+      "sha256": "15b3543771f76457df2c5a09ed639c6528c911967b6d989fa624684654dda5cd"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\交付表\\case_manifest.csv",
+      "local_path": "task05/inputs/first_three/out/交付表/case_manifest.csv",
+      "bytes": 3780,
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\交付表\\contribution_panel13.csv",
+      "local_path": "task05/inputs/first_three/out/交付表/contribution_panel13.csv",
+      "bytes": 9040,
+      "sha256": "371f44ae404bc3677761d4d05b49faf6df6bdd965b66d155532f59fa9befc94a"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\交付表\\contribution_panel14_supplement.csv",
+      "local_path": "task05/inputs/first_three/out/交付表/contribution_panel14_supplement.csv",
+      "bytes": 18137,
+      "sha256": "3d42047d379c0355bec06fc418f6094e345fd2e5aac1a2ca2dcfb859be0ea5a8"
+    },
+    {
+      "source": "E:\\task05_前三步\\out\\交付表\\peak_contribution.csv",
+      "local_path": "task05/inputs/first_three/out/交付表/peak_contribution.csv",
+      "bytes": 556080,
+      "sha256": "9f5ce353388ade2f0b291172b49b918adc1f05446cb9d37e34bcd0c19a59e15f"
+    },
+    {
+      "source": "E:\\task05_前三步\\说明.md",
+      "local_path": "task05/inputs/first_three/说明.md",
+      "bytes": 10574,
+      "sha256": "6aa7d7d368121ed3f4e04ac45e784e984a86dd6cc2d11542c6702fdc1f3e7e82"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\electric_kettle_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/electric_kettle_w.csv.gz",
+      "bytes": 5696802,
+      "sha256": "7916ca330bb7800aee58c661ff607ed72340f0e689b88f38208d6f42f1c2915c"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\fridge_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/fridge_w.csv.gz",
+      "bytes": 6773758,
+      "sha256": "4d39c9698c6d2725df40129fa28fb410c0de49a09115fc83df5cb8bdfca1628f"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\computer_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/computer_w.csv.gz",
+      "bytes": 5009965,
+      "sha256": "1491a2dd7e17b7961af8a0c1c2300c8e2cff7ef7706a7e5798d3bbc98178f3ee"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\tv_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/tv_w.csv.gz",
+      "bytes": 6001223,
+      "sha256": "430f1cde79ce15702ae3a633aec7232db75c851134d1909c8ea10450b769168c"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\upstairs_water_heater_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "bytes": 5468539,
+      "sha256": "fc285baee86ea8af96a129d579f4cfe9bcb0e61414bbd3b53301f2040aed25cd"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\downstairs_water_heater_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "bytes": 5106502,
+      "sha256": "77b03813c8a5979526912a7a2ce46284e62fe04d0b959464ae7dc176147386c3"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\washing_machine_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/washing_machine_w.csv.gz",
+      "bytes": 5415820,
+      "sha256": "341c22b19bcd2c7e668fe6ef5c781ed845b314c4b2d505077921582cf235386e"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_1_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/air_conditioner_1_w.csv.gz",
+      "bytes": 5328552,
+      "sha256": "2599cd724c37aea0b35ca5219e2766d43284688786c4b7569210bbc4fbf431c7"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_2_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/air_conditioner_2_w.csv.gz",
+      "bytes": 5803308,
+      "sha256": "3c07bdd6621a4e65c2ffc0de9362185ac5e4373c2c5fa0c3ea7c182c36e9a715"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_3_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/air_conditioner_3_w.csv.gz",
+      "bytes": 5357100,
+      "sha256": "7339e62670d8d5b8bb4c8bfb13c10ca1b80931524fa6288ec9901fde2bc9e9ea"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_4_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/air_conditioner_4_w.csv.gz",
+      "bytes": 5443125,
+      "sha256": "23a2ab2205243f3e44874ad273e6c1c135a77172b6b049b6e378c181f7a9eb64"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_5_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/air_conditioner_5_w.csv.gz",
+      "bytes": 5588981,
+      "sha256": "29eb55e8ef55b9f4ca7469772c51911d79f256f29e903b1ec9928ccbfc1c916c"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\data\\standardized\\cn_obee_v1_noimpute_v1.0.0\\appliance_quality\\air_conditioner_6_w.csv.gz",
+      "local_path": "task05/inputs/appliance_quality/air_conditioner_6_w.csv.gz",
+      "bytes": 5529264,
+      "sha256": "82e1f47e8d9208695242f2e743ccd5cd3a2c52e1b2268a9b431ca9556608f68e"
+    },
+    {
+      "source": "E:\\家庭用电分析方案\\task01\\reports\\split_manifest.json",
+      "local_path": "task05/inputs/task01/split_manifest.json",
+      "bytes": 923,
+      "sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8"
+    },
+    {
+      "source": "E:\\task0203\\task03\\data\\derived\\task03\\date_dimension.csv",
+      "local_path": "task05/inputs/task03/date_dimension.csv",
+      "bytes": 111582,
+      "sha256": "ec95f8d24a7cac5da863846ee9c747defbb633a89707ee97b8ab59962472083e"
+    },
+    {
+      "source": "E:\\task05_task06_实施分析_20261114.md",
+      "local_path": "task05/inputs/requirements/task05_task06_实施分析_20261114.md",
+      "bytes": 20275,
+      "sha256": "f5162cb7674e80234876771d216bc1ad1baff9c24bb5c111bf9e87feea244a63"
+    },
+    {
+      "source": "E:\\Task05_Task06_数据口径与审核节点.md",
+      "local_path": "task05/inputs/requirements/Task05_Task06_数据口径与审核节点.md",
+      "bytes": 9537,
+      "sha256": "1fa6ddd462e3b185187ee1ab9a62abd1198ba4c72416d184cd6b7927da5be913"
+    },
+    {
+      "source": "E:\\task0203\\task02\\data\\derived\\task02\\hourly_panel13.csv",
+      "local_path": "task05/inputs/task02_reference/hourly_panel13.csv",
+      "bytes": 1234311,
+      "sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee"
+    }
+  ],
+  "source_comparisons": [
+    {
+      "file": "task04/case_manifest.csv",
+      "comparison": "sha256",
+      "equal": true
+    },
+    {
+      "file": "task04/case_minute_curves.csv.gz",
+      "comparison": "sha256",
+      "equal": true
+    },
+    {
+      "file": "task04/case_hourly_curves.csv",
+      "comparison": "sha256",
+      "equal": true
+    },
+    {
+      "file": "task04/case_quality_summary.csv",
+      "comparison": "sha256",
+      "equal": true
+    },
+    {
+      "file": "task04/daily_extrema_times.csv",
+      "comparison": "sha256",
+      "equal": true
+    },
+    {
+      "file": "task04/thresholds.json",
+      "comparison": "sha256",
+      "equal": true
+    },
+    {
+      "file": "task02/daily_panel13.csv",
+      "comparison": "sha256",
+      "equal": true
+    },
+    {
+      "file": "task02/hourly_appliance.csv",
+      "comparison": "sha256",
+      "equal": true
+    },
+    {
+      "file": "task02/hourly_panel13.csv",
+      "comparison": "strict_targets_and_other_common_columns_exact",
+      "equal": true,
+      "common_columns": [
+        "timestamp",
+        "panel_id",
+        "data_version",
+        "usable_minutes",
+        "coverage",
+        "hour_complete",
+        "valid_duration_energy_kwh",
+        "energy_kwh",
+        "mean_power_kw"
+      ],
+      "extra_columns_other": [
+        "observed_duration_mean_power_kw"
+      ],
+      "inherited_incomplete_hour_mean_nonnull": 4,
+      "resolution": "Preserve inherited file; gate mean_power_kw by hour_complete. Newer strict reference archived separately. No partial-hour value is a complete-hour target."
+    }
+  ]
+}

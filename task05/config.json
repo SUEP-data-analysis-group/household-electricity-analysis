@@ -1,0 +1,74 @@
+{
+  "task": "task05_steps_4_5_6",
+  "version": "task05_v1.0.1_20261117",
+  "timezone": "Asia/Shanghai",
+  "analysis_start": "2021-05-31T00:00:00+08:00",
+  "analysis_end_exclusive": "2022-06-01T00:00:00+08:00",
+  "threshold_fitted_start": "2021-05-31T00:00:00+08:00",
+  "threshold_fitted_end_exclusive": "2022-03-09T00:00:00+08:00",
+  "fixed_energy_panel": [
+    "electric_kettle_w",
+    "fridge_w",
+    "computer_w",
+    "tv_w",
+    "upstairs_water_heater_w",
+    "downstairs_water_heater_w",
+    "washing_machine_w",
+    "air_conditioner_1_w",
+    "air_conditioner_2_w",
+    "air_conditioner_3_w",
+    "air_conditioner_4_w",
+    "air_conditioner_5_w",
+    "air_conditioner_6_w"
+  ],
+  "comparable_operation_subset": [
+    "electric_kettle_w",
+    "fridge_w",
+    "computer_w",
+    "tv_w",
+    "upstairs_water_heater_w",
+    "downstairs_water_heater_w",
+    "washing_machine_w",
+    "air_conditioner_1_w",
+    "air_conditioner_2_w",
+    "air_conditioner_4_w",
+    "air_conditioner_5_w",
+    "air_conditioner_6_w"
+  ],
+  "subset_exclusion": {
+    "air_conditioner_3_w": "No identifiable operation platform; remains in energy panel"
+  },
+  "primary_overlap_scope": "panel13_complete_352d",
+  "primary_comparison_denominator": "S12_common_known",
+  "supplementary_overlap_scope": "all_calendar_527040",
+  "state_encoding": {
+    "on": 1,
+    "off": 0,
+    "unknown": -1
+  },
+  "reason_codes": {
+    "0": "known",
+    "1": "source_missing_or_invalid",
+    "2": "operation_not_identifiable",
+    "3": "uninitialized_hysteresis_band",
+    "4": "pending_on_confirmation",
+    "5": "pending_off_confirmation"
+  },
+  "initial_state": "unknown; band remains unknown until confirmed threshold crossing",
+  "missing_rule": "unknown and reset stable/candidate/count; restart after each gap",
+  "confirmation_rule": "consecutive threshold evidence; candidate minutes unknown; no retroactive backfill",
+  "minimum_duration_interpretation": "confirmation duration, not guaranteed output on/off run duration",
+  "prediction_use": "Not used by task06 baseline; state only confirmed at current minute and aggregate later. Any use needs separate availability audit.",
+  "qc_review_bits": [
+    16,
+    32
+  ],
+  "qc_review_action": "retain values; carry review counts, do not automatically delete",
+  "threshold_sensitivity_scales": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "absolute_energy_tolerance_kwh": 1e-06,
+  "note": "No manually labelled operation truth. High/low electrical proxy only; not occupancy or entire device cycle."
+}

@@ -1,0 +1,18 @@
+test_bad_thresholds_rejected (__main__.StateRulesTests.test_bad_thresholds_rejected) ... ok
+test_equal_on_off_boundaries (__main__.StateRulesTests.test_equal_on_off_boundaries) ... ok
+test_future_cannot_change_past (__main__.StateRulesTests.test_future_cannot_change_past) ... ok
+test_gap_interrupts_candidate (__main__.StateRulesTests.test_gap_interrupts_candidate) ... ok
+test_initial_band_unknown (__main__.StateRulesTests.test_initial_band_unknown) ... ok
+test_invalid_even_when_numeric (__main__.StateRulesTests.test_invalid_even_when_numeric) ... ok
+test_missing_resets (__main__.StateRulesTests.test_missing_resets) ... ok
+test_no_identifiable (__main__.StateRulesTests.test_no_identifiable) ... ok
+test_normal_switch (__main__.StateRulesTests.test_normal_switch) ... ok
+test_pending_cancel (__main__.StateRulesTests.test_pending_cancel) ... ok
+test_pending_no_backfill (__main__.StateRulesTests.test_pending_no_backfill) ... ok
+test_short_heating_pulse (__main__.StateRulesTests.test_short_heating_pulse) ... ok
+test_zero_known_denominator (__main__.StateRulesTests.test_zero_known_denominator) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.377s
+
+OK

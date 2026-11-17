@@ -1,0 +1,32 @@
+{
+  "node": "C(step3)",
+  "generated_by": "run_C_peak_contribution.py",
+  "input_task04_files": {
+    "daily_extrema_times.csv": 715,
+    "peak_rows": 363,
+    "tied_days": 1,
+    "max_tied_count": 12,
+    "case_manifest.csv": [
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ]
+  },
+  "peak_hours_used": 363,
+  "mismatch": [],
+  "weights_rule": "逐日 1/tied_count 等权后再跨天等权平均；与能量加权口径分列",
+  "checks": {
+    "peak_hours_363_inherited": true,
+    "peak_hours_all_13_complete": true,
+    "peak_hours_sum_dev_eq_panel": true,
+    "weights_sum_to_1_per_day": true,
+    "days_covered_352": true,
+    "typical_share_sum_eq_1": true,
+    "energy_weighted_share_sum_eq_1": true,
+    "cases_4_inherited": true,
+    "minute_peak_rows_4cases": true,
+    "minute_peak_share_sum_eq_1_per_case": true
+  },
+  "all_pass": true
+}

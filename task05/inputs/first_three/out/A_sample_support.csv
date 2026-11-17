@@ -1,0 +1,4 @@
+﻿sample_scope,panel_id,panel_version,devices,n_samples,n_units,unit,first,last,excluded_minutes,excluded_minutes_note,definition,role
+panel13_complete_352d,panel13,v1.0.0,13,506880,352,严格完整日(每24完整小时),2021-05-31 00:00:00+08:00,2022-05-31 23:59:00+08:00,20160,14 个不完整日的全部分钟；其中仍有效的 3404 个不进入主分母,task02 daily_panel13.day_complete=True 的352日，逐分钟内panel_complete=True,主结果分母
+panel13_all_common_valid,panel13,v1.0.0,13,510284,14,全期共同有效分钟(含 3404 个不完整日内的有效分钟),2021-05-31 00:00:00+08:00,2022-05-31 23:59:00+08:00,16756,整段内非共同有效分钟，不补0不外推,panel_complete=True 的全部分钟，另命名 sample_scope，不沿用上一种集合分母,补充结果分母（不与主结果混用）
+panel14_all_common_valid,panel14,v1.0.0,14,217643,148,全期共同有效分钟 + 148 个严格完整日（两种口径分别声明）,2021-05-31 00:00:00+08:00,2021-11-09 18:38:00+08:00,309397,14台共同有效止于 2021-11-09 18:38:00+08:00，之后到期末全部无效,14台同时可用的分钟，独立分母，不借用 panel13,独立补充面板

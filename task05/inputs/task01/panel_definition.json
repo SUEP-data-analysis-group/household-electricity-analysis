@@ -1,0 +1,68 @@
+{
+  "main_panel": "panel13",
+  "panel_version": "v1.0.0",
+  "panels": [
+    {
+      "panel_id": "panel13",
+      "panel_version": "v1.0.0",
+      "devices": [
+        "electric_kettle_w",
+        "fridge_w",
+        "computer_w",
+        "tv_w",
+        "upstairs_water_heater_w",
+        "downstairs_water_heater_w",
+        "washing_machine_w",
+        "air_conditioner_1_w",
+        "air_conditioner_2_w",
+        "air_conditioner_3_w",
+        "air_conditioner_4_w",
+        "air_conditioner_5_w",
+        "air_conditioner_6_w"
+      ],
+      "target_name": "固定监测面板总负荷",
+      "independent_whole_home_meter": false,
+      "analysis_start": "2021-05-31 00:00:00+08:00",
+      "analysis_end_exclusive": "2022-06-01 00:00:00+08:00",
+      "first_common_valid": "2021-05-31 00:00:00+08:00",
+      "last_common_valid_inclusive": "2022-06-01 00:00:00+08:00",
+      "admission_coverage": 0.9682073466909532,
+      "admitted_as_main": "True",
+      "strict_complete_days": 352,
+      "strict_complete_hours": 8503,
+      "rule": "all listed devices usable; otherwise panel missing; available_sum_w diagnostic only"
+    },
+    {
+      "panel_id": "panel14",
+      "panel_version": "v1.0.0",
+      "devices": [
+        "electric_kettle_w",
+        "fridge_w",
+        "rice_cooker_w",
+        "computer_w",
+        "tv_w",
+        "upstairs_water_heater_w",
+        "downstairs_water_heater_w",
+        "washing_machine_w",
+        "air_conditioner_1_w",
+        "air_conditioner_2_w",
+        "air_conditioner_3_w",
+        "air_conditioner_4_w",
+        "air_conditioner_5_w",
+        "air_conditioner_6_w"
+      ],
+      "target_name": "固定监测面板总负荷",
+      "independent_whole_home_meter": false,
+      "analysis_start": "2021-05-31 00:00:00+08:00",
+      "analysis_end_exclusive": "2022-06-01 00:00:00+08:00",
+      "first_common_valid": "2021-05-31 00:00:00+08:00",
+      "last_common_valid_inclusive": "2021-11-09 18:38:00+08:00",
+      "admission_coverage": 0.4129534760170006,
+      "admitted_as_main": false,
+      "strict_complete_days": 148,
+      "strict_complete_hours": 3625,
+      "rule": "all listed devices usable; otherwise panel missing; available_sum_w diagnostic only"
+    }
+  ],
+  "selection_evidence": "13-device joint coverage exceeds 95%; contains full calendar span and supports fixed forecast windows; 14-device supplementary only"
+}

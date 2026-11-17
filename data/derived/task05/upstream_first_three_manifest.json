@@ -1,0 +1,317 @@
+{
+  "task": "task05 前三个步骤（输入锁定与样本集合 / 三种分母与贡献主表 / 峰时贡献与四案例）",
+  "owner": "胡敏嘉",
+  "generated_at": "2026-11-15 13:06:11",
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "panel_version": "panel13/v1.0.0",
+  "task04_version": "task04_v1.0.0_20261114（独立交付包；派生表与仓库 v1.0.1 逐字节一致）",
+  "environment": {
+    "python": "3.8.15",
+    "pandas": "2.0.3",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "sample_scopes": [
+    {
+      "sample_scope": "panel13_complete_352d",
+      "minutes": 506880,
+      "days": 352,
+      "panel_energy_kwh": 2739.5971373333323,
+      "role": "主结果"
+    },
+    {
+      "sample_scope": "panel13_all_common_valid",
+      "minutes": 510284,
+      "panel_energy_kwh": 2758.8816481666668,
+      "role": "补充结果"
+    },
+    {
+      "sample_scope": "panel14_all_common_valid",
+      "minutes": 217643,
+      "days": 148,
+      "panel_energy_kwh": 1471.4150801666665,
+      "role": "14 台独立补充"
+    }
+  ],
+  "rules": {
+    "energy": "E = sum(P_W over M) / 60000  kWh",
+    "share": "share_i = E_i / E_panel；E_panel=0 时为空",
+    "denominator": "三个 scope 各自独立分母，不互相借用",
+    "peak_hours": "task04 daily_extrema_times.csv 中 kind=peak 全量继承，共 363 个区间",
+    "tie_rule": "逐日按 1/tied_count 等权后再跨天汇总；与峰时段累计能量占比分开报告",
+    "cases": "C01—C04 按 task04 case_manifest 原样承接，不重选"
+  },
+  "inputs": [
+    {
+      "file": "inputs\\standardized\\panel_minute.csv.gz",
+      "role": "task01 面板分钟功率与联合完整性",
+      "bytes": 9616119,
+      "sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29"
+    },
+    {
+      "file": "inputs\\standardized\\power_minute.csv.gz",
+      "role": "task01 分设备分钟功率（无插补）",
+      "bytes": 9314304,
+      "sha256": "a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95"
+    },
+    {
+      "file": "inputs\\task01\\panel_definition.json",
+      "role": "task01 panel13/panel14 设备名单",
+      "bytes": 2454,
+      "sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb"
+    },
+    {
+      "file": "inputs\\task02\\daily_panel13.csv",
+      "role": "task02 日级完整性",
+      "bytes": 34926,
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65"
+    },
+    {
+      "file": "inputs\\task02\\hourly_appliance.csv",
+      "role": "task02 分设备小时电量",
+      "bytes": 10170016,
+      "sha256": "6de532b6a96c841deac4b46741dea985713ea67cc48c6906d794dc3863006e09"
+    },
+    {
+      "file": "inputs\\task02\\hourly_panel13.csv",
+      "role": "task02 面板小时电量",
+      "bytes": 1088287,
+      "sha256": "2eca7322e043c5115a03b06dc180a4fd05da10c1db6273e56e3ed6c1325876d8"
+    },
+    {
+      "file": "inputs\\task04\\daily_extrema_times.csv",
+      "role": "task04 全部峰/谷小时与并列",
+      "bytes": 60127,
+      "sha256": "e9e699ee8afc08ee0c17dcab8ab628c1cac87584b19cf2fb1add4ff82e04f0d7"
+    },
+    {
+      "file": "inputs\\task04\\case_manifest.csv",
+      "role": "task04 四个案例清单",
+      "bytes": 3780,
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30"
+    },
+    {
+      "file": "inputs\\task04\\case_hourly_curves.csv",
+      "role": "task04 案例小时曲线",
+      "bytes": 14044,
+      "sha256": "1de1392943bf83b9997cb5509eb4c572d26aef0ed35646bedb9d2391a596f6f9"
+    },
+    {
+      "file": "inputs\\task04\\case_minute_curves.csv.gz",
+      "role": "task04 案例分钟曲线",
+      "bytes": 89175,
+      "sha256": "fa04f83aace62209d35d91c90b21b1e169211ece228deae08a3f29265542e0d0"
+    },
+    {
+      "file": "inputs\\task04\\case_quality_summary.csv",
+      "role": "task04 案例质量汇总",
+      "bytes": 3978,
+      "sha256": "6d7d58ec301b4617140a2250471232adcd334ded0b80f2a80bd90136f2f80850"
+    },
+    {
+      "file": "inputs\\task04\\thresholds.json",
+      "role": "task04 训练期阈值（本步骤未使用）",
+      "bytes": 787,
+      "sha256": "2b570312dd0de69c2ce7c3e12d998ab7628a66d4953edb4668960a5c9e496166"
+    }
+  ],
+  "code": [
+    {
+      "file": "code\\run_A_input_audit.py",
+      "role": "A 节点：输入锁定与样本集合",
+      "bytes": 12460,
+      "sha256": "dc2e4e5c16b8023d0ed41429dcfe7d2c0d95e0458e3167e67744a6d2b02a9b89"
+    },
+    {
+      "file": "code\\run_B_contribution.py",
+      "role": "B 节点：三种分母贡献主表与对账",
+      "bytes": 12981,
+      "sha256": "87e8781082829780f485c0dcea76e49442656fd85fb11760779efe0e0e2239f0"
+    },
+    {
+      "file": "code\\run_C_peak_contribution.py",
+      "role": "第三步：峰时贡献与四案例",
+      "bytes": 9481,
+      "sha256": "942de3cf350ab9190c230154d8d5bb8796af1270f53899de12c6bd896ffd664c"
+    },
+    {
+      "file": "code\\make_delivery_tables.py",
+      "role": "按 README 命名整理交付表",
+      "bytes": 4522,
+      "sha256": "3d92ed3918a8cf0c4cda700229a8870a553a724f0262fd02234d4a32d57a58af"
+    },
+    {
+      "file": "code\\make_manifest.py",
+      "role": "生成本清单",
+      "bytes": 6633,
+      "sha256": "5b486bbd7e4f999432709b2fa77de4f10dfe0332a369cf5a1a49fe6716c06ea3"
+    },
+    {
+      "file": "code\\verify_package.py",
+      "role": "交付包自校验",
+      "bytes": 1088,
+      "sha256": "42291ab8c76d1cd9ed1b8c1623c0c6ce8d8000f6ab2bf13ce9b301a364cf8139"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "out\\A_input_inventory.csv",
+      "role": "输入清单",
+      "bytes": 1923,
+      "sha256": "1f6084fe6df64cfa0d59179a1b810e54777723512ff219166c56e5c382fb9be9"
+    },
+    {
+      "file": "out\\A_sample_support.csv",
+      "role": "样本支持表",
+      "bytes": 1189,
+      "sha256": "dfa4a0d7895891b0e1864de577c9a12b23972635610775d14410b722157cf15f"
+    },
+    {
+      "file": "out\\A_sample_day_list_panel13.csv",
+      "role": "主完整日逐日名单",
+      "bytes": 11337,
+      "sha256": "4920368e18ba1d7ff7fc5e59b139329949a4215dadfd7fbad185fd7f9282c812"
+    },
+    {
+      "file": "out\\A_sample_day_list_panel14.csv",
+      "role": "panel14 的 148 个完整日名单",
+      "bytes": 4485,
+      "sha256": "e34d0ddf5d379822406a1fa9c36775bb787dd60917ade0b006e9a47528004f35"
+    },
+    {
+      "file": "out\\A_time_axis_check.csv",
+      "role": "三个应展示时间点证据",
+      "bytes": 749,
+      "sha256": "5742cbdf9e7dd1b244361872b8211e691591dc25b09badbebd81e8afcdeaeef0"
+    },
+    {
+      "file": "out\\A_audit.json",
+      "role": "A 节点机读核验",
+      "bytes": 1145,
+      "sha256": "19247150532a65ed9d89d44306a54c0ca879000f97d2f095cad7d30e04b1d97b"
+    },
+    {
+      "file": "out\\B_contribution_panel13.csv",
+      "role": "主/补充贡献表（步骤内命名）",
+      "bytes": 5318,
+      "sha256": "186f4cce1c486e25a22ca18ffa66188e1397894de9b082108eba660da18dad93"
+    },
+    {
+      "file": "out\\B_contribution_panel14_supplement.csv",
+      "role": "14 台独立补充（步骤内命名）",
+      "bytes": 13327,
+      "sha256": "2bdc94b541f2c5f1b83ec2eeef0457e45550bdc1ef908a8b67dc3d4121706796"
+    },
+    {
+      "file": "out\\B_hour_reconcile.csv",
+      "role": "8448 小时键逐设备对账",
+      "bytes": 1380,
+      "sha256": "7bc4ffe153333cfc24cd153cd38128f7745097eb041bb0cb7eea834478ed3d38"
+    },
+    {
+      "file": "out\\B_reconcile.json",
+      "role": "B 节点机读核验",
+      "bytes": 2000,
+      "sha256": "093a039a2467bb3c9c50f29edbdc9d002a48c9625bb08c7c4b1db25f94a1fa51"
+    },
+    {
+      "file": "out\\C_peak_contribution.csv",
+      "role": "峰时贡献明细（步骤内命名）",
+      "bytes": 556080,
+      "sha256": "9f5ce353388ade2f0b291172b49b918adc1f05446cb9d37e34bcd0c19a59e15f"
+    },
+    {
+      "file": "out\\C_peak_summary.csv",
+      "role": "两种峰时汇总口径",
+      "bytes": 1245,
+      "sha256": "c2bdd4739cad084139c56e5c6d5da09980b51a27985791180b43369a521f1a28"
+    },
+    {
+      "file": "out\\C_case_peak.csv",
+      "role": "四案例峰时与分钟峰",
+      "bytes": 13603,
+      "sha256": "b045fa70ec87b0d7c2c0168b6bf62df347c44e6bfa903db5dc37e268ba260acd"
+    },
+    {
+      "file": "out\\C_reconcile.json",
+      "role": "第三步机读核验",
+      "bytes": 890,
+      "sha256": "a53c3b8bfabfb9b4359b3d3e319779c1c828622a73f2b70476b6d34c1a288617"
+    },
+    {
+      "file": "out\\交付表\\contribution_panel13.csv",
+      "role": "README 命名：主面板贡献表",
+      "bytes": 9040,
+      "sha256": "371f44ae404bc3677761d4d05b49faf6df6bdd965b66d155532f59fa9befc94a"
+    },
+    {
+      "file": "out\\交付表\\contribution_panel14_supplement.csv",
+      "role": "README 命名：14 台补充表",
+      "bytes": 18137,
+      "sha256": "3d42047d379c0355bec06fc418f6094e345fd2e5aac1a2ca2dcfb859be0ea5a8"
+    },
+    {
+      "file": "out\\交付表\\peak_contribution.csv",
+      "role": "README 命名：峰时贡献表",
+      "bytes": 556080,
+      "sha256": "9f5ce353388ade2f0b291172b49b918adc1f05446cb9d37e34bcd0c19a59e15f"
+    },
+    {
+      "file": "out\\交付表\\case_manifest.csv",
+      "role": "README 命名：案例清单（原样承接 task04）",
+      "bytes": 3780,
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30"
+    }
+  ],
+  "checks": {
+    "A": {
+      "period_minutes_527040": true,
+      "main_minutes_506880": true,
+      "panel13_valid_510284": true,
+      "panel14_valid_217643": true,
+      "panel14_days_148": true,
+      "timestamp_unique": true,
+      "no_end_leak": true,
+      "device_list_13_and_14": true
+    },
+    "B": {
+      "main_minutes_506880": true,
+      "main_device_null_values": true,
+      "main_sum_devices_eq_panel_abs_le_1e-6": true,
+      "main_share_sum_eq_1_le_1e-9": true,
+      "main_panel_matches_task02_day_total_le_1e-6": true,
+      "supp_minutes_510284": true,
+      "supp_sum_devices_eq_panel_abs_le_1e-6": true,
+      "supp_share_sum_eq_1_le_1e-9": true,
+      "panel14_minutes_217643": true,
+      "panel14_sum_devices_eq_panel_le_1e-6": true,
+      "panel14_148d_minutes_213120": true,
+      "panel14_148d_sum_le_1e-6": true,
+      "hour_keys_8448": true,
+      "hour_reconcile_rows_109824": true,
+      "hour_vs_minute_max_abs_diff_le_1e-6": true,
+      "separate_denominators": true
+    },
+    "C": {
+      "peak_hours_363_inherited": true,
+      "peak_hours_all_13_complete": true,
+      "peak_hours_sum_dev_eq_panel": true,
+      "weights_sum_to_1_per_day": true,
+      "days_covered_352": true,
+      "typical_share_sum_eq_1": true,
+      "energy_weighted_share_sum_eq_1": true,
+      "cases_4_inherited": true,
+      "minute_peak_rows_4cases": true,
+      "minute_peak_share_sum_eq_1_per_case": true
+    },
+    "A_all_pass": true,
+    "B_all_pass": true,
+    "C_all_pass": true
+  },
+  "not_in_this_package": [
+    "operation_thresholds.csv（逐设备运行阈值，第④步）",
+    "minute_operation_state.csv.gz（分钟运行状态，第⑤步）",
+    "overlap_summary.csv（重叠分母与 unknown 比例，第⑥步）",
+    "报告正文（task05 报告需与④⑤⑥合并后统写）"
+  ],
+  "all_pass": true
+}

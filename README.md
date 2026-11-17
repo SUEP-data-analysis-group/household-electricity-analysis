@@ -2,7 +2,7 @@
 
 本项目使用 **CN-OBEE v1**，研究北京一户家庭的监测电器用电规律、工作日与休息日差异、峰谷变化、电器贡献及日前负荷预测。
 
-**当前进度（2026-11-14）：task01—task04 已完成并经核验，task04 已合入仓库；task05、task06 尚待执行。** 仓库包含发布原件、标准分钟数据、质量标记和可复现程序。克隆后即可读取现成数据开展后续任务。
+**当前进度（2026-11-17）：task01—task05 已完成并经核验；task05 两份成果已整合，样本元数据已修订，task06 尚待执行。** 仓库包含发布原件、标准分钟数据、质量标记和可复现程序。克隆后即可读取现成数据开展后续任务。
 
 ## 所有版本与当前推荐
 
@@ -45,7 +45,7 @@ task04 新增版本：[本地审核版 v1.0.0](https://github.com/SUEP-data-anal
 
 1. 阅读 [task01 实际质量报告](task01/reports/quality_report.md)，了解数据范围、缺口与可用时段。
 2. 查阅 [数据字段与读取约定](task01/DATA_CONTRACT.md)，确认单位、时间、空值和面板字段。
-3. 直接读取 [task02](data/derived/task02/)、[task03](data/derived/task03/)和 [task04 正式数据](data/derived/task04/)，按 task05、task06 的 README 继续。
+3. 直接读取 [task02](data/derived/task02/)、[task03](data/derived/task03/)和 [task04 正式数据](data/derived/task04/)，查看 [task05 已完成成果](task05/README.md)，并按 task06 的 README 继续预测任务。
 
 ## task01 具体完成了什么
 
@@ -83,7 +83,7 @@ task01 建立六项任务共用的数据基础，回答“数据从哪里来、�
 
 ## task02—task06 如何利用 task01 继续
 
-后续新结果统一保存到 `data/derived/task02/` 至 `data/derived/task06/`。**task02、task03、task04 的正式结果已交付到仓库；task05、task06 的派生结果仍待生成。** 每项任务应记录所用标准版本、面板、时间范围、筛选规则及排除数量。
+后续新结果统一保存到 `data/derived/task02/` 至 `data/derived/task06/`。**task02—task05 的正式结果已交付到仓库；task06 的派生结果仍待生成。** 每项任务应记录所用标准版本、面板、时间范围、筛选规则及排除数量。
 
 | 任务 | 读取哪些输入 | 接着完成什么 | 已生成 / 计划输出 |
 | --- | --- | --- | --- |
@@ -271,6 +271,6 @@ assert panel.index.is_unique
 
 先完成下载清单和字段核对，再做无插补标准化，生成逐设备与联合覆盖报告，比较 13 台候选面板与 14 台补充面板，最后锁定主范围和预测日历边界。随后才开始任务二至六。
 
-任务一已交付：`source_manifest`、`data_dictionary`、`panel_definition`、标准分钟数据及质量标记、`gap_report`、`anomaly_report`、`coverage_hourly`、`coverage_daily`、`quality_report`、`processing_log`、固定规则配置和版本说明。发布原件和原下载清单保留，官方补充 Notebook.pdf 已另存；标准分钟表、逐设备质量、字典、覆盖/缺口/异常报告、面板与切分、可复现程序均已生成。task02—task04 已完成正式数据生成与核验；task05、task06 的实施步骤已写明，电器解释与预测建模仍待执行。
+任务一已交付：`source_manifest`、`data_dictionary`、`panel_definition`、标准分钟数据及质量标记、`gap_report`、`anomaly_report`、`coverage_hourly`、`coverage_daily`、`quality_report`、`processing_log`、固定规则配置和版本说明。发布原件和原下载清单保留，官方补充 Notebook.pdf 已另存；标准分钟表、逐设备质量、字典、覆盖/缺口/异常报告、面板与切分、可复现程序均已生成。task02—task05 已完成正式数据生成与核验；task05 的[验收修订说明](task05/reports/验收修订说明.md)记录核对范围与修正。task06 预测建模仍待执行。
 
 每个派生版本都应在相应 README 更新实际输入、面板、时间范围、完整性要求、缺口处理、异常处理、样本排除数及原因、参数来源、输出字段、已知限制和与标准版本的关系。不能只保留代码而不说明规则。

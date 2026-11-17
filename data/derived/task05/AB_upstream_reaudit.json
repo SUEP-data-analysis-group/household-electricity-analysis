@@ -1,0 +1,544 @@
+{
+  "generated_at": "2026-11-17T20:11:50.329070+08:00",
+  "scope": "task05 self re-audit; no claim of task06 actual model verification",
+  "all_pass": true,
+  "checks": [
+    {
+      "check": "import_hash_task05/inputs/standardized/panel_minute.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/standardized/power_minute.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task01/panel_definition.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task02/daily_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task02/hourly_appliance.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task02/hourly_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/case_hourly_curves.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/case_manifest.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/case_minute_curves.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/case_quality_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/config.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/daily_extrema_times.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/daily_minute_hourly_comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/daily_peak_valley.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/DATA_DICTIONARY.md",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/derivation_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/excluded_days.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/hourly_changes.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/hourly_change_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/peak_hour_frequency.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/README.md",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/thresholds.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task04/verification_task04.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/code/make_delivery_tables.py",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/code/make_manifest.py",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/code/run_A_input_audit.py",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/code/run_B_contribution.py",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/code/run_C_peak_contribution.py",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/code/verify_package.py",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/A_audit.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/A_input_inventory.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/A_sample_day_list_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/A_sample_day_list_panel14.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/A_sample_support.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/A_time_axis_check.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/B_contribution_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/B_contribution_panel14_supplement.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/B_hour_reconcile.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/B_reconcile.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/C_case_peak.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/C_peak_contribution.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/C_peak_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/C_reconcile.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/derivation_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/交付表/case_manifest.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/交付表/contribution_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/交付表/contribution_panel14_supplement.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/out/交付表/peak_contribution.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/first_three/说明.md",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/electric_kettle_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/fridge_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/computer_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/tv_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/washing_machine_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/air_conditioner_1_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/air_conditioner_2_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/air_conditioner_3_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/air_conditioner_4_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/air_conditioner_5_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/appliance_quality/air_conditioner_6_w.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task01/split_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task03/date_dimension.csv",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/requirements/task05_task06_实施分析_20261114.md",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/requirements/Task05_Task06_数据口径与审核节点.md",
+      "passed": true
+    },
+    {
+      "check": "import_hash_task05/inputs/task02_reference/hourly_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\standardized\\panel_minute.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\standardized\\power_minute.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task01\\panel_definition.json",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task02\\daily_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task02\\hourly_appliance.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task02\\hourly_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task04\\daily_extrema_times.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task04\\case_manifest.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task04\\case_hourly_curves.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task04\\case_minute_curves.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task04\\case_quality_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_inputs\\task04\\thresholds.json",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\A_input_inventory.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\A_sample_support.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\A_sample_day_list_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\A_sample_day_list_panel14.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\A_time_axis_check.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\A_audit.json",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\B_contribution_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\B_contribution_panel14_supplement.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\B_hour_reconcile.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\B_reconcile.json",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\C_peak_contribution.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\C_peak_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\C_case_peak.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\C_reconcile.json",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\交付表\\contribution_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\交付表\\contribution_panel14_supplement.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\交付表\\peak_contribution.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_out\\交付表\\case_manifest.csv",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_code\\run_A_input_audit.py",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_code\\run_B_contribution.py",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_code\\run_C_peak_contribution.py",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_code\\make_delivery_tables.py",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_code\\make_manifest.py",
+      "passed": true
+    },
+    {
+      "check": "peer_manifest_code\\verify_package.py",
+      "passed": true
+    },
+    {
+      "check": "peer_audit_all_pass",
+      "passed": true
+    },
+    {
+      "check": "panel13_510284_minutes",
+      "passed": true
+    },
+    {
+      "check": "panel13_complete_quality_exact",
+      "passed": true
+    },
+    {
+      "check": "main_352days_506880_minutes",
+      "passed": true
+    },
+    {
+      "check": "minute_panel_device_sum",
+      "passed": true
+    },
+    {
+      "check": "contribution_panel13_complete_352d",
+      "passed": true,
+      "energy_kwh": 2739.5971373333336
+    },
+    {
+      "check": "contribution_panel13_all_common_valid",
+      "passed": true,
+      "energy_kwh": 2758.8816481666663
+    },
+    {
+      "check": "hour_keys_8784_exact",
+      "passed": true
+    },
+    {
+      "check": "strict_hours8503_main_hours8448",
+      "passed": true
+    },
+    {
+      "check": "same8448hour_targets_reconcile",
+      "passed": true,
+      "max_abs_diff_kw": 8.881784197001252e-16
+    },
+    {
+      "check": "all8503strict_targets_reconcile",
+      "passed": true
+    },
+    {
+      "check": "newer_hour_reference_strict_exact",
+      "passed": true
+    },
+    {
+      "check": "panel14_217643_minutes",
+      "passed": true
+    },
+    {
+      "check": "panel14_sum_same_minute",
+      "passed": true
+    },
+    {
+      "check": "panel14_148_strict_days",
+      "passed": true
+    },
+    {
+      "check": "panel14_panel14_all_common_valid",
+      "passed": true
+    },
+    {
+      "check": "panel14_same_set_ref13_panel14_all_common_valid",
+      "passed": true
+    },
+    {
+      "check": "panel14_panel14_complete_148d",
+      "passed": true
+    },
+    {
+      "check": "panel14_same_set_ref13_panel14_complete_148d",
+      "passed": true
+    },
+    {
+      "check": "363_peak_intervals",
+      "passed": true
+    },
+    {
+      "check": "peak_keys_in_valid_hours",
+      "passed": true
+    },
+    {
+      "check": "peak_device_values_same_hour",
+      "passed": true
+    },
+    {
+      "check": "peak_all_ties_and_devices",
+      "passed": true
+    },
+    {
+      "check": "fixed_case_ids",
+      "passed": true
+    },
+    {
+      "check": "case_day_labels_match_task03",
+      "passed": true
+    },
+    {
+      "check": "minute_peak_C01",
+      "passed": true
+    },
+    {
+      "check": "minute_peak_C02",
+      "passed": true
+    },
+    {
+      "check": "minute_peak_C03",
+      "passed": true
+    },
+    {
+      "check": "minute_peak_C04",
+      "passed": true
+    }
+  ],
+  "energy_kwh": {
+    "panel13_complete_352d": 2739.5971373333336,
+    "panel13_all_common_valid": 2758.8816481666663
+  },
+  "partial_hour_mean_nonnull": 4,
+  "resolution": "Inherited raw column preserved. Never use mean_power_kw without hour_complete; strict_target_kw blanks incomplete hours."
+}

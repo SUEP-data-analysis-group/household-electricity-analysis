@@ -1,0 +1,319 @@
+{
+  "generated_at": "2026-11-17T20:08:15.158018+08:00",
+  "all_pass": true,
+  "repository_baseline": "88bf9752227f05b526e80ce15b7392845fd0dbe7",
+  "files": [
+    {
+      "input": "task05/inputs/standardized/panel_minute.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/panel_minute.csv.gz",
+      "input_sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29",
+      "repository_sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/standardized/power_minute.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/power_minute.csv.gz",
+      "input_sha256": "a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95",
+      "repository_sha256": "a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task01/panel_definition.json",
+      "repository_path": "task01/reports/panel_definition.json",
+      "input_sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb",
+      "repository_sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task02/daily_panel13.csv",
+      "repository_path": "data/derived/task02/daily_panel13.csv",
+      "input_sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65",
+      "repository_sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task02/hourly_appliance.csv",
+      "repository_path": "data/derived/task02/hourly_appliance.csv",
+      "input_sha256": "6de532b6a96c841deac4b46741dea985713ea67cc48c6906d794dc3863006e09",
+      "repository_sha256": "6de532b6a96c841deac4b46741dea985713ea67cc48c6906d794dc3863006e09",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task02/hourly_panel13.csv",
+      "repository_path": "data/derived/task02/hourly_panel13.csv",
+      "input_sha256": "2eca7322e043c5115a03b06dc180a4fd05da10c1db6273e56e3ed6c1325876d8",
+      "repository_sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee",
+      "comparison": "strict_hour_targets_exact; four_legacy_partial_means_not_used",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/case_hourly_curves.csv",
+      "repository_path": "data/derived/task04/case_hourly_curves.csv",
+      "input_sha256": "1de1392943bf83b9997cb5509eb4c572d26aef0ed35646bedb9d2391a596f6f9",
+      "repository_sha256": "1de1392943bf83b9997cb5509eb4c572d26aef0ed35646bedb9d2391a596f6f9",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/case_manifest.csv",
+      "repository_path": "data/derived/task04/case_manifest.csv",
+      "input_sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30",
+      "repository_sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/case_minute_curves.csv.gz",
+      "repository_path": "data/derived/task04/case_minute_curves.csv.gz",
+      "input_sha256": "fa04f83aace62209d35d91c90b21b1e169211ece228deae08a3f29265542e0d0",
+      "repository_sha256": "fa04f83aace62209d35d91c90b21b1e169211ece228deae08a3f29265542e0d0",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/case_quality_summary.csv",
+      "repository_path": "data/derived/task04/case_quality_summary.csv",
+      "input_sha256": "6d7d58ec301b4617140a2250471232adcd334ded0b80f2a80bd90136f2f80850",
+      "repository_sha256": "6d7d58ec301b4617140a2250471232adcd334ded0b80f2a80bd90136f2f80850",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/config.json",
+      "repository_path": "task04/config.json",
+      "input_sha256": "51b59d6fdd6b7d0bee1aa2deaeb497f511f5f3486e1715e6f6d3e09ba598bdb4",
+      "repository_sha256": "460c5025500b7068b6af57d621adcc45153e84252a4a498acf08562acafdcea7",
+      "comparison": "archived_task04_v1.0.0_metadata_vs_repository_v1.0.1; derived_data_checked_separately",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/daily_extrema_times.csv",
+      "repository_path": "data/derived/task04/daily_extrema_times.csv",
+      "input_sha256": "e9e699ee8afc08ee0c17dcab8ab628c1cac87584b19cf2fb1add4ff82e04f0d7",
+      "repository_sha256": "e9e699ee8afc08ee0c17dcab8ab628c1cac87584b19cf2fb1add4ff82e04f0d7",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/daily_minute_hourly_comparison.csv",
+      "repository_path": "data/derived/task04/daily_minute_hourly_comparison.csv",
+      "input_sha256": "2f7f0336a2eb2930f88215984d1992edf85e26767379fbfcbf26aa872562740f",
+      "repository_sha256": "2f7f0336a2eb2930f88215984d1992edf85e26767379fbfcbf26aa872562740f",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/daily_peak_valley.csv",
+      "repository_path": "data/derived/task04/daily_peak_valley.csv",
+      "input_sha256": "2bed412c140d424d7fa363d7beb3cf9f0a0ecd2a0acddb23f50b094c7621a515",
+      "repository_sha256": "2bed412c140d424d7fa363d7beb3cf9f0a0ecd2a0acddb23f50b094c7621a515",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/DATA_DICTIONARY.md",
+      "repository_path": "task04/DATA_DICTIONARY.md",
+      "input_sha256": "5bc3c3f595954233c4073bfac941fb925ae1db4a4a01ea2b3f80c30d2e4f0938",
+      "repository_sha256": "5bc3c3f595954233c4073bfac941fb925ae1db4a4a01ea2b3f80c30d2e4f0938",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/derivation_manifest.json",
+      "repository_path": "data/derived/task04/derivation_manifest.json",
+      "input_sha256": "6db8dc1faed172b57c964fb4fa456dab1aec55e62d29136694a6c18ba4aee166",
+      "repository_sha256": "f7ee5e02e88f685ca9e3a3d1b96ee192c165d14c92c3c6117d795ca70b508c77",
+      "comparison": "archived_task04_v1.0.0_metadata_vs_repository_v1.0.1; derived_data_checked_separately",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/excluded_days.csv",
+      "repository_path": "data/derived/task04/excluded_days.csv",
+      "input_sha256": "f9c8b1142e309f31aa82c09412cc171fd204902d684b43d82158547d3c29461a",
+      "repository_sha256": "f9c8b1142e309f31aa82c09412cc171fd204902d684b43d82158547d3c29461a",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/hourly_changes.csv",
+      "repository_path": "data/derived/task04/hourly_changes.csv",
+      "input_sha256": "2f8d259c5f466a76550c778774b6cd318db699aff05985cd93d6ee94e1d8b49d",
+      "repository_sha256": "2f8d259c5f466a76550c778774b6cd318db699aff05985cd93d6ee94e1d8b49d",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/hourly_change_summary.csv",
+      "repository_path": "data/derived/task04/hourly_change_summary.csv",
+      "input_sha256": "ba83e84cb897576a3217d8e95cf3d352de795875eeb3ed695c492d54802f5e6b",
+      "repository_sha256": "ba83e84cb897576a3217d8e95cf3d352de795875eeb3ed695c492d54802f5e6b",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/peak_hour_frequency.csv",
+      "repository_path": "data/derived/task04/peak_hour_frequency.csv",
+      "input_sha256": "08ee56360723cb45ced8a0ececb65e73782afe445638714e287b386240dd755f",
+      "repository_sha256": "08ee56360723cb45ced8a0ececb65e73782afe445638714e287b386240dd755f",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/README.md",
+      "repository_path": "task04/README.md",
+      "input_sha256": "fbd79faf7d34cda34b8ddbe6066d36d580e901bf89d0cec7a22a844ddf296706",
+      "repository_sha256": "c960fa83ad5e83396293d1f47d2f31e8c8bcfafea258c026252f956e3720a13e",
+      "comparison": "archived_task04_v1.0.0_metadata_vs_repository_v1.0.1; derived_data_checked_separately",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/thresholds.json",
+      "repository_path": "data/derived/task04/thresholds.json",
+      "input_sha256": "2b570312dd0de69c2ce7c3e12d998ab7628a66d4953edb4668960a5c9e496166",
+      "repository_sha256": "2b570312dd0de69c2ce7c3e12d998ab7628a66d4953edb4668960a5c9e496166",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task04/verification_task04.json",
+      "repository_path": "task04/reports/verification.json",
+      "input_sha256": "54b961fba233b70e8645d571990622a1e13c45915f4e8fb43d1e56b6c29c5af9",
+      "repository_sha256": "54b961fba233b70e8645d571990622a1e13c45915f4e8fb43d1e56b6c29c5af9",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/electric_kettle_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/electric_kettle_w.csv.gz",
+      "input_sha256": "7916ca330bb7800aee58c661ff607ed72340f0e689b88f38208d6f42f1c2915c",
+      "repository_sha256": "7916ca330bb7800aee58c661ff607ed72340f0e689b88f38208d6f42f1c2915c",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/fridge_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/fridge_w.csv.gz",
+      "input_sha256": "4d39c9698c6d2725df40129fa28fb410c0de49a09115fc83df5cb8bdfca1628f",
+      "repository_sha256": "4d39c9698c6d2725df40129fa28fb410c0de49a09115fc83df5cb8bdfca1628f",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/computer_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/computer_w.csv.gz",
+      "input_sha256": "1491a2dd7e17b7961af8a0c1c2300c8e2cff7ef7706a7e5798d3bbc98178f3ee",
+      "repository_sha256": "1491a2dd7e17b7961af8a0c1c2300c8e2cff7ef7706a7e5798d3bbc98178f3ee",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/tv_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/tv_w.csv.gz",
+      "input_sha256": "430f1cde79ce15702ae3a633aec7232db75c851134d1909c8ea10450b769168c",
+      "repository_sha256": "430f1cde79ce15702ae3a633aec7232db75c851134d1909c8ea10450b769168c",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "input_sha256": "fc285baee86ea8af96a129d579f4cfe9bcb0e61414bbd3b53301f2040aed25cd",
+      "repository_sha256": "fc285baee86ea8af96a129d579f4cfe9bcb0e61414bbd3b53301f2040aed25cd",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "input_sha256": "77b03813c8a5979526912a7a2ce46284e62fe04d0b959464ae7dc176147386c3",
+      "repository_sha256": "77b03813c8a5979526912a7a2ce46284e62fe04d0b959464ae7dc176147386c3",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/washing_machine_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/washing_machine_w.csv.gz",
+      "input_sha256": "341c22b19bcd2c7e668fe6ef5c781ed845b314c4b2d505077921582cf235386e",
+      "repository_sha256": "341c22b19bcd2c7e668fe6ef5c781ed845b314c4b2d505077921582cf235386e",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/air_conditioner_1_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_1_w.csv.gz",
+      "input_sha256": "2599cd724c37aea0b35ca5219e2766d43284688786c4b7569210bbc4fbf431c7",
+      "repository_sha256": "2599cd724c37aea0b35ca5219e2766d43284688786c4b7569210bbc4fbf431c7",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/air_conditioner_2_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_2_w.csv.gz",
+      "input_sha256": "3c07bdd6621a4e65c2ffc0de9362185ac5e4373c2c5fa0c3ea7c182c36e9a715",
+      "repository_sha256": "3c07bdd6621a4e65c2ffc0de9362185ac5e4373c2c5fa0c3ea7c182c36e9a715",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/air_conditioner_3_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_3_w.csv.gz",
+      "input_sha256": "7339e62670d8d5b8bb4c8bfb13c10ca1b80931524fa6288ec9901fde2bc9e9ea",
+      "repository_sha256": "7339e62670d8d5b8bb4c8bfb13c10ca1b80931524fa6288ec9901fde2bc9e9ea",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/air_conditioner_4_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_4_w.csv.gz",
+      "input_sha256": "23a2ab2205243f3e44874ad273e6c1c135a77172b6b049b6e378c181f7a9eb64",
+      "repository_sha256": "23a2ab2205243f3e44874ad273e6c1c135a77172b6b049b6e378c181f7a9eb64",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/air_conditioner_5_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_5_w.csv.gz",
+      "input_sha256": "29eb55e8ef55b9f4ca7469772c51911d79f256f29e903b1ec9928ccbfc1c916c",
+      "repository_sha256": "29eb55e8ef55b9f4ca7469772c51911d79f256f29e903b1ec9928ccbfc1c916c",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/appliance_quality/air_conditioner_6_w.csv.gz",
+      "repository_path": "data/standardized/cn_obee_v1_noimpute_v1.0.0/appliance_quality/air_conditioner_6_w.csv.gz",
+      "input_sha256": "82e1f47e8d9208695242f2e743ccd5cd3a2c52e1b2268a9b431ca9556608f68e",
+      "repository_sha256": "82e1f47e8d9208695242f2e743ccd5cd3a2c52e1b2268a9b431ca9556608f68e",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task01/split_manifest.json",
+      "repository_path": "task01/reports/split_manifest.json",
+      "input_sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8",
+      "repository_sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task03/date_dimension.csv",
+      "repository_path": "data/derived/task03/date_dimension.csv",
+      "input_sha256": "ec95f8d24a7cac5da863846ee9c747defbb633a89707ee97b8ab59962472083e",
+      "repository_sha256": "ec95f8d24a7cac5da863846ee9c747defbb633a89707ee97b8ab59962472083e",
+      "comparison": "identical_sha256",
+      "passed": true
+    },
+    {
+      "input": "task05/inputs/task02_reference/hourly_panel13.csv",
+      "repository_path": "data/derived/task02/hourly_panel13.csv",
+      "input_sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee",
+      "repository_sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee",
+      "comparison": "identical_sha256",
+      "passed": true
+    }
+  ]
+}

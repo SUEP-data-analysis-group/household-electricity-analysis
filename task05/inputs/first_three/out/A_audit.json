@@ -1,0 +1,41 @@
+{
+  "node": "A",
+  "generated_by": "run_A_input_audit.py",
+  "main_period": "[2021-05-31 00:00, 2022-06-01 00:00) Asia/Shanghai",
+  "rows_in_period": 527040,
+  "panel13_common_valid_minutes": 510284,
+  "panel13_complete_days": 352,
+  "panel13_complete_days_minutes": 506880,
+  "panel14_common_valid_minutes": 217643,
+  "panel14_complete_days": 148,
+  "panel14_last_common_valid": "2021-11-09T10:38:00+00:00",
+  "devices_panel13": [
+    "electric_kettle_w",
+    "fridge_w",
+    "computer_w",
+    "tv_w",
+    "upstairs_water_heater_w",
+    "downstairs_water_heater_w",
+    "washing_machine_w",
+    "air_conditioner_1_w",
+    "air_conditioner_2_w",
+    "air_conditioner_3_w",
+    "air_conditioner_4_w",
+    "air_conditioner_5_w",
+    "air_conditioner_6_w"
+  ],
+  "devices_panel14_only": [
+    "rice_cooker_w"
+  ],
+  "checks": {
+    "period_minutes_527040": true,
+    "main_minutes_506880": true,
+    "panel13_valid_510284": true,
+    "panel14_valid_217643": true,
+    "panel14_days_148": true,
+    "timestamp_unique": true,
+    "no_end_leak": true,
+    "device_list_13_and_14": true
+  },
+  "all_pass": true
+}

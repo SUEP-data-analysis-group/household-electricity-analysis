@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-11-17T20:09:16.225048+08:00",
+  "fitted_start": "2021-05-31T00:00:00+08:00",
+  "fitted_end_exclusive": "2022-03-09T00:00:00+08:00",
+  "training_calendar_minutes": 406080,
+  "not_used": "validation and test values",
+  "evidence_files": [
+    {
+      "path": "training_distribution.csv",
+      "sha256": "ebd1740e8276ac7e2e0a5d93a36db18eba65f28378dc1866b8a716c7aef721ad"
+    },
+    {
+      "path": "training_histogram.csv",
+      "sha256": "ce21753579ba004faaca7e0a82f202abecb2b8968b88bf7c58eebee9f111537d"
+    },
+    {
+      "path": "training_modes.csv",
+      "sha256": "838edb1ecc12aee85d4a0cd85f1cde2368472b1f80edfc80df57d5e4a31f461b"
+    },
+    {
+      "path": "training_candidate_run_lengths.csv",
+      "sha256": "cd118f39ae17796bb171dc2317f355221da08c4fdd2976906bda60a38e479322"
+    }
+  ]
+}

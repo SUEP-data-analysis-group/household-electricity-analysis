@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-11-17T20:13:15.217242+08:00",
+  "minutes": 527040,
+  "devices": [
+    "electric_kettle_w",
+    "fridge_w",
+    "computer_w",
+    "tv_w",
+    "upstairs_water_heater_w",
+    "downstairs_water_heater_w",
+    "washing_machine_w",
+    "air_conditioner_1_w",
+    "air_conditioner_2_w",
+    "air_conditioner_3_w",
+    "air_conditioner_4_w",
+    "air_conditioner_5_w",
+    "air_conditioner_6_w"
+  ],
+  "state_file_sha256": "4ba8f3800b32b7b00a411a60c75f02ef28704a76bbd6e5fa46f02a72f9e13818",
+  "threshold_sha256": "183b62186bb0c137c79be47d933cbd09c1123d93eedb3b3a619bc0d17c44315e",
+  "config_sha256": "6593cb400534ffb3b1b9002cd10f4942f4f844972f8e3db34816710bf44e510a",
+  "training_rule_audit_sha256": "28cb20c0e75855dfb774c8c0e9305f82407041e1e6dcf034adbe6ef77baa3b5a",
+  "no_backfill": true,
+  "no_future_minutes": true,
+  "no_new_power_imputation": true,
+  "all13_common_known_minutes": 0,
+  "runtime": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "numpy": "2.3.4"
+  }
+}

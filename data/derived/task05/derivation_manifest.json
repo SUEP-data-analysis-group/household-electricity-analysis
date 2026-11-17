@@ -1,0 +1,930 @@
+{
+  "task": "task05_steps_1_2_3_4_5_6",
+  "version": "task05_v1.0.1_20261117",
+  "generated_at": "2026-11-17T20:14:10.223562+08:00",
+  "source_version": "cn_obee_v1_noimpute_v1.0.0",
+  "panel_version": "panel13/v1.0.0",
+  "completed_steps": [
+    "1 input/sample audit",
+    "2 same-sample contributions",
+    "3 same-time peak contributions",
+    "4 per-device operation rules",
+    "5 continuous minute states",
+    "6 overlap/report/verification"
+  ],
+  "inherited_steps": "1-3 numeric values retained; sample metadata corrected; original bytes in inputs/first_three",
+  "timezone": "Asia/Shanghai",
+  "interval": {
+    "start": "2021-05-31T00:00:00+08:00",
+    "end_exclusive": "2022-06-01T00:00:00+08:00"
+  },
+  "samples": {
+    "calendar_minutes": 527040,
+    "calendar_hours": 8784,
+    "calendar_days": 366,
+    "main_complete_days": 352,
+    "panel13_common_valid_dates": 356,
+    "panel13_partial_dates": 4,
+    "panel14_common_valid_dates": 153,
+    "panel14_partial_dates": 5,
+    "main_minutes": 506880,
+    "panel13_common_valid_power_minutes": 510284,
+    "panel14_common_valid_power_minutes": 217643,
+    "panel14_complete_days": 148,
+    "main_S12_known_minutes": 499217,
+    "main_at_least_two_on_minutes": 187147,
+    "main_energy_kwh": 2739.5971373333336,
+    "all13_common_known_minutes": 0,
+    "fixed_peak_hours": 363,
+    "fixed_case_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ]
+  },
+  "operation_subset": [
+    "electric_kettle_w",
+    "fridge_w",
+    "computer_w",
+    "tv_w",
+    "upstairs_water_heater_w",
+    "downstairs_water_heater_w",
+    "washing_machine_w",
+    "air_conditioner_1_w",
+    "air_conditioner_2_w",
+    "air_conditioner_4_w",
+    "air_conditioner_5_w",
+    "air_conditioner_6_w"
+  ],
+  "rules": {
+    "threshold_period_start": "2021-05-31T00:00:00+08:00",
+    "threshold_period_end_exclusive": "2022-03-09T00:00:00+08:00",
+    "causal_current_minute": true,
+    "backfill": false,
+    "new_power_imputation": false,
+    "invalid_state": "unknown",
+    "gap_reset": true,
+    "review_bits_retained": [
+      16,
+      32
+    ],
+    "zero_denominator": "missing",
+    "state_truth": "no manually labelled device operation truth"
+  },
+  "incomplete_hour_note": {
+    "inherited_nonnull_partial_means": 4,
+    "target_requires_hour_complete": true
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.4",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.0"
+  },
+  "source_import_manifest": "task05/inputs/import_manifest.json",
+  "source_file_records": 67,
+  "validation": {
+    "independent_script": "task05/verify_task05.py",
+    "result": "data/derived/task05/verification_task05.json",
+    "self_hash_excluded": true,
+    "final_verification_files_excluded_to_prevent_cycle": true,
+    "no_task06_actual_model_audit_claim": true
+  },
+  "files": [
+    {
+      "path": "task05/audit_repository_sources.py",
+      "role": "code",
+      "bytes": 3007,
+      "sha256": "888cac48ddf26ef93220986e4c584d44daaf0dd8a50894fd2d3a28ef9bdf744b"
+    },
+    {
+      "path": "task05/audit_rules.py",
+      "role": "code",
+      "bytes": 2488,
+      "sha256": "2bf8ce72e4290353ec14b572bce7267bd69b6e5da2ca72c50188f2d8b8c22a97"
+    },
+    {
+      "path": "task05/common.py",
+      "role": "code",
+      "bytes": 2977,
+      "sha256": "6afb59f977067608430ed0335b31c6ad9ab0eb397b3f71c4d3e868b3c123c97c"
+    },
+    {
+      "path": "task05/config.json",
+      "role": "rules",
+      "bytes": 2582,
+      "sha256": "6593cb400534ffb3b1b9002cd10f4942f4f844972f8e3db34816710bf44e510a"
+    },
+    {
+      "path": "task05/DATA_DICTIONARY.md",
+      "role": "documentation",
+      "bytes": 10368,
+      "sha256": "1f905e5902cad9c7160beb703ad4f78f07c7dc1690b286c4bb9003aef070c579"
+    },
+    {
+      "path": "task05/DELIVERY.md",
+      "role": "documentation",
+      "bytes": 634,
+      "sha256": "16faf5f2260135fd23ce3fdc4e2e83a924326ab70d608dfb6f15e53e7ea365d2"
+    },
+    {
+      "path": "task05/freeze_rules.py",
+      "role": "code",
+      "bytes": 5776,
+      "sha256": "783537b682f274bd9cb44ee25802c21c5185658371409c1e01db2a38a2ea4ec7"
+    },
+    {
+      "path": "task05/import_inputs.py",
+      "role": "code",
+      "bytes": 4682,
+      "sha256": "a09a7767bead160da8d9eb957e4359769a49c60f58d4994fea728a5983172fe4"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/air_conditioner_1_w.csv.gz",
+      "role": "input",
+      "bytes": 5328552,
+      "sha256": "2599cd724c37aea0b35ca5219e2766d43284688786c4b7569210bbc4fbf431c7"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/air_conditioner_2_w.csv.gz",
+      "role": "input",
+      "bytes": 5803308,
+      "sha256": "3c07bdd6621a4e65c2ffc0de9362185ac5e4373c2c5fa0c3ea7c182c36e9a715"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/air_conditioner_3_w.csv.gz",
+      "role": "input",
+      "bytes": 5357100,
+      "sha256": "7339e62670d8d5b8bb4c8bfb13c10ca1b80931524fa6288ec9901fde2bc9e9ea"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/air_conditioner_4_w.csv.gz",
+      "role": "input",
+      "bytes": 5443125,
+      "sha256": "23a2ab2205243f3e44874ad273e6c1c135a77172b6b049b6e378c181f7a9eb64"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/air_conditioner_5_w.csv.gz",
+      "role": "input",
+      "bytes": 5588981,
+      "sha256": "29eb55e8ef55b9f4ca7469772c51911d79f256f29e903b1ec9928ccbfc1c916c"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/air_conditioner_6_w.csv.gz",
+      "role": "input",
+      "bytes": 5529264,
+      "sha256": "82e1f47e8d9208695242f2e743ccd5cd3a2c52e1b2268a9b431ca9556608f68e"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/computer_w.csv.gz",
+      "role": "input",
+      "bytes": 5009965,
+      "sha256": "1491a2dd7e17b7961af8a0c1c2300c8e2cff7ef7706a7e5798d3bbc98178f3ee"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/downstairs_water_heater_w.csv.gz",
+      "role": "input",
+      "bytes": 5106502,
+      "sha256": "77b03813c8a5979526912a7a2ce46284e62fe04d0b959464ae7dc176147386c3"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/electric_kettle_w.csv.gz",
+      "role": "input",
+      "bytes": 5696802,
+      "sha256": "7916ca330bb7800aee58c661ff607ed72340f0e689b88f38208d6f42f1c2915c"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/fridge_w.csv.gz",
+      "role": "input",
+      "bytes": 6773758,
+      "sha256": "4d39c9698c6d2725df40129fa28fb410c0de49a09115fc83df5cb8bdfca1628f"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/tv_w.csv.gz",
+      "role": "input",
+      "bytes": 6001223,
+      "sha256": "430f1cde79ce15702ae3a633aec7232db75c851134d1909c8ea10450b769168c"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/upstairs_water_heater_w.csv.gz",
+      "role": "input",
+      "bytes": 5468539,
+      "sha256": "fc285baee86ea8af96a129d579f4cfe9bcb0e61414bbd3b53301f2040aed25cd"
+    },
+    {
+      "path": "task05/inputs/appliance_quality/washing_machine_w.csv.gz",
+      "role": "input",
+      "bytes": 5415820,
+      "sha256": "341c22b19bcd2c7e668fe6ef5c781ed845b314c4b2d505077921582cf235386e"
+    },
+    {
+      "path": "task05/inputs/first_three/code/make_delivery_tables.py",
+      "role": "input",
+      "bytes": 4522,
+      "sha256": "3d92ed3918a8cf0c4cda700229a8870a553a724f0262fd02234d4a32d57a58af"
+    },
+    {
+      "path": "task05/inputs/first_three/code/make_manifest.py",
+      "role": "input",
+      "bytes": 6633,
+      "sha256": "5b486bbd7e4f999432709b2fa77de4f10dfe0332a369cf5a1a49fe6716c06ea3"
+    },
+    {
+      "path": "task05/inputs/first_three/code/run_A_input_audit.py",
+      "role": "input",
+      "bytes": 12460,
+      "sha256": "dc2e4e5c16b8023d0ed41429dcfe7d2c0d95e0458e3167e67744a6d2b02a9b89"
+    },
+    {
+      "path": "task05/inputs/first_three/code/run_B_contribution.py",
+      "role": "input",
+      "bytes": 12981,
+      "sha256": "87e8781082829780f485c0dcea76e49442656fd85fb11760779efe0e0e2239f0"
+    },
+    {
+      "path": "task05/inputs/first_three/code/run_C_peak_contribution.py",
+      "role": "input",
+      "bytes": 9481,
+      "sha256": "942de3cf350ab9190c230154d8d5bb8796af1270f53899de12c6bd896ffd664c"
+    },
+    {
+      "path": "task05/inputs/first_three/code/verify_package.py",
+      "role": "input",
+      "bytes": 1088,
+      "sha256": "42291ab8c76d1cd9ed1b8c1623c0c6ce8d8000f6ab2bf13ce9b301a364cf8139"
+    },
+    {
+      "path": "task05/inputs/first_three/out/A_audit.json",
+      "role": "input",
+      "bytes": 1145,
+      "sha256": "19247150532a65ed9d89d44306a54c0ca879000f97d2f095cad7d30e04b1d97b"
+    },
+    {
+      "path": "task05/inputs/first_three/out/A_input_inventory.csv",
+      "role": "input",
+      "bytes": 1923,
+      "sha256": "1f6084fe6df64cfa0d59179a1b810e54777723512ff219166c56e5c382fb9be9"
+    },
+    {
+      "path": "task05/inputs/first_three/out/A_sample_day_list_panel13.csv",
+      "role": "input",
+      "bytes": 11337,
+      "sha256": "4920368e18ba1d7ff7fc5e59b139329949a4215dadfd7fbad185fd7f9282c812"
+    },
+    {
+      "path": "task05/inputs/first_three/out/A_sample_day_list_panel14.csv",
+      "role": "input",
+      "bytes": 4485,
+      "sha256": "e34d0ddf5d379822406a1fa9c36775bb787dd60917ade0b006e9a47528004f35"
+    },
+    {
+      "path": "task05/inputs/first_three/out/A_sample_support.csv",
+      "role": "input",
+      "bytes": 1189,
+      "sha256": "dfa4a0d7895891b0e1864de577c9a12b23972635610775d14410b722157cf15f"
+    },
+    {
+      "path": "task05/inputs/first_three/out/A_time_axis_check.csv",
+      "role": "input",
+      "bytes": 749,
+      "sha256": "5742cbdf9e7dd1b244361872b8211e691591dc25b09badbebd81e8afcdeaeef0"
+    },
+    {
+      "path": "task05/inputs/first_three/out/B_contribution_panel13.csv",
+      "role": "input",
+      "bytes": 5318,
+      "sha256": "186f4cce1c486e25a22ca18ffa66188e1397894de9b082108eba660da18dad93"
+    },
+    {
+      "path": "task05/inputs/first_three/out/B_contribution_panel14_supplement.csv",
+      "role": "input",
+      "bytes": 13327,
+      "sha256": "2bdc94b541f2c5f1b83ec2eeef0457e45550bdc1ef908a8b67dc3d4121706796"
+    },
+    {
+      "path": "task05/inputs/first_three/out/B_hour_reconcile.csv",
+      "role": "input",
+      "bytes": 1380,
+      "sha256": "7bc4ffe153333cfc24cd153cd38128f7745097eb041bb0cb7eea834478ed3d38"
+    },
+    {
+      "path": "task05/inputs/first_three/out/B_reconcile.json",
+      "role": "input",
+      "bytes": 2000,
+      "sha256": "093a039a2467bb3c9c50f29edbdc9d002a48c9625bb08c7c4b1db25f94a1fa51"
+    },
+    {
+      "path": "task05/inputs/first_three/out/C_case_peak.csv",
+      "role": "input",
+      "bytes": 13603,
+      "sha256": "b045fa70ec87b0d7c2c0168b6bf62df347c44e6bfa903db5dc37e268ba260acd"
+    },
+    {
+      "path": "task05/inputs/first_three/out/C_peak_contribution.csv",
+      "role": "input",
+      "bytes": 556080,
+      "sha256": "9f5ce353388ade2f0b291172b49b918adc1f05446cb9d37e34bcd0c19a59e15f"
+    },
+    {
+      "path": "task05/inputs/first_three/out/C_peak_summary.csv",
+      "role": "input",
+      "bytes": 1245,
+      "sha256": "c2bdd4739cad084139c56e5c6d5da09980b51a27985791180b43369a521f1a28"
+    },
+    {
+      "path": "task05/inputs/first_three/out/C_reconcile.json",
+      "role": "input",
+      "bytes": 890,
+      "sha256": "a53c3b8bfabfb9b4359b3d3e319779c1c828622a73f2b70476b6d34c1a288617"
+    },
+    {
+      "path": "task05/inputs/first_three/out/derivation_manifest.json",
+      "role": "input",
+      "bytes": 11514,
+      "sha256": "15b3543771f76457df2c5a09ed639c6528c911967b6d989fa624684654dda5cd"
+    },
+    {
+      "path": "task05/inputs/first_three/out/交付表/case_manifest.csv",
+      "role": "input",
+      "bytes": 3780,
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30"
+    },
+    {
+      "path": "task05/inputs/first_three/out/交付表/contribution_panel13.csv",
+      "role": "input",
+      "bytes": 9040,
+      "sha256": "371f44ae404bc3677761d4d05b49faf6df6bdd965b66d155532f59fa9befc94a"
+    },
+    {
+      "path": "task05/inputs/first_three/out/交付表/contribution_panel14_supplement.csv",
+      "role": "input",
+      "bytes": 18137,
+      "sha256": "3d42047d379c0355bec06fc418f6094e345fd2e5aac1a2ca2dcfb859be0ea5a8"
+    },
+    {
+      "path": "task05/inputs/first_three/out/交付表/peak_contribution.csv",
+      "role": "input",
+      "bytes": 556080,
+      "sha256": "9f5ce353388ade2f0b291172b49b918adc1f05446cb9d37e34bcd0c19a59e15f"
+    },
+    {
+      "path": "task05/inputs/first_three/说明.md",
+      "role": "input",
+      "bytes": 10574,
+      "sha256": "6aa7d7d368121ed3f4e04ac45e784e984a86dd6cc2d11542c6702fdc1f3e7e82"
+    },
+    {
+      "path": "task05/inputs/import_manifest.json",
+      "role": "input",
+      "bytes": 20841,
+      "sha256": "0dc30cf37d74dbee501807abd14eecded91bd41209fc59baf53fa18fa81e235e"
+    },
+    {
+      "path": "task05/inputs/requirements/task05_task06_实施分析_20261114.md",
+      "role": "input",
+      "bytes": 20275,
+      "sha256": "f5162cb7674e80234876771d216bc1ad1baff9c24bb5c111bf9e87feea244a63"
+    },
+    {
+      "path": "task05/inputs/requirements/Task05_Task06_数据口径与审核节点.md",
+      "role": "input",
+      "bytes": 9537,
+      "sha256": "1fa6ddd462e3b185187ee1ab9a62abd1198ba4c72416d184cd6b7927da5be913"
+    },
+    {
+      "path": "task05/inputs/standardized/panel_minute.csv.gz",
+      "role": "input",
+      "bytes": 9616119,
+      "sha256": "e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29"
+    },
+    {
+      "path": "task05/inputs/standardized/power_minute.csv.gz",
+      "role": "input",
+      "bytes": 9314304,
+      "sha256": "a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95"
+    },
+    {
+      "path": "task05/inputs/task01/panel_definition.json",
+      "role": "input",
+      "bytes": 2454,
+      "sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb"
+    },
+    {
+      "path": "task05/inputs/task01/split_manifest.json",
+      "role": "input",
+      "bytes": 923,
+      "sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8"
+    },
+    {
+      "path": "task05/inputs/task02/daily_panel13.csv",
+      "role": "input",
+      "bytes": 34926,
+      "sha256": "8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65"
+    },
+    {
+      "path": "task05/inputs/task02/hourly_appliance.csv",
+      "role": "input",
+      "bytes": 10170016,
+      "sha256": "6de532b6a96c841deac4b46741dea985713ea67cc48c6906d794dc3863006e09"
+    },
+    {
+      "path": "task05/inputs/task02/hourly_panel13.csv",
+      "role": "input",
+      "bytes": 1088287,
+      "sha256": "2eca7322e043c5115a03b06dc180a4fd05da10c1db6273e56e3ed6c1325876d8"
+    },
+    {
+      "path": "task05/inputs/task02_reference/hourly_panel13.csv",
+      "role": "input",
+      "bytes": 1234311,
+      "sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee"
+    },
+    {
+      "path": "task05/inputs/task03/date_dimension.csv",
+      "role": "input",
+      "bytes": 111582,
+      "sha256": "ec95f8d24a7cac5da863846ee9c747defbb633a89707ee97b8ab59962472083e"
+    },
+    {
+      "path": "task05/inputs/task04/case_hourly_curves.csv",
+      "role": "input",
+      "bytes": 14044,
+      "sha256": "1de1392943bf83b9997cb5509eb4c572d26aef0ed35646bedb9d2391a596f6f9"
+    },
+    {
+      "path": "task05/inputs/task04/case_manifest.csv",
+      "role": "input",
+      "bytes": 3780,
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30"
+    },
+    {
+      "path": "task05/inputs/task04/case_minute_curves.csv.gz",
+      "role": "input",
+      "bytes": 89175,
+      "sha256": "fa04f83aace62209d35d91c90b21b1e169211ece228deae08a3f29265542e0d0"
+    },
+    {
+      "path": "task05/inputs/task04/case_quality_summary.csv",
+      "role": "input",
+      "bytes": 3978,
+      "sha256": "6d7d58ec301b4617140a2250471232adcd334ded0b80f2a80bd90136f2f80850"
+    },
+    {
+      "path": "task05/inputs/task04/config.json",
+      "role": "input",
+      "bytes": 1820,
+      "sha256": "51b59d6fdd6b7d0bee1aa2deaeb497f511f5f3486e1715e6f6d3e09ba598bdb4"
+    },
+    {
+      "path": "task05/inputs/task04/daily_extrema_times.csv",
+      "role": "input",
+      "bytes": 60127,
+      "sha256": "e9e699ee8afc08ee0c17dcab8ab628c1cac87584b19cf2fb1add4ff82e04f0d7"
+    },
+    {
+      "path": "task05/inputs/task04/daily_minute_hourly_comparison.csv",
+      "role": "input",
+      "bytes": 46847,
+      "sha256": "2f7f0336a2eb2930f88215984d1992edf85e26767379fbfcbf26aa872562740f"
+    },
+    {
+      "path": "task05/inputs/task04/daily_peak_valley.csv",
+      "role": "input",
+      "bytes": 76255,
+      "sha256": "2bed412c140d424d7fa363d7beb3cf9f0a0ecd2a0acddb23f50b094c7621a515"
+    },
+    {
+      "path": "task05/inputs/task04/DATA_DICTIONARY.md",
+      "role": "input",
+      "bytes": 4465,
+      "sha256": "5bc3c3f595954233c4073bfac941fb925ae1db4a4a01ea2b3f80c30d2e4f0938"
+    },
+    {
+      "path": "task05/inputs/task04/derivation_manifest.json",
+      "role": "input",
+      "bytes": 27020,
+      "sha256": "6db8dc1faed172b57c964fb4fa456dab1aec55e62d29136694a6c18ba4aee166"
+    },
+    {
+      "path": "task05/inputs/task04/excluded_days.csv",
+      "role": "input",
+      "bytes": 1419,
+      "sha256": "f9c8b1142e309f31aa82c09412cc171fd204902d684b43d82158547d3c29461a"
+    },
+    {
+      "path": "task05/inputs/task04/hourly_change_summary.csv",
+      "role": "input",
+      "bytes": 541,
+      "sha256": "ba83e84cb897576a3217d8e95cf3d352de795875eeb3ed695c492d54802f5e6b"
+    },
+    {
+      "path": "task05/inputs/task04/hourly_changes.csv",
+      "role": "input",
+      "bytes": 1409783,
+      "sha256": "2f8d259c5f466a76550c778774b6cd318db699aff05985cd93d6ee94e1d8b49d"
+    },
+    {
+      "path": "task05/inputs/task04/peak_hour_frequency.csv",
+      "role": "input",
+      "bytes": 3502,
+      "sha256": "08ee56360723cb45ced8a0ececb65e73782afe445638714e287b386240dd755f"
+    },
+    {
+      "path": "task05/inputs/task04/README.md",
+      "role": "input",
+      "bytes": 8669,
+      "sha256": "fbd79faf7d34cda34b8ddbe6066d36d580e901bf89d0cec7a22a844ddf296706"
+    },
+    {
+      "path": "task05/inputs/task04/thresholds.json",
+      "role": "input",
+      "bytes": 787,
+      "sha256": "2b570312dd0de69c2ce7c3e12d998ab7628a66d4953edb4668960a5c9e496166"
+    },
+    {
+      "path": "task05/inputs/task04/verification_task04.json",
+      "role": "input",
+      "bytes": 8797,
+      "sha256": "54b961fba233b70e8645d571990622a1e13c45915f4e8fb43d1e56b6c29c5af9"
+    },
+    {
+      "path": "task05/inspect_training.py",
+      "role": "code",
+      "bytes": 3287,
+      "sha256": "566b1b7d240dbaece8fb221047983de1bbc2fba47d013ddd2132a8756aa3d553"
+    },
+    {
+      "path": "task05/make_manifest.py",
+      "role": "code",
+      "bytes": 3956,
+      "sha256": "c93a1394b12f879b50c09a84d3e72ea9d307f09cb3f9f6d8a072550ff98e5629"
+    },
+    {
+      "path": "task05/operation_rules.py",
+      "role": "code",
+      "bytes": 1855,
+      "sha256": "5f2727f2271b8f996ebe30d98d2f408042c444cba8e4e01f1bbb038c0f5e2c8b"
+    },
+    {
+      "path": "task05/package_task05.py",
+      "role": "code",
+      "bytes": 1362,
+      "sha256": "d1e94b718959b96d10a9143dcd505b0739d86bf2c0fa2c42e40aaf74312d5108"
+    },
+    {
+      "path": "task05/prepare_delivery.py",
+      "role": "code",
+      "bytes": 3758,
+      "sha256": "177906407c65a224fa965742156c4ccfc8e7a7100452e4dedcc93f6051b8b54b"
+    },
+    {
+      "path": "task05/README.md",
+      "role": "documentation",
+      "bytes": 4571,
+      "sha256": "6544af01f7597bd95282330001976649d5371d24c802d8e3356ca96176c1a1bd"
+    },
+    {
+      "path": "task05/report_task05.py",
+      "role": "code",
+      "bytes": 25670,
+      "sha256": "3f2e6a9c15688957432c0ae82b3e55ed7ff9c54136cee3c7f476aeb56a554874"
+    },
+    {
+      "path": "task05/reports/figures/01_training_distributions.png",
+      "role": "report",
+      "bytes": 190142,
+      "sha256": "50b9cb183cc777a7deede5bf64797026427205876bfcd5d1150cd0a0f0bd631b"
+    },
+    {
+      "path": "task05/reports/figures/02_state_support.png",
+      "role": "report",
+      "bytes": 96223,
+      "sha256": "cdcee850877a3580d26aad5fbf6078d1d0d78ab44308f2df1e2e5ce6e3cece6b"
+    },
+    {
+      "path": "task05/reports/figures/03_overlap_heatmap.png",
+      "role": "report",
+      "bytes": 189680,
+      "sha256": "28a060be68febb97d72fbeb489ca2f4edc626503a948a92db7d3808ac0ee27ac"
+    },
+    {
+      "path": "task05/reports/figures/04_C01_operation.png",
+      "role": "report",
+      "bytes": 169469,
+      "sha256": "7cb5d073b28c88bae62304764107643d392f203f2962d65324912ce7311d6e61"
+    },
+    {
+      "path": "task05/reports/figures/04_C02_operation.png",
+      "role": "report",
+      "bytes": 156001,
+      "sha256": "88239d056ac8b523ae01099da05c6a330cc8b1885acbeb1d738f9a7b390fc297"
+    },
+    {
+      "path": "task05/reports/figures/04_C03_operation.png",
+      "role": "report",
+      "bytes": 167484,
+      "sha256": "f53908191deb620a0a6117c428ee18be69be2f44fcf627904f263a2fab48d635"
+    },
+    {
+      "path": "task05/reports/figures/04_C04_operation.png",
+      "role": "report",
+      "bytes": 163196,
+      "sha256": "1c312efa36559738bc558aeb846d304f7e8bef582ea608ecdc7e8992172b4886"
+    },
+    {
+      "path": "task05/reports/figures/05_threshold_sensitivity.png",
+      "role": "report",
+      "bytes": 186571,
+      "sha256": "82e5bcd88331c962d1755d4593d5cd410c62b2fae2efb991e635066bf3aefd4c"
+    },
+    {
+      "path": "task05/reports/first_three_reproduction.txt",
+      "role": "report",
+      "bytes": 10241,
+      "sha256": "e284e27c6cc44c709b34322cd8db37a95eaae53ed69e24acd91fc1df56c97227"
+    },
+    {
+      "path": "task05/reports/state_boundary_tests.txt",
+      "role": "report",
+      "bytes": 1227,
+      "sha256": "56af287968cf4724fb56e33dadd662eed5c492400a8a82f88d2f9380430af7d6"
+    },
+    {
+      "path": "task05/reports/task05_后三步实验报告.html",
+      "role": "report",
+      "bytes": 1783066,
+      "sha256": "f09d49c8748f5219205f0393f394bb6152f0191b16dd9c94418f288a2fc1a6ac"
+    },
+    {
+      "path": "task05/reports/task05_后三步实验报告.md",
+      "role": "report",
+      "bytes": 19654,
+      "sha256": "6a28aea85c5621ff697ed3dff0d2f4b2250b44e4f4a2fe98eded8eb70fba5e27"
+    },
+    {
+      "path": "task05/reports/验收修订说明.md",
+      "role": "report",
+      "bytes": 4013,
+      "sha256": "262e4c417c8f7514554c8a1aae54133882708d932a6487850df7025a3124b90c"
+    },
+    {
+      "path": "task05/reproduce_first_three.py",
+      "role": "code",
+      "bytes": 2237,
+      "sha256": "cb274545ce7efdce8f5fa04e3713cd72bcfadcfd946cd102b381b653b3ffcae7"
+    },
+    {
+      "path": "task05/REQUIREMENTS.md",
+      "role": "documentation",
+      "bytes": 7085,
+      "sha256": "dfce1db80c46bd69508543d93388aa990b314dd1addf900f2fd1fa85ff6dc5d5"
+    },
+    {
+      "path": "task05/requirements.txt",
+      "role": "output",
+      "bytes": 199,
+      "sha256": "d64ba4bb5ec285b962be9288df2d8eba7b7be8cfdbec27316a83a3c0a52dff4c"
+    },
+    {
+      "path": "task05/run_all.py",
+      "role": "code",
+      "bytes": 685,
+      "sha256": "50da9bd221f096bdbe7f5cdc98591ed8e5917fc0c2c5b1d6d5c372061afbe2bb"
+    },
+    {
+      "path": "task05/run_task05.py",
+      "role": "code",
+      "bytes": 18079,
+      "sha256": "4f70a49ffef389e24f7339b47336094dcca977e11f5ceffd68c7e77a547e576c"
+    },
+    {
+      "path": "task05/tests/test_manifest_required.py",
+      "role": "code",
+      "bytes": 800,
+      "sha256": "a78e883dc2502ee8bb7544ca78b5f595c0060c0d1c14518c4e92ea6d23d3b1f6"
+    },
+    {
+      "path": "task05/tests/test_rules.py",
+      "role": "code",
+      "bytes": 2240,
+      "sha256": "070e8b80386f2dcd05ae030e7a0e05afb1c5070e5637a70b84aad89e0694591f"
+    },
+    {
+      "path": "task05/verify_delivery.py",
+      "role": "code",
+      "bytes": 3577,
+      "sha256": "1e564fae8a4f138750119f9191dcbd45f7b644e2b07cf25584a492b4b3faf057"
+    },
+    {
+      "path": "task05/verify_task05.py",
+      "role": "code",
+      "bytes": 16269,
+      "sha256": "9726f38a1773a6e053f57cb7aac290e9c203626ca0ba2a422d126e641e507c19"
+    },
+    {
+      "path": "data/derived/task05/A_sample_day_list_panel13.csv",
+      "role": "output",
+      "bytes": 11337,
+      "sha256": "4920368e18ba1d7ff7fc5e59b139329949a4215dadfd7fbad185fd7f9282c812"
+    },
+    {
+      "path": "data/derived/task05/A_sample_day_list_panel14.csv",
+      "role": "output",
+      "bytes": 4485,
+      "sha256": "e34d0ddf5d379822406a1fa9c36775bb787dd60917ade0b006e9a47528004f35"
+    },
+    {
+      "path": "data/derived/task05/AB_upstream_reaudit.json",
+      "role": "output",
+      "bytes": 14664,
+      "sha256": "41d977639056b5f9cecae72a37bfcfadd7c7191074e1c6941e4317f6116086d2"
+    },
+    {
+      "path": "data/derived/task05/C_case_peak.csv",
+      "role": "output",
+      "bytes": 13603,
+      "sha256": "b045fa70ec87b0d7c2c0168b6bf62df347c44e6bfa903db5dc37e268ba260acd"
+    },
+    {
+      "path": "data/derived/task05/C_peak_summary.csv",
+      "role": "output",
+      "bytes": 1245,
+      "sha256": "c2bdd4739cad084139c56e5c6d5da09980b51a27985791180b43369a521f1a28"
+    },
+    {
+      "path": "data/derived/task05/C_state_rule_audit.json",
+      "role": "output",
+      "bytes": 946,
+      "sha256": "28cb20c0e75855dfb774c8c0e9305f82407041e1e6dcf034adbe6ef77baa3b5a"
+    },
+    {
+      "path": "data/derived/task05/case_manifest.csv",
+      "role": "output",
+      "bytes": 3780,
+      "sha256": "1a6be9a5b79add838e8964965d47df49ca0d90725b34c676b81f5df7d4886c30"
+    },
+    {
+      "path": "data/derived/task05/case_operation_state.csv.gz",
+      "role": "output",
+      "bytes": 72578,
+      "sha256": "4635881951b5421d201fb715d2eb84e0f5812fe410e002343618b3a71afe7b18"
+    },
+    {
+      "path": "data/derived/task05/concurrent_device_count.csv",
+      "role": "output",
+      "bytes": 2885,
+      "sha256": "8f2209f1b65bb6e0a6db70dbf36dc4d83ab476f7e36188a32947d30ec4dc401e"
+    },
+    {
+      "path": "data/derived/task05/confirmed_on_segments.csv",
+      "role": "output",
+      "bytes": 3169390,
+      "sha256": "87cc4761ca493742f0d3d40e51c7c3b64f112e0b8084fb770c96e0938f607672"
+    },
+    {
+      "path": "data/derived/task05/contribution_panel13.csv",
+      "role": "output",
+      "bytes": 9879,
+      "sha256": "f66df39884ed1033dfe9dd1adcff16ad96299a86e4d1b437cefd2d8fcdb737b8"
+    },
+    {
+      "path": "data/derived/task05/contribution_panel14_supplement.csv",
+      "role": "output",
+      "bytes": 22628,
+      "sha256": "9a7c012be3ac088f4745ad041d1536c77dc9c58a22f245c475ac3103cb871a2a"
+    },
+    {
+      "path": "data/derived/task05/first_three_reproduction.json",
+      "role": "output",
+      "bytes": 654,
+      "sha256": "9463f41ac9cc13d7beb80627893bd32015458e435e1a36dffbfc965aff991833"
+    },
+    {
+      "path": "data/derived/task05/minute_operation_state.csv.gz",
+      "role": "output",
+      "bytes": 1516060,
+      "sha256": "4ba8f3800b32b7b00a411a60c75f02ef28704a76bbd6e5fa46f02a72f9e13818"
+    },
+    {
+      "path": "data/derived/task05/monthly_operation_support.csv",
+      "role": "output",
+      "bytes": 9717,
+      "sha256": "6f9cd9d0f628f2fb1f1c5036b6436f30862d717ab702c18265ea09eb4412bfca"
+    },
+    {
+      "path": "data/derived/task05/operation_support.csv",
+      "role": "output",
+      "bytes": 4229,
+      "sha256": "2ac7e7319915d242c1b963168d1a4f0e3b12652e033e58973aa5f28b8e926280"
+    },
+    {
+      "path": "data/derived/task05/operation_thresholds.csv",
+      "role": "rules",
+      "bytes": 7834,
+      "sha256": "183b62186bb0c137c79be47d933cbd09c1123d93eedb3b3a619bc0d17c44315e"
+    },
+    {
+      "path": "data/derived/task05/overlap_group_summary.csv",
+      "role": "output",
+      "bytes": 1651,
+      "sha256": "f1deac299eb72019cab4109972c9590ce3212b1cc6bc43319388de7d62700d5a"
+    },
+    {
+      "path": "data/derived/task05/overlap_summary.csv",
+      "role": "output",
+      "bytes": 82276,
+      "sha256": "0996b196a85d68c7ea8725604785bd1d55bcd71965d87245fbdff30c35c83ca1"
+    },
+    {
+      "path": "data/derived/task05/peak_contribution.csv",
+      "role": "output",
+      "bytes": 1174663,
+      "sha256": "736905521b14aa4175fc3f7ab0e717def20e097800fd9593fb3e31fda83531ec"
+    },
+    {
+      "path": "data/derived/task05/repository_source_audit.json",
+      "role": "output",
+      "bytes": 16673,
+      "sha256": "9f75356f8891a9510b8c3df4b8de6d60856252651e3ad49dc8f31c82f1668a2c"
+    },
+    {
+      "path": "data/derived/task05/rule_boundary_examples.csv",
+      "role": "output",
+      "bytes": 675,
+      "sha256": "8486eaddd1f701769261b7f2a3b63a80a238cf219eef5d92a9be824d80cf6be5"
+    },
+    {
+      "path": "data/derived/task05/sample_minute_masks.csv.gz",
+      "role": "output",
+      "bytes": 1357618,
+      "sha256": "7cd03cfb7ebb3bf4f8683811c1a31039db241a3f07b8a2efd1c2b6c7b01bcdf2"
+    },
+    {
+      "path": "data/derived/task05/sample_support_by_day.csv",
+      "role": "output",
+      "bytes": 45975,
+      "sha256": "4d07fed3957690b42bf4d2f6ba4b0c99c63296f0f38f1dc9be93b2f9ddbc04a4"
+    },
+    {
+      "path": "data/derived/task05/state_generation_record.json",
+      "role": "output",
+      "bytes": 1027,
+      "sha256": "63bd47a0ca3b7120707e70c80735d728d66296f7ae71b963b541e6cc329b0ee7"
+    },
+    {
+      "path": "data/derived/task05/threshold_sensitivity_overlap.csv",
+      "role": "output",
+      "bytes": 14383,
+      "sha256": "b392c5cccbe74fb14ab5149e633e657bc262a6656f1b510e706a30b183ef96c2"
+    },
+    {
+      "path": "data/derived/task05/threshold_sensitivity_support.csv",
+      "role": "output",
+      "bytes": 2764,
+      "sha256": "fc86a57637c0a85d0c198136c2b68ccb2e9117bf21aced070242a3a6448f3592"
+    },
+    {
+      "path": "data/derived/task05/training_candidate_run_lengths.csv",
+      "role": "output",
+      "bytes": 6747,
+      "sha256": "cd118f39ae17796bb171dc2317f355221da08c4fdd2976906bda60a38e479322"
+    },
+    {
+      "path": "data/derived/task05/training_distribution.csv",
+      "role": "output",
+      "bytes": 2022,
+      "sha256": "ebd1740e8276ac7e2e0a5d93a36db18eba65f28378dc1866b8a716c7aef721ad"
+    },
+    {
+      "path": "data/derived/task05/training_histogram.csv",
+      "role": "output",
+      "bytes": 6092,
+      "sha256": "ce21753579ba004faaca7e0a82f202abecb2b8968b88bf7c58eebee9f111537d"
+    },
+    {
+      "path": "data/derived/task05/training_inspection.json",
+      "role": "output",
+      "bytes": 846,
+      "sha256": "ec70a7205fe56517f3011deec2579fb3a6a6a1b435affda0152fc6d6d2d65607"
+    },
+    {
+      "path": "data/derived/task05/training_modes.csv",
+      "role": "output",
+      "bytes": 3842,
+      "sha256": "838edb1ecc12aee85d4a0cd85f1cde2368472b1f80edfc80df57d5e4a31f461b"
+    },
+    {
+      "path": "data/derived/task05/upstream_first_three_manifest.json",
+      "role": "output",
+      "bytes": 11514,
+      "sha256": "15b3543771f76457df2c5a09ed639c6528c911967b6d989fa624684654dda5cd"
+    },
+    {
+      "path": "data/derived/task05/upstream_hour_reconciliation.csv",
+      "role": "output",
+      "bytes": 825533,
+      "sha256": "5701dd1293085c5cb43bc60c4f89970a69bada6fd73639b1b9305f3992c15d29"
+    }
+  ]
+}

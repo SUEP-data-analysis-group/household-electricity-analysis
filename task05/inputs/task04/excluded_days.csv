@@ -1,0 +1,15 @@
+﻿date,valid_hours,coverage,exclusion_reason,natural_day_type,actual_day_type,daily_extrema_determined
+2021-06-01 00:00:00+08:00,13,0.5826388888888889,incomplete_day_13_of_24_hours,weekday,actual_workday,False
+2021-06-02 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekday,actual_workday,False
+2021-06-03 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekday,actual_workday,False
+2021-06-04 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekday,actual_workday,False
+2021-06-05 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekend,actual_restday,False
+2021-06-06 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekend,actual_restday,False
+2021-06-07 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekday,actual_workday,False
+2021-06-08 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekday,actual_workday,False
+2021-06-09 00:00:00+08:00,7,0.3104166666666667,incomplete_day_7_of_24_hours,weekday,actual_workday,False
+2021-07-04 00:00:00+08:00,20,0.8395833333333333,incomplete_day_20_of_24_hours,weekend,actual_restday,False
+2021-07-05 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekday,actual_workday,False
+2021-07-06 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekday,actual_workday,False
+2021-07-07 00:00:00+08:00,0,0.0,incomplete_day_0_of_24_hours,weekday,actual_workday,False
+2021-07-08 00:00:00+08:00,15,0.63125,incomplete_day_15_of_24_hours,weekday,actual_workday,False

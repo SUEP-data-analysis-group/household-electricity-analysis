@@ -1,0 +1,5 @@
+# Repository revision validated with CPython 3.13.5 on Windows.
+# Original package: Python 3.8.16 / NumPy 1.24.4 / pandas 2.0.3 / Matplotlib 3.7.5.
+numpy==2.3.4
+pandas==2.2.3
+matplotlib==3.10.0

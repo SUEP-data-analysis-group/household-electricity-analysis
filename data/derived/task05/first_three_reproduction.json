@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-11-17T20:05:06.584898+08:00",
+  "all_pass": true,
+  "method": "original six scripts replayed in an isolated temporary directory",
+  "numeric_atol": 1e-09,
+  "numeric_rtol": 1e-10,
+  "tables": [
+    {
+      "file": "contribution_panel13.csv",
+      "rows": 28,
+      "values_match": true
+    },
+    {
+      "file": "contribution_panel14_supplement.csv",
+      "rows": 58,
+      "values_match": true
+    },
+    {
+      "file": "peak_contribution.csv",
+      "rows": 4771,
+      "values_match": true
+    },
+    {
+      "file": "case_manifest.csv",
+      "rows": 4,
+      "values_match": true
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "generated_at": "2026-11-17T20:16:25.204632+08:00",
+  "version": "task05_v1.0.1_20261117",
+  "all_pass": true,
+  "check_count": 59,
+  "boundary_unit_tests": 13,
+  "independent_method": "vectorized threshold evidence lengths + most recent confirmation/reset event; no production classify import for full reconstruction",
+  "compared_state_cells": 6851520,
+  "checks": [
+    {
+      "check": "required_derivation_manifest_exists",
+      "passed": true
+    },
+    {
+      "check": "continuous_unique_527040_minute_axis",
+      "passed": true
+    },
+    {
+      "check": "fixed_panel13_no_rice",
+      "passed": true
+    },
+    {
+      "check": "frozen_training_end",
+      "passed": true
+    },
+    {
+      "check": "only_three_states",
+      "passed": true
+    },
+    {
+      "check": "independent_full_state_and_reason_electric_kettle_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_fridge_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_computer_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_tv_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_upstairs_water_heater_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_downstairs_water_heater_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_washing_machine_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_air_conditioner_1_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_air_conditioner_2_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_air_conditioner_3_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_air_conditioner_4_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_air_conditioner_5_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "independent_full_state_and_reason_air_conditioner_6_w",
+      "passed": true,
+      "compared_minutes": 527040
+    },
+    {
+      "check": "source_invalid_always_unknown",
+      "passed": true
+    },
+    {
+      "check": "AC3_all_unknown_energy_retained",
+      "passed": true
+    },
+    {
+      "check": "review_bits_not_deleted_and_no_filling",
+      "passed": true
+    },
+    {
+      "check": "causal_prefix_invariance_91_prefixes",
+      "passed": true,
+      "prefixes": 91
+    },
+    {
+      "check": "support_and_unknown_reason_counts_26_rows",
+      "passed": true
+    },
+    {
+      "check": "monthly_support_sums",
+      "passed": true
+    },
+    {
+      "check": "confirmed_segment_minutes_equal_all_on",
+      "passed": true
+    },
+    {
+      "check": "segment_time_lengths",
+      "passed": true
+    },
+    {
+      "check": "segments_maximal_on_ranges_and_energy",
+      "passed": true,
+      "segments": 18484
+    },
+    {
+      "check": "S12_excludes_only_AC3",
+      "passed": true
+    },
+    {
+      "check": "independent_all_pair_counts_and_five_rates",
+      "passed": true,
+      "rows": 288
+    },
+    {
+      "check": "AC3_24_pair_scope_rows_zero_known_and_missing_rate",
+      "passed": true
+    },
+    {
+      "check": "global_groups_and_concurrency_histograms",
+      "passed": true
+    },
+    {
+      "check": "four_original_case_files_unchanged",
+      "passed": true
+    },
+    {
+      "check": "four_case_days_5760_minutes",
+      "passed": true
+    },
+    {
+      "check": "case_states_and_power_same_minute",
+      "passed": true
+    },
+    {
+      "check": "independent_sensitivity_all_scales",
+      "passed": true
+    },
+    {
+      "check": "unchanged_first_three_values_contribution_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_first_three_values_contribution_panel14_supplement.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_first_three_values_peak_contribution.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_first_three_values_case_manifest.csv",
+      "passed": true
+    },
+    {
+      "check": "case_manifest_bytes_unchanged",
+      "passed": true
+    },
+    {
+      "check": "exact_minute_masks_four_scopes",
+      "passed": true
+    },
+    {
+      "check": "date_lists_include_partial_dates",
+      "passed": true
+    },
+    {
+      "check": "contribution_sample_metadata_matches_masks",
+      "passed": true
+    },
+    {
+      "check": "peak_panel_scope_interval_and_energy_metadata",
+      "passed": true
+    },
+    {
+      "check": "independent_contribution_totals_shares_contribution_panel13.csv",
+      "passed": true
+    },
+    {
+      "check": "independent_contribution_totals_shares_contribution_panel14_supplement.csv",
+      "passed": true
+    },
+    {
+      "check": "main_energy_and_8448_hour_targets",
+      "passed": true
+    },
+    {
+      "check": "incomplete_hour_strict_target_missing",
+      "passed": true
+    },
+    {
+      "check": "363_peak_hours_all13_retained",
+      "passed": true
+    },
+    {
+      "check": "same_time_peak_sum_and_share",
+      "passed": true
+    },
+    {
+      "check": "tied_peak_weights_equal_one_per_352days",
+      "passed": true
+    },
+    {
+      "check": "upstream_and_rule_audits_pass",
+      "passed": true
+    },
+    {
+      "check": "frozen_rules_not_changed_after_C_audit",
+      "passed": true
+    },
+    {
+      "check": "13_boundary_tests_pass",
+      "passed": true
+    },
+    {
+      "check": "missing_manifest_rejected_regression",
+      "passed": true
+    },
+    {
+      "check": "all_required_deliveries_in_manifest",
+      "passed": true
+    },
+    {
+      "check": "first_three_reproduction.json_passes",
+      "passed": true
+    },
+    {
+      "check": "repository_source_audit.json_passes",
+      "passed": true
+    },
+    {
+      "check": "final_manifest_all_file_hashes",
+      "passed": true,
+      "files": 139
+    }
+  ],
+  "limitations": [
+    "Implementation correctness is not operation truth validation.",
+    "No actual task06 model audit performed."
+  ]
+}

@@ -1,0 +1,133 @@
+run_A_input_audit.py
+输入清单：
+                 file    rows    bytes                                                           sha256
+  panel_minute.csv.gz 1054082  9616119 e0ce973fa0e254cf12f2025dab71f60b7f9645b69c36cc1bd21b3a1672853d29
+  power_minute.csv.gz  527041  9314304 a3767f93b9049738fd75b21adbb190a78d822bcd4361ade2b8dcfd6c2b834c95
+panel_definition.json      67     2454 a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb
+    daily_panel13.csv     366    34926 8eacf103edf961e820afcb51d7b23643ed5a1f8df172de8b9a8c82f4dc924d65
+ hourly_appliance.csv  114192 10170016 6de532b6a96c841deac4b46741dea985713ea67cc48c6906d794dc3863006e09
+   hourly_panel13.csv    8784  1088287 2eca7322e043c5115a03b06dc180a4fd05da10c1db6273e56e3ed6c1325876d8
+
+样本支持表：
+            sample_scope  n_samples  n_units                     first                      last  excluded_minutes
+   panel13_complete_352d     506880      352 2021-05-31 00:00:00+08:00 2022-05-31 23:59:00+08:00             20160
+panel13_all_common_valid     510284       14 2021-05-31 00:00:00+08:00 2022-05-31 23:59:00+08:00             16756
+panel14_all_common_valid     217643      148 2021-05-31 00:00:00+08:00 2021-11-09 18:38:00+08:00            309397
+
+时间轴抽检：
+ label                hour_label                             interval  valid_minutes_in_hour  task02_hour_complete  task02_energy_kwh  task02_valid_duration_energy_kwh
+正常完整小时 2021-05-31 00:00:00+08:00 [2021-05-31 00:00, 2021-05-31 01:00)                     60                  True           0.059292                          0.059292
+部分缺测小时 2021-06-01 13:00:00+08:00 [2021-06-01 13:00, 2021-06-01 14:00)                     59                 False                NaN                          0.057205
+跨午夜峰小时 2021-07-12 23:00:00+08:00 [2021-07-12 23:00, 2021-07-13 00:00)                     60                  True           3.438890                          3.438890
+
+A 节点核验：{"period_minutes_527040": true, "main_minutes_506880": true, "panel13_valid_510284": true, "panel14_valid_217643": true, "panel14_days_148": true, "timestamp_unique": true, "no_end_leak": true, "device_list_13_and_14": true}
+all_pass = True
+
+
+run_B_contribution.py
+=== 主结果 352 完整日 ===
+面板电量 2739.597137 kWh；分项之和 2739.597137 kWh；差 0.000e+00；task02 日合计 2739.597137 kWh
+占比合计 1.000000000
+
+=== 补充 510284 分钟 ===
+面板电量 2758.881648 kWh；分项之和 2758.881648 kWh；占比合计 1.000000000
+
+=== panel14 ===
+全期 217643 分钟 1471.415080 kWh；148完整日 213120 分钟 1444.105753 kWh
+
+=== 8448 小时键对账 ===
+             appliance_id  hour_keys  rows  energy_from_hourly_kwh  energy_from_minute_kwh  abs_diff_kwh     rel_diff
+        electric_kettle_w       8448  8448              112.539893              112.539893  2.842171e-13 2.525479e-15
+                 fridge_w       8448  8448              573.938594              573.938594  3.410605e-13 5.942457e-16
+               computer_w       8448  8448                2.055700                2.055700  1.731948e-14 8.425099e-15
+                     tv_w       8448  8448              231.686170              231.686170  2.557954e-13 1.104060e-15
+  upstairs_water_heater_w       8448  8448             1357.253575             1357.253575  4.547474e-13 3.350497e-16
+downstairs_water_heater_w       8448  8448              266.097585              266.097585  5.684342e-14 2.136187e-16
+        washing_machine_w       8448  8448               12.147161               12.147161  2.700062e-13 2.222793e-14
+      air_conditioner_1_w       8448  8448               24.582085               24.582085  8.526513e-14 3.468588e-15
+      air_conditioner_2_w       8448  8448               29.128325               29.128325  3.055334e-13 1.048922e-14
+      air_conditioner_3_w       8448  8448                1.147183                1.147183  1.405542e-13 1.225212e-13
+      air_conditioner_4_w       8448  8448               47.499128               47.499128  2.486900e-13 5.235674e-15
+      air_conditioner_5_w       8448  8448               53.376320               53.376320  1.563194e-13 2.928628e-15
+      air_conditioner_6_w       8448  8448               28.145418               28.145418  2.806644e-13 9.971939e-15
+
+checks: {"main_minutes_506880": true, "main_device_null_values": true, "main_sum_devices_eq_panel_abs_le_1e-6": true, "main_share_sum_eq_1_le_1e-9": true, "main_panel_matches_task02_day_total_le_1e-6": true, "supp_minutes_510284": true, "supp_sum_devices_eq_panel_abs_le_1e-6": true, "supp_share_sum_eq_1_le_1e-9": true, "panel14_minutes_217643": true, "panel14_sum_devices_eq_panel_le_1e-6": true, "panel14_148d_minutes_213120": true, "panel14_148d_sum_le_1e-6": true, "hour_keys_8448": true, "hour_reconcile_rows_109824": true, "hour_vs_minute_max_abs_diff_le_1e-6": true, "separate_denominators": true}
+all_pass = True
+
+=== 主结果 13 台排名 ===
+             appliance_id  energy_kwh    share
+  upstairs_water_heater_w 1357.253575 0.495421
+                 fridge_w  573.938594 0.209497
+downstairs_water_heater_w  266.097585 0.097130
+                     tv_w  231.686170 0.084569
+        electric_kettle_w  112.539893 0.041079
+      air_conditioner_5_w   53.376320 0.019483
+      air_conditioner_4_w   47.499128 0.017338
+      air_conditioner_2_w   29.128325 0.010632
+      air_conditioner_6_w   28.145418 0.010274
+      air_conditioner_1_w   24.582085 0.008973
+        washing_machine_w   12.147161 0.004434
+               computer_w    2.055700 0.000750
+      air_conditioner_3_w    1.147183 0.000419
+
+
+run_C_peak_contribution.py
+峰小时区间：363，全部13台完整：363
+并列峰日数：1
+
+两种峰时口径：
+             appliance_id  typical_peak_share_equal_weight  peak_period_energy_share  peak_period_energy_kwh  n_peak_hours  n_days
+  upstairs_water_heater_w                         0.533227                  0.479683              159.653503           363     352
+downstairs_water_heater_w                         0.166209                  0.240018               79.885398           363     352
+                 fridge_w                         0.112313                  0.083371               27.748627           363     352
+                     tv_w                         0.089162                  0.079460               26.446845           363     352
+        electric_kettle_w                         0.049936                  0.042979               14.304780           363     352
+      air_conditioner_5_w                         0.013581                  0.025780                8.580242           363     352
+      air_conditioner_4_w                         0.011359                  0.018279                6.083675           363     352
+      air_conditioner_6_w                         0.009687                  0.012289                4.090142           363     352
+      air_conditioner_1_w                         0.006580                  0.009788                3.257635           363     352
+        washing_machine_w                         0.004599                  0.004555                1.515886           363     352
+      air_conditioner_2_w                         0.002882                  0.003152                1.048950           363     352
+               computer_w                         0.000269                  0.000498                0.165780           363     352
+      air_conditioner_3_w                         0.000195                  0.000149                0.049736           363     352
+
+四案例分钟峰：
+case_id                      date        timestamp              appliance_id    share
+    C01 2021-08-10 00:00:00+08:00 2021-08-10 07:04 downstairs_water_heater_w 0.967043
+    C01 2021-08-10 00:00:00+08:00 2021-08-10 07:04                  fridge_w 0.029856
+    C01 2021-08-10 00:00:00+08:00 2021-08-10 07:04       air_conditioner_4_w 0.000666
+    C01 2021-08-10 00:00:00+08:00 2021-08-10 07:04       air_conditioner_1_w 0.000634
+    C02 2021-08-22 00:00:00+08:00 2021-08-22 21:37 downstairs_water_heater_w 0.545994
+    C02 2021-08-22 00:00:00+08:00 2021-08-22 21:37   upstairs_water_heater_w 0.270391
+    C02 2021-08-22 00:00:00+08:00 2021-08-22 21:37       air_conditioner_4_w 0.120698
+    C02 2021-08-22 00:00:00+08:00 2021-08-22 21:37                      tv_w 0.037846
+    C03 2021-08-04 00:00:00+08:00 2021-08-04 21:59 downstairs_water_heater_w 0.627446
+    C03 2021-08-04 00:00:00+08:00 2021-08-04 21:59   upstairs_water_heater_w 0.305563
+    C03 2021-08-04 00:00:00+08:00 2021-08-04 21:59                      tv_w 0.038223
+    C03 2021-08-04 00:00:00+08:00 2021-08-04 21:59                  fridge_w 0.026777
+    C04 2021-07-12 00:00:00+08:00 2021-07-12 22:55 downstairs_water_heater_w 0.636070
+    C04 2021-07-12 00:00:00+08:00 2021-07-12 22:55   upstairs_water_heater_w 0.319219
+    C04 2021-07-12 00:00:00+08:00 2021-07-12 22:55                  fridge_w 0.043246
+    C04 2021-07-12 00:00:00+08:00 2021-07-12 22:55       air_conditioner_4_w 0.000347
+
+checks: {"peak_hours_363_inherited": true, "peak_hours_all_13_complete": true, "peak_hours_sum_dev_eq_panel": true, "weights_sum_to_1_per_day": true, "days_covered_352": true, "typical_share_sum_eq_1": true, "energy_weighted_share_sum_eq_1": true, "cases_4_inherited": true, "minute_peak_rows_4cases": true, "minute_peak_share_sum_eq_1_per_case": true}
+all_pass = True
+
+
+make_delivery_tables.py
+panel14 完整日 148 天 / 213120 分钟，与 A 节点一致
+contribution_panel13.csv                 行数 28，逐列一致：是
+contribution_panel14_supplement.csv      行数 58，逐列一致：是
+peak_contribution.csv                    行数 4771，逐列一致：是
+交付表已生成： case_manifest.csv, contribution_panel13.csv, contribution_panel14_supplement.csv, peak_contribution.csv
+
+
+make_manifest.py
+derivation_manifest.json 已生成，all_pass = True
+输入 12 项、代码 6 项、输出 18 项
+
+
+verify_package.py
+核验条目：输入 12、代码 6、输出 18
+不一致： 无
+核验结果： 全部一致

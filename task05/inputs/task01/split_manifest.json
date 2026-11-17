@@ -1,0 +1,25 @@
+{
+  "timezone": "Asia/Shanghai",
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "panel_id": "panel13",
+  "panel_version": "v1.0.0",
+  "E": "2022-06-01 00:00:00+08:00",
+  "train": [
+    "2021-05-31 00:00:00+08:00",
+    "2022-03-09 00:00:00+08:00"
+  ],
+  "validation": [
+    "2022-03-09 00:00:00+08:00",
+    "2022-04-06 00:00:00+08:00"
+  ],
+  "test": [
+    "2022-04-06 00:00:00+08:00",
+    "2022-06-01 00:00:00+08:00"
+  ],
+  "intervals": "left-closed right-open; contiguous calendar days, no compression",
+  "release_time": "D 00:00 Asia/Shanghai",
+  "required_history_hours": 168,
+  "availability_assumption": "previous hour final by D 00:00; publication latency unavailable, must be stated in task06",
+  "conservative_mask": "previous 168 hourly targets and next 24 target hours all strict-valid; future feature selection not implemented",
+  "first_possible_origin": "2021-06-07 00:00:00+08:00"
+}
