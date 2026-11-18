@@ -1,0 +1,53 @@
+{
+  "start_commit": "3bc432cd85f2d233d166e7d186b1b450e7c48f20",
+  "branch": "task06/day-ahead-audit-20261118",
+  "created_at": "2026-11-18T11:00:36.308717+00:00",
+  "upstream_versions": {
+    "task02": "task02_v1.1.0_20261113",
+    "task03": "task03_v1.1.0_20261113",
+    "task04": "task04_v1.0.1_20261114"
+  },
+  "inputs": [
+    {
+      "path": "data/derived/task02/hourly_panel13.csv",
+      "actual_path": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\household-electricity-analysis\\data\\derived\\task02\\hourly_panel13.csv",
+      "sha256": "27b142997501ac43ee394a2774976dfbd498972af0d32c4ba27b8d3ad23544ee"
+    },
+    {
+      "path": "task01/reports/panel_definition.json",
+      "actual_path": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\household-electricity-analysis\\task01\\reports\\panel_definition.json",
+      "sha256": "a32a7ca09bea8b3a50f5faebc464ba0caa5e1ddd24d62d6f081253adf1842deb"
+    },
+    {
+      "path": "task01/reports/split_manifest.json",
+      "actual_path": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\household-electricity-analysis\\task01\\reports\\split_manifest.json",
+      "sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8"
+    },
+    {
+      "path": "task01/reports/forecast_origin_quality.csv",
+      "actual_path": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\household-electricity-analysis\\task01\\reports\\forecast_origin_quality.csv",
+      "sha256": "fc271cb10b74227b1c4e58239b774ff30a62fcad106de3f00261fbdacd034f29"
+    },
+    {
+      "path": "task01/reports/strict_hourly_check.csv",
+      "actual_path": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\household-electricity-analysis\\task01\\reports\\strict_hourly_check.csv",
+      "sha256": "563d43539aeefd3c09efdbde8ea691313f982115da26eb842f0603660a221b18"
+    },
+    {
+      "path": "data/derived/task03/holiday_calendar_2021_2022.csv",
+      "actual_path": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\household-electricity-analysis\\data\\derived\\task03\\holiday_calendar_2021_2022.csv",
+      "sha256": "4ddf6a97133f94a4ad336b42b77b93782cc9ad64439b0704370e0c85b46de3c1"
+    },
+    {
+      "path": "task03/sources/holiday_rules.json",
+      "actual_path": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\household-electricity-analysis\\task03\\sources\\holiday_rules.json",
+      "sha256": "7ee7ea9566761ff56402577d41c50d5908128049b24eda538304d1d086e0e480"
+    },
+    {
+      "path": "data/derived/task04/thresholds.json",
+      "actual_path": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\household-electricity-analysis\\data\\derived\\task04\\thresholds.json",
+      "sha256": "2b570312dd0de69c2ce7c3e12d998ab7628a66d4953edb4668960a5c9e496166"
+    }
+  ],
+  "strict_label_max_abs_difference": 4.440892098500626e-16
+}

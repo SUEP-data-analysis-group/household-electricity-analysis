@@ -1,0 +1,321 @@
+{
+  "version": "task06_v1.0.0_20261118",
+  "timezone": "Asia/Shanghai",
+  "data_version": "cn_obee_v1_noimpute_v1.0.0",
+  "panel": "panel13/v1.0.0",
+  "devices": [
+    "electric_kettle_w",
+    "fridge_w",
+    "computer_w",
+    "tv_w",
+    "upstairs_water_heater_w",
+    "downstairs_water_heater_w",
+    "washing_machine_w",
+    "air_conditioner_1_w",
+    "air_conditioner_2_w",
+    "air_conditioner_3_w",
+    "air_conditioner_4_w",
+    "air_conditioner_5_w",
+    "air_conditioner_6_w"
+  ],
+  "inputs": [
+    "data/derived/task02/hourly_panel13.csv",
+    "task01/reports/panel_definition.json",
+    "task01/reports/split_manifest.json",
+    "task01/reports/forecast_origin_quality.csv",
+    "task01/reports/strict_hourly_check.csv",
+    "data/derived/task03/holiday_calendar_2021_2022.csv",
+    "task03/sources/holiday_rules.json",
+    "data/derived/task04/thresholds.json"
+  ],
+  "target": "mean_power_kw",
+  "unit": "kW",
+  "dtype": "float64",
+  "imputation": 0,
+  "target_semantics": "hourly time mean of SUM of fixed 13 monitored devices",
+  "splits": {
+    "train": [
+      "2021-05-31 00:00:00+08:00",
+      "2022-03-09 00:00:00+08:00"
+    ],
+    "validation": [
+      "2022-03-09 00:00:00+08:00",
+      "2022-04-06 00:00:00+08:00"
+    ],
+    "test": [
+      "2022-04-06 00:00:00+08:00",
+      "2022-06-01 00:00:00+08:00"
+    ]
+  },
+  "release": "D 00:00; horizons 0..23",
+  "latency_hours": [
+    0,
+    1
+  ],
+  "availability": "s + 1h + latency <= origin; source_timestamp < origin",
+  "windows": {
+    "0h": "[D-24h,D), [D-168h,D); recent D-1h",
+    "1h": "[D-25h,D-1h), [D-169h,D-1h); recent D-2h"
+  },
+  "lag24_fallback": "1h h=23 only: lag48 when nominal lag24 not yet published; no missing-value fallback",
+  "numeric_features": [
+    "lag24",
+    "lag168",
+    "recent",
+    "mean_24h",
+    "std_24h",
+    "min_24h",
+    "max_24h",
+    "mean_168h",
+    "std_168h",
+    "min_168h",
+    "max_168h"
+  ],
+  "categorical_features": {
+    "horizon": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "weekday": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "month": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "natural_weekend": [
+      0,
+      1
+    ],
+    "actual_workday": [
+      0,
+      1
+    ],
+    "is_holiday_break": [
+      0,
+      1
+    ],
+    "is_makeup_workday": [
+      0,
+      1
+    ],
+    "holiday_name": [
+      "",
+      "元旦",
+      "春节",
+      "清明节",
+      "劳动节",
+      "端午节",
+      "中秋节",
+      "国庆节"
+    ],
+    "makeup_for_holiday": [
+      "",
+      "元旦",
+      "春节",
+      "清明节",
+      "劳动节",
+      "端午节",
+      "中秋节",
+      "国庆节"
+    ]
+  },
+  "encoding": "fixed full one-hot categories for ALL learning models; no load-derived categories",
+  "scaling": "Linear-L1 numeric only StandardScaler fitted on respective fit rows",
+  "release_eligibility": "known complete 168h history, required lags and published calendar only",
+  "target_complete": "all 24 strict labels finite; post-release scoring only",
+  "common_score_mask": "release eligible AND target_complete, frozen before any scores; same for ablations",
+  "fit_eligibility": "common mask and ALL day labels available at fit_cutoff",
+  "validation_selection": "validation common mask AND all labels available at test_start",
+  "initial_fit_cutoff": "2022-03-09 00:00:00+08:00",
+  "refit_cutoff": "2022-04-06 00:00:00+08:00",
+  "training": "one shared horizon model; initial train fit; select on validation MAE; refit once before test; fixed during test",
+  "linear": {
+    "quantile": 0.5,
+    "solver": "highs",
+    "alphas": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "solver_options": {
+      "threads": 4
+    },
+    "tie_break": "MAE within 1e-12 -> larger alpha"
+  },
+  "lightgbm": {
+    "fixed": {
+      "objective": "regression_l1",
+      "metric": "l1",
+      "device_type": "cpu",
+      "learning_rate": 0.05,
+      "max_depth": 4,
+      "random_state": 42,
+      "n_jobs": 4,
+      "deterministic": true,
+      "force_col_wise": true,
+      "subsample": 1.0,
+      "subsample_freq": 0,
+      "colsample_bytree": 1.0,
+      "verbosity": -1
+    },
+    "candidates": [
+      {
+        "n_estimators": 200,
+        "num_leaves": 7,
+        "min_child_samples": 80
+      },
+      {
+        "n_estimators": 200,
+        "num_leaves": 7,
+        "min_child_samples": 40
+      },
+      {
+        "n_estimators": 200,
+        "num_leaves": 15,
+        "min_child_samples": 80
+      },
+      {
+        "n_estimators": 200,
+        "num_leaves": 15,
+        "min_child_samples": 40
+      },
+      {
+        "n_estimators": 500,
+        "num_leaves": 7,
+        "min_child_samples": 80
+      },
+      {
+        "n_estimators": 500,
+        "num_leaves": 7,
+        "min_child_samples": 40
+      },
+      {
+        "n_estimators": 500,
+        "num_leaves": 15,
+        "min_child_samples": 80
+      },
+      {
+        "n_estimators": 500,
+        "num_leaves": 15,
+        "min_child_samples": 40
+      }
+    ],
+    "early_stopping": false,
+    "tie_break": "within 1e-12 -> fewer trees, fewer leaves, larger min_child_samples"
+  },
+  "ablations": {
+    "NoCalendar": "remove all calendar fields; retain horizon",
+    "No168Stats": "remove only 168h mean/std/min/max; retain lag168"
+  },
+  "ablation_parameters": "Full selected parameters, no independent search",
+  "prediction_postprocess": "max(raw_pred,0); save raw and clipped counts",
+  "primary_metric": "MAE",
+  "secondary_metrics": [
+    "RMSE",
+    "high_load",
+    "daily_peak"
+  ],
+  "high_load": {
+    "q": 0.7326097666666669,
+    "rule": "y_true > q on common mask",
+    "fit_hours": 6487,
+    "metrics": [
+      "MAE_H",
+      "Bias_H",
+      "U_H",
+      "under_rate",
+      "conditional_gap",
+      "gap_q90",
+      "FNR_H",
+      "over_mean_all"
+    ]
+  },
+  "peak": {
+    "ties": "exact unrounded float64",
+    "predicted_tie": "earliest",
+    "main": "min(abs(t_true - earliest_predicted_peak)); ordinary within-day hours",
+    "secondary": [
+      "circular earliest-predicted distance",
+      "mean nearest ordinary distance over all predicted ties"
+    ],
+    "true_flat": "timing NA; amplitude retained",
+    "pred_flat": "retained; earliest=0"
+  },
+  "bootstrap": {
+    "B": 10000,
+    "seed": 42,
+    "interval": [
+      2.5,
+      97.5
+    ],
+    "valid_fraction": 0.95,
+    "primary": "8 non-overlapping 7-day blocks anchored 2022-04-06; sample 8 with replacement",
+    "sensitivity": "non-circular moving day blocks L=3,7,14; uniform starts 0..56-L; concatenate ceil(56/L), truncate 56",
+    "pairing": "same sampled days for all models and metrics; recompute subset numerator/denominator",
+    "uncertainty_target": "frozen forecast evaluation metrics, NOT future-load prediction intervals"
+  },
+  "stable_improvement": "for EACH B1 and B2: Full-baseline MAE<0, primary 95% upper<0, >=6/8 weekly differences<0",
+  "practical_improvement_delta": null,
+  "tau_U": null,
+  "tau_P": null,
+  "tau_T": null,
+  "p_day": null,
+  "p_high": null,
+  "noninferiority_epsilon": null,
+  "case_rules": [
+    "first complete test day",
+    "highest true test peak (post-hoc diagnostic)",
+    "worst Full daily test MAE (post-hoc diagnostic)"
+  ],
+  "limitations": [
+    "one household panel, fixed published data and assumed availability",
+    "test 2022-04-06..2022-05-31 only; no annual/cross-household claim",
+    "upstream per-point filling unknown; new imputation=0",
+    "upstream full-period descriptive work informed design; retrospective exploration",
+    "no online release logs or simulation of training/service latency",
+    "hours/days/weeks not proved independent; N_eff not estimated; only 8 blocks",
+    "10000 draws are not new observations; cross-week dependence and nonstationarity matter",
+    "horizon/ablation intervals are marginal, no simultaneous significance claim",
+    "CI crossing zero does not show equivalence/noninferiority"
+  ]
+}

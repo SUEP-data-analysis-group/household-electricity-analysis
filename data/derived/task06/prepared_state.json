@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-11-18T11:01:47.263276+00:00",
+  "config_sha256": "0e88ab10e7981ddbc222233fd18f094612b9b9251db02fb75573760d19e2b3b8",
+  "mask_sha256": "b975658a2d58df1c00692d68672910f1d3efc3dc0306d655922997b3acd8635e",
+  "feature_hashes": {
+    "0h": "41fafd5c7ecc21cfe2d975c1579f6efc602695aca7c1a752edf3fd3ce20db086",
+    "1h": "37e66163063abd75c9853276bb4f271162d6130f36c9e6e7202caebe15ea7a39"
+  },
+  "sample_hashes": {
+    "0h": "fcff6372f9542777a34d466883f3c309f3ca24d129df0ced3455ffcd810b9c83",
+    "1h": "ee10ff132516bca478abd7f7ed9079042860fbf44ffd1e43ca7773baeed9680a"
+  }
+}

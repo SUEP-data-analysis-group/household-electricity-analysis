@@ -1,0 +1,2 @@
+# These audited artifacts and frozen source hashes must survive checkout byte-for-byte.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

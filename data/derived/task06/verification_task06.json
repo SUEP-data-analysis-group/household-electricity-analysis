@@ -1,0 +1,269 @@
+{
+  "version": "task06_v1.0.0_20261118",
+  "created_at": "2026-11-18T11:20:22.179099+00:00",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "input_timezone_grid_devices_splits_strict_labels",
+      "status": "passed",
+      "details": {
+        "strict_hours": 8503,
+        "missing_hours": 281,
+        "max_label_difference_kw": 4.440892098500626e-16,
+        "devices": [
+          "electric_kettle_w",
+          "fridge_w",
+          "computer_w",
+          "tv_w",
+          "upstairs_water_heater_w",
+          "downstairs_water_heater_w",
+          "washing_machine_w",
+          "air_conditioner_1_w",
+          "air_conditioner_2_w",
+          "air_conditioner_3_w",
+          "air_conditioner_4_w",
+          "air_conditioner_5_w",
+          "air_conditioner_6_w"
+        ]
+      }
+    },
+    {
+      "name": "independently_reconstructed_masks_and_delayed_label_cutoffs",
+      "status": "passed",
+      "details": [
+        {
+          "scenario": "0h",
+          "score_days": {
+            "train": 253,
+            "validation": 28,
+            "test": 56
+          },
+          "initial_fit_days": 253,
+          "refit_days": 281,
+          "selection_days": 28
+        },
+        {
+          "scenario": "1h",
+          "score_days": {
+            "train": 253,
+            "validation": 28,
+            "test": 56
+          },
+          "initial_fit_days": 252,
+          "refit_days": 280,
+          "selection_days": 27
+        }
+      ]
+    },
+    {
+      "name": "source_times_publication_times_and_calendar_public_dates",
+      "status": "passed",
+      "details": {
+        "rows": 47580,
+        "fallback_rows": 366,
+        "calendar_date_may_be_future": true
+      }
+    },
+    {
+      "name": "six_method_keys_masks_and_no_dynamic_deletion",
+      "status": "passed",
+      "details": {
+        "rows": 105408,
+        "common_score_keys": 16176
+      }
+    },
+    {
+      "name": "fitting_selection_scaling_and_ablation_cutoffs",
+      "status": "passed",
+      "details": {
+        "saved_model_stages": 16,
+        "validation_candidates": 24
+      }
+    },
+    {
+      "name": "future_record_perturbation_deletion_and_posthoc_quality_invariance",
+      "status": "passed",
+      "details": [
+        {
+          "scenario": "0h",
+          "model": "Linear-L1",
+          "operation": "perturbed",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "0h",
+          "model": "Linear-L1",
+          "operation": "deleted",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "0h",
+          "model": "Full",
+          "operation": "perturbed",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "0h",
+          "model": "Full",
+          "operation": "deleted",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "0h",
+          "model": "NoCalendar",
+          "operation": "perturbed",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "0h",
+          "model": "NoCalendar",
+          "operation": "deleted",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "0h",
+          "model": "No168Stats",
+          "operation": "perturbed",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "0h",
+          "model": "No168Stats",
+          "operation": "deleted",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "0h",
+          "operation": "target_missing_and_QC_changed",
+          "release_unchanged": true,
+          "score_mask_changed": true
+        },
+        {
+          "scenario": "1h",
+          "model": "Linear-L1",
+          "operation": "perturbed",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "1h",
+          "model": "Linear-L1",
+          "operation": "deleted",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "1h",
+          "model": "Full",
+          "operation": "perturbed",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "1h",
+          "model": "Full",
+          "operation": "deleted",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "1h",
+          "model": "NoCalendar",
+          "operation": "perturbed",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "1h",
+          "model": "NoCalendar",
+          "operation": "deleted",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "1h",
+          "model": "No168Stats",
+          "operation": "perturbed",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "1h",
+          "model": "No168Stats",
+          "operation": "deleted",
+          "origin": "2022-04-06 00:00:00+08:00",
+          "max_prediction_difference_kw": 0.0
+        },
+        {
+          "scenario": "1h",
+          "operation": "target_missing_and_QC_changed",
+          "release_unchanged": true,
+          "score_mask_changed": true
+        }
+      ]
+    },
+    {
+      "name": "one_hour_fallback_and_last_validation_day",
+      "status": "passed",
+      "details": {
+        "fallback_horizon": 23,
+        "all_learning_variants_share_feature": true,
+        "last_validation_day": "2022-04-05",
+        "excluded_from_selection_and_refit": true
+      }
+    },
+    {
+      "name": "independent_csv_point_high_peak_daily_horizon_weekly_metrics",
+      "status": "passed",
+      "details": {
+        "independent_numeric_checks": 72036,
+        "tolerance_kw_or_h": 1e-12
+      }
+    },
+    {
+      "name": "reloaded_models_and_original_validation_predictions",
+      "status": "passed",
+      "details": {
+        "stages": 16,
+        "maximum_difference_kw": 0,
+        "tolerance_kw": 1e-12
+      }
+    },
+    {
+      "name": "bootstrap_pairing_subsets_quantiles_intervals_and_indices",
+      "status": "passed",
+      "details": {
+        "direct_replicate_metric_checks": 15360,
+        "independently_recomputed_MAE_intervals": 40,
+        "pairing": "single day-index array applied to every method",
+        "tolerance": 1e-12
+      }
+    },
+    {
+      "name": "configuration_freeze_and_upstream_original_bytes",
+      "status": "passed",
+      "details": {
+        "upstream_files_byte_identical": 328,
+        "test_predicted_after_freeze": true,
+        "frozen_core_source_files_unchanged": 4
+      }
+    },
+    {
+      "name": "explicit_peak_highload_interval_and_selection_counterexamples",
+      "status": "passed",
+      "details": "........                                                                 [100%]\n8 passed in 12.83s"
+    }
+  ],
+  "passed": 12,
+  "failed": 0,
+  "independent_path": "saved CSV arithmetic, explicit artificial examples, frozen-model metamorphic experiments; not a production-function rerun",
+  "limitations": "independent code path in same process/environment; no external human reviewer implied"
+}

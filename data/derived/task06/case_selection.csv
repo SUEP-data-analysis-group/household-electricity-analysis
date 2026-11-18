@@ -1,0 +1,7 @@
+﻿scenario,origin,selection_rule,posthoc
+0h,2022-04-06 00:00:00+08:00,First complete day,False
+0h,2022-04-09 00:00:00+08:00,Highest true peak [post-hoc],True
+0h,2022-04-09 00:00:00+08:00,Worst Full daily MAE [post-hoc],True
+1h,2022-04-06 00:00:00+08:00,First complete day,False
+1h,2022-04-09 00:00:00+08:00,Highest true peak [post-hoc],True
+1h,2022-04-09 00:00:00+08:00,Worst Full daily MAE [post-hoc],True

@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "created_at": "2026-11-18T11:23:24.644772+00:00",
+  "actual_command": "& ..\\.venv\\Scripts\\python.exe task06/run_task06.py all --output-root work/task06_reproduction/data --report-root work/task06_reproduction/reports",
+  "primary_accepted_checks": 12,
+  "reproduction_accepted_checks": 12,
+  "separately_retrained": true,
+  "changed_hyperparameters_or_rules": false,
+  "observed_stage_span_seconds": 301.488997399,
+  "span_definition": "derived from first stage timestamp to last completed report timestamp; excludes interpreter startup and final manifest I/O",
+  "checks": [
+    {
+      "file": "predictions.csv",
+      "rows": 105408,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "baseline_predictions.csv",
+      "rows": 35136,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "metrics.csv",
+      "rows": 36,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "high_load_metrics.csv",
+      "rows": 36,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "daily_peak_metrics.csv",
+      "rows": 4044,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "daily_metrics.csv",
+      "rows": 4044,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "horizon_metrics.csv",
+      "rows": 864,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "weekly_metrics.csv",
+      "rows": 600,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "uncertainty_summary.csv",
+      "rows": 1408,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "information_sensitivity.csv",
+      "rows": 36,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "common_score_mask.csv",
+      "rows": 17568,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    },
+    {
+      "file": "stability_conclusions.csv",
+      "rows": 4,
+      "exact_frame_equality": true,
+      "byte_identical": true,
+      "maximum_numeric_difference": 0
+    }
+  ]
+}
