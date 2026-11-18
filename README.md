@@ -18,7 +18,7 @@
 
 task04 新增版本：[本地审核版 v1.0.0](https://github.com/SUEP-data-analysis-group/household-electricity-analysis/tree/task04_v1.0.0_20261114/task04)；当前推荐 **task04_v1.0.1_20261114**，见 [README](task04/README.md)、[版本记录](task04/CHANGELOG.md)和 [正式数据](data/derived/task04/)。两版 11 份 CSV 字节一致，v1.0.1 适配仓库运行路径。
 
-旧版通过 Git 历史标签保留，主分支不重复摆放多套旧结果。各任务目录存程序/报告，正式数据集中在 `data/derived/`；task03 另附 [可独立复跑的完整 ZIP](task03/deliverables/task03_工作日与休息日比较_完整成果包.zip)。
+旧版通过 Git 历史标签保留，主分支不重复摆放多套旧结果。各任务目录存程序/报告，正式数据集中在 `data/derived/`。
 
 ## 2026-11-14：task04 已交付
 
