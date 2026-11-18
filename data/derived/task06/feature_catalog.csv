@@ -1,0 +1,21 @@
+﻿feature,group,dtype,categories,definition,source,source_rule,retained_NoCalendar,retained_No168Stats
+horizon,horizon,category,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]",horizon,published target calendar,calendar public_available_at <= origin,True,True
+weekday,calendar,category,"[0, 1, 2, 3, 4, 5, 6]",weekday,published target calendar,calendar public_available_at <= origin,False,True
+month,calendar,category,"[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]",month,published target calendar,calendar public_available_at <= origin,False,True
+natural_weekend,calendar,category,"[0, 1]",natural_weekend,published target calendar,calendar public_available_at <= origin,False,True
+actual_workday,calendar,category,"[0, 1]",actual_workday,published target calendar,calendar public_available_at <= origin,False,True
+is_holiday_break,calendar,category,"[0, 1]",is_holiday_break,published target calendar,calendar public_available_at <= origin,False,True
+is_makeup_workday,calendar,category,"[0, 1]",is_makeup_workday,published target calendar,calendar public_available_at <= origin,False,True
+holiday_name,calendar,category,"["""", ""元旦"", ""春节"", ""清明节"", ""劳动节"", ""端午节"", ""中秋节"", ""国庆节""]",holiday_name,published target calendar,calendar public_available_at <= origin,False,True
+makeup_for_holiday,calendar,category,"["""", ""元旦"", ""春节"", ""清明节"", ""劳动节"", ""端午节"", ""中秋节"", ""国庆节""]",makeup_for_holiday,published target calendar,calendar public_available_at <= origin,False,True
+lag24,history,float64,null,lag24,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,True
+lag168,history,float64,null,lag168,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,True
+recent,history,float64,null,recent,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,True
+mean_24h,history,float64,null,mean_24h,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,True
+std_24h,history,float64,null,population std ddof=0,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,True
+min_24h,history,float64,null,min_24h,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,True
+max_24h,history,float64,null,max_24h,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,True
+mean_168h,168h_stats,float64,null,mean_168h,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,False
+std_168h,168h_stats,float64,null,population std ddof=0,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,False
+min_168h,168h_stats,float64,null,min_168h,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,False
+max_168h,168h_stats,float64,null,max_168h,strict mean_power_kw history,source < origin; source+1h+latency <= origin,True,False

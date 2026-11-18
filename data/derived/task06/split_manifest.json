@@ -1,0 +1,102 @@
+{
+  "upstream": {
+    "timezone": "Asia/Shanghai",
+    "data_version": "cn_obee_v1_noimpute_v1.0.0",
+    "panel_id": "panel13",
+    "panel_version": "v1.0.0",
+    "E": "2022-06-01 00:00:00+08:00",
+    "train": [
+      "2021-05-31 00:00:00+08:00",
+      "2022-03-09 00:00:00+08:00"
+    ],
+    "validation": [
+      "2022-03-09 00:00:00+08:00",
+      "2022-04-06 00:00:00+08:00"
+    ],
+    "test": [
+      "2022-04-06 00:00:00+08:00",
+      "2022-06-01 00:00:00+08:00"
+    ],
+    "intervals": "left-closed right-open; contiguous calendar days, no compression",
+    "release_time": "D 00:00 Asia/Shanghai",
+    "required_history_hours": 168,
+    "availability_assumption": "previous hour final by D 00:00; publication latency unavailable, must be stated in task06",
+    "conservative_mask": "previous 168 hourly targets and next 24 target hours all strict-valid; future feature selection not implemented",
+    "first_possible_origin": "2021-06-07 00:00:00+08:00"
+  },
+  "upstream_sha256": "182ee550f3d98550bffdbf545459f0e8ec8fe0543b3771ab666f2ccacced85b8",
+  "scenarios": [
+    {
+      "scenario": "0h",
+      "split": "train",
+      "calendar_origins": 282,
+      "release_origins": 254,
+      "complete_target_origins": 268,
+      "score_origins": 253,
+      "score_hours": 6072,
+      "initial_fit_origins": 253,
+      "refit_origins": 253,
+      "validation_selection_origins": 0
+    },
+    {
+      "scenario": "0h",
+      "split": "validation",
+      "calendar_origins": 28,
+      "release_origins": 28,
+      "complete_target_origins": 28,
+      "score_origins": 28,
+      "score_hours": 672,
+      "initial_fit_origins": 0,
+      "refit_origins": 28,
+      "validation_selection_origins": 28
+    },
+    {
+      "scenario": "0h",
+      "split": "test",
+      "calendar_origins": 56,
+      "release_origins": 56,
+      "complete_target_origins": 56,
+      "score_origins": 56,
+      "score_hours": 1344,
+      "initial_fit_origins": 0,
+      "refit_origins": 0,
+      "validation_selection_origins": 0
+    },
+    {
+      "scenario": "1h",
+      "split": "train",
+      "calendar_origins": 282,
+      "release_origins": 254,
+      "complete_target_origins": 268,
+      "score_origins": 253,
+      "score_hours": 6072,
+      "initial_fit_origins": 252,
+      "refit_origins": 253,
+      "validation_selection_origins": 0
+    },
+    {
+      "scenario": "1h",
+      "split": "validation",
+      "calendar_origins": 28,
+      "release_origins": 28,
+      "complete_target_origins": 28,
+      "score_origins": 28,
+      "score_hours": 672,
+      "initial_fit_origins": 0,
+      "refit_origins": 27,
+      "validation_selection_origins": 27
+    },
+    {
+      "scenario": "1h",
+      "split": "test",
+      "calendar_origins": 56,
+      "release_origins": 56,
+      "complete_target_origins": 56,
+      "score_origins": 56,
+      "score_hours": 1344,
+      "initial_fit_origins": 0,
+      "refit_origins": 0,
+      "validation_selection_origins": 0
+    }
+  ]
+}

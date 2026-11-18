@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-11-18",
+  "method": "Web reader opened official source pages; upstream archived HTML retained without edits",
+  "calendar": [
+    {"year": 2021, "url": "https://app.www.gov.cn/govdata/gov/202011/26/465359/article.html", "notice_date": "2020-11-25", "public_date": "2020-11-26", "status": "official page opened and date checked"},
+    {"year": 2022, "url": "https://app.www.gov.cn/govdata/gov/202110/25/477434/article.html", "notice_date": "2021-10-25", "public_date": "2021-10-25", "status": "official page opened and date checked"}
+  ],
+  "calendar_time_assumption": "No publication time of day obtained; public_available_at is next local midnight, Asia/Shanghai",
+  "documentation": [
+    {"url": "https://lightgbm.readthedocs.io/en/stable/Parameters.html", "status": "opened; version 4.7.0; deterministic CPU and force_col_wise settings checked"},
+    {"url": "https://lightgbm.readthedocs.io/en/stable/Parameters-Tuning.html", "status": "opened"},
+    {"url": "https://lightgbm.readthedocs.io/en/stable/GPU-Performance.html", "status": "opened; GPU not assumed necessary"},
+    {"url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.QuantileRegressor.html", "status": "opened; version 1.9.1; median quantile and highs solver checked"},
+    {"url": "https://link.springer.com/article/10.1007/s10618-022-00894-5", "status": "opened"},
+    {"url": "https://neurips.cc/public/guides/PaperChecklist", "status": "opened"},
+    {"url": "https://www.nature.com/articles/s41597-023-02891-9", "status": "publisher retrieval redirected to inaccessible identity page; repository archived source metadata used for dataset context"}
+  ]
+}

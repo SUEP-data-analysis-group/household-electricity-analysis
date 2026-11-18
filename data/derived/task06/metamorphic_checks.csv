@@ -1,0 +1,19 @@
+﻿scenario,model,operation,origin,max_prediction_difference_kw,release_unchanged,score_mask_changed
+0h,Linear-L1,perturbed,2022-04-06 00:00:00+08:00,0.0,,
+0h,Linear-L1,deleted,2022-04-06 00:00:00+08:00,0.0,,
+0h,Full,perturbed,2022-04-06 00:00:00+08:00,0.0,,
+0h,Full,deleted,2022-04-06 00:00:00+08:00,0.0,,
+0h,NoCalendar,perturbed,2022-04-06 00:00:00+08:00,0.0,,
+0h,NoCalendar,deleted,2022-04-06 00:00:00+08:00,0.0,,
+0h,No168Stats,perturbed,2022-04-06 00:00:00+08:00,0.0,,
+0h,No168Stats,deleted,2022-04-06 00:00:00+08:00,0.0,,
+0h,,target_missing_and_QC_changed,,,True,True
+1h,Linear-L1,perturbed,2022-04-06 00:00:00+08:00,0.0,,
+1h,Linear-L1,deleted,2022-04-06 00:00:00+08:00,0.0,,
+1h,Full,perturbed,2022-04-06 00:00:00+08:00,0.0,,
+1h,Full,deleted,2022-04-06 00:00:00+08:00,0.0,,
+1h,NoCalendar,perturbed,2022-04-06 00:00:00+08:00,0.0,,
+1h,NoCalendar,deleted,2022-04-06 00:00:00+08:00,0.0,,
+1h,No168Stats,perturbed,2022-04-06 00:00:00+08:00,0.0,,
+1h,No168Stats,deleted,2022-04-06 00:00:00+08:00,0.0,,
+1h,,target_missing_and_QC_changed,,,True,True

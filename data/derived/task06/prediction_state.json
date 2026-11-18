@@ -1,0 +1,7 @@
+{
+  "created_at": "2026-11-18T11:11:34.239439+00:00",
+  "frozen_sha256": "aac37411f953c5ebe18820286a2c1b9b04d0a6981588f2a5ca9f11dcbd83da94",
+  "predictions_sha256": "2ce13e38efe7f5a8493c0dfa04b9e32bff37869a80b941c945a37ad83130a210",
+  "rows": 105408,
+  "test_forecasts_generated_after_frozen_config": true
+}

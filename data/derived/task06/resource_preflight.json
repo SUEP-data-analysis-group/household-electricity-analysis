@@ -1,0 +1,86 @@
+{
+  "created_at": "2026-11-18T11:02:08.059280+00:00",
+  "python": "C:\\Users\\user\\Documents\\Codex\\2026-11-18\\files-pasted-by-the-user-task06\\work\\.venv\\Scripts\\python.exe",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "logical_cpus": 20,
+  "physical_cpus": 14,
+  "threads": 4,
+  "total_memory_bytes": 33947578368,
+  "available_memory_bytes": 16364376064,
+  "feature_build_measured": {
+    "stage": "prepare_inputs_and_features",
+    "started_at": "2026-11-18T11:00:22.035570+00:00",
+    "rss_before_bytes": 152899584,
+    "0h_shape": [
+      8784,
+      20
+    ],
+    "1h_shape": [
+      8784,
+      20
+    ],
+    "status": "ok",
+    "wall_seconds": 85.51776539999992,
+    "rss_after_bytes": 215261184,
+    "process_peak_rss_bytes": 222887936
+  },
+  "raw_feature_dimension": 20,
+  "encoded_feature_dimension": 78,
+  "measured_fits": {
+    "Full": {
+      "stage": "preflight_fit",
+      "started_at": "2026-11-18T11:01:57.150966+00:00",
+      "rss_before_bytes": 154071040,
+      "variant": "Full",
+      "n_rows": 6072,
+      "fit_seconds": 0.7172333999988041,
+      "solver_status": "success",
+      "solver_iterations": 200,
+      "warnings": [],
+      "encoded_dimensions": 78,
+      "status": "ok",
+      "wall_seconds": 0.7825106000000233,
+      "rss_after_bytes": 159858688,
+      "process_peak_rss_bytes": 166768640
+    },
+    "Linear-L1": {
+      "stage": "preflight_fit",
+      "started_at": "2026-11-18T11:01:57.939875+00:00",
+      "rss_before_bytes": 159866880,
+      "variant": "Linear-L1",
+      "n_rows": 6072,
+      "fit_seconds": 10.01543220000167,
+      "solver_status": "success",
+      "solver_iterations": 7295,
+      "warnings": [
+        "OptimizeWarning: Unrecognized options detected: {'threads': 4}. These will be passed to HiGHS verbatim."
+      ],
+      "encoded_dimensions": 78,
+      "status": "ok",
+      "wall_seconds": 10.071293799999694,
+      "rss_after_bytes": 164278272,
+      "process_peak_rss_bytes": 223170560
+    }
+  },
+  "bootstrap_preflight": {
+    "B": 500,
+    "seconds_measured": 0.01359490000140795,
+    "input": "synthetic training-shaped daily sufficient statistics; no held-out scores",
+    "estimated_per_10000_seconds": 0.271898000028159,
+    "caveat": "quantile metric and report I/O add unmeasured overhead"
+  },
+  "estimated_total_training_bootstrap_seconds": 118.53833400022268,
+  "estimate_kind": "extrapolation; not a measured full-run time",
+  "memory_requirement_estimated_bytes": 669511680,
+  "local_feasible": true,
+  "cloud_cpu_needed": false,
+  "gpu_needed": false,
+  "rationale": "6072 rows and compact CPU models fit in available local memory; empirical fits completed",
+  "migration": {
+    "minimum": "4 CPU threads, 8 GB RAM; no GPU",
+    "command": "python -m pip install -r task06/requirements.txt && python task06/run_task06.py all",
+    "checkpoints": "prepare -> preflight -> train -> predict -> evaluate -> report -> verify"
+  }
+}

@@ -1,0 +1,7 @@
+﻿scenario,split,calendar_origins,release_origins,complete_target_origins,score_origins,score_hours,initial_fit_origins,refit_origins,validation_selection_origins
+0h,train,282,254,268,253,6072,253,253,0
+0h,validation,28,28,28,28,672,0,28,28
+0h,test,56,56,56,56,1344,0,0,0
+1h,train,282,254,268,253,6072,252,253,0
+1h,validation,28,28,28,28,672,0,27,27
+1h,test,56,56,56,56,1344,0,0,0
